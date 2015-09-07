@@ -1,0 +1,10 @@
+echo # yt >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+没有远程的项目首次要建立远程仓库
+git配置好之后本地仓库提交好之后打这2个命令,如果一切顺利后续让输入账号密码
+git remote add origin https://github.com/11653786/yt.git
+git push -u origin master
+很烦躁的说。就这里打账号密码
+
