@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="helloapp">
+<head>
+    <meta charset="UTF-8">
+    <title>hello</title>
+    <link href="../../../resource/css/bootstrap/bootstrap.css"/>
+
+</head>
+<body>
+<div ng-controller="directiveController">
+    <hr>
+    <div ui-view="about"></div>
+    <hr>
+    <form name="mainForm" ng-submit="save()">
+        //form名称+验证的input名称,$error.ng-验证指令
+        <p>
+        <table class="table-bordered" width="100%;">
+            <tr >
+                <td class="info">用户名:</td>
+                <td> <input class="form-control" type="text" name="username" placeholder="请输入用户名" ng-model="user.username" required ng-minlength="6" ng-maxlength="10"/>
+                    <span ng-show="mainForm.username.$error.required">*必填!</span>
+                    <span ng-show="mainForm.username.$error.minlength">最少6位!</span><br>
+                </td>
+            </tr>
+        <tr>
+            <td>age:</td>
+            <td><input type="number" name="age" placeholder="请输入年龄" id="age" ng-model="user.age" class="form-control" required />
+                <div ng-show="mainForm.age.$error.number">请输入数字!</div>
+            </td>
+        </tr>
+            <tr>
+                <td>邮箱:</td>
+                <td> <input type="email" name="email"  placeholder="请输入email" ng-model="user.email" class="form-control" required/>
+                    <span ng-show="mainForm.email.$error.email">请输入正确的邮件地址</span></td>
+            </tr>
+            <tr>
+                <td>url:</td>
+                <td><input type="url" class="form-control"  placeholder="请输入url" name="url" ng-model="user.url"  required   />
+                    <span ng-show="mainForm.url.$error.url">请http://开头!输入网址</span>
+                  </td>
+            </tr>
+        </table>
+        <input class="btn btn-success btn-lg btn-block" type="submit" value="提交"/>
+        </p>
+        <div class="well">
+            <hello>hello标签</hello>
+            <div hello></div>
+        </div>
+        <div class="well">
+            <forms ></forms>
+        </div>
+    </form>
+    <div ng-controller="hellocontroller">
+        {{hello}}
+    </div>
+    <!--缓存标签-->
+    <mycache><div>div</div></mycache>
+    <!-- -->
+    <a ui-sref="directive">directive</a>
+</div>
+
+</body>
+</html>

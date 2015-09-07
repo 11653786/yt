@@ -1,0 +1,8 @@
+form
+
+提供了10种类型的扩展
+text.number.email.number.url.hidden.radio.checkbox.button.submit.reset
+4种css样式
+ng-valid ng-invalid ng-pristine ng-dirty
+内置校验
+required minlength maxlength

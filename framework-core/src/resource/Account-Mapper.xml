@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--名空间别乱写写baseDao使用-->
+<mapper namespace="com.yt.entity.AccountMapper">
+    <resultMap id="BaseResultMap" type="com.yt.entity.Account">
+        <id column="accountId" property="accountId" jdbcType="VARCHAR"></id>
+        <result column="account_name" property="accountName" jdbcType="VARCHAR"></result>
+    </resultMap>
+
+    <!--表名不用管根据sql自动映射?-->
+    <!--在insert方法里设置了主键自动增长-->
+    <insert id="save" parameterType="com.yt.entity.Account"   >
+        <!--主键uuid生成策略-->
+        <selectKey keyProperty="accountId" resultType="String" order="BEFORE">
+            select uuid()
+        </selectKey>
+        insert into account(accountId,account_name) values(#{accountId},#{accountName})
+    </insert>
+</mapper>
