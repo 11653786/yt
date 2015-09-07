@@ -3,6 +3,7 @@ git init
 git add README.md
 git commit -m "first commit"
 没有远程的项目首次要建立远程仓库
+首次要连接远程路径
 git配置好之后本地仓库提交好之后打这2个命令,如果一切顺利后续让输入账号密码
 git remote add origin https://github.com/11653786/yt.git
 git push -u origin master
