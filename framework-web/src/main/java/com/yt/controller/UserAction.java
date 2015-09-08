@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -70,7 +71,7 @@ public class UserAction extends BaseAction{
     @RequestMapping(value = "/save")
     public String saveSession(HttpSession session){
         session.setAttribute("hehe","hehe1");
-        session.setMaxInactiveInterval(3600*3600);
+        session.setMaxInactiveInterval(3600 * 3600);
         System.out.println(session.getAttribute("hehe"));
         return "index";
     }
@@ -97,10 +98,27 @@ public class UserAction extends BaseAction{
 
     @RequestMapping(value = "/datagrid")
     @ResponseBody
-    public void datagrid(HttpServletRequest request){
+    public Page datagrid(HttpServletRequest request){
         Map<String,String> map=this.getParameters(request);
         Page page= userService.getPage1(map);
-        System.out.println(page);
+        return page;
+    }
+
+    @RequestMapping(value ="/datagrid1")
+    @ResponseBody
+    public List<User> datagrid1(){
+        List<User> users=new ArrayList<User>();
+        User u=new User();
+        u.setUserName(1 + "");
+        u.setId(1);
+        users.add(u);
+        users.add(u);
+        users.add(u);
+        users.add(u);
+        users.add(u);
+        users.add(u);
+        users.add(u);
+        return users;
     }
 
 

@@ -105,8 +105,10 @@ public class BaseDaoImpl<T> extends RedisDaoImpl implements BaseDao<T>{
     public Page getPage1(Map<String,String> map){
         List<T>  list= session.selectList(setNameSpace() + ".getPage1",map);
         Page pages=new Page();
-        pages.setPage(Integer.valueOf(map.get("page")));
-        pages.setPageSize(Integer.valueOf(map.get("pageSize")));
+        Integer page=Integer.valueOf(map.get("page"));
+        pages.setPage(page);
+        Integer pageSize=Integer.valueOf(map.get("pageSize"));
+        pages.setPageSize(pageSize);
         pages.setList(list);
         return pages;
     }

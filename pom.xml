@@ -24,7 +24,7 @@
         <spring.version.old>4.0.5.RELEASE</spring.version.old>
         <redis.version>1.4.2.RELEASE</redis.version>
         <shiro.version>1.2.3</shiro.version>
-        <org.slf4j-version>1.6.6</org.slf4j-version>
+        <org.slf4j-version>1.5.8</org.slf4j-version>
     </properties>
     <!--框架公用的jar包放在父模块中-->
 
