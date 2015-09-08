@@ -18,7 +18,7 @@ public interface BaseDao<T> extends RedisDao {
 
     public T getByEntityId(T t);
 
-    public List<T> getPage();
+    public List<T> getPage(Map<String,Object> map);
 
-    public Page getPage1(Map<String,String> map);
+
 }

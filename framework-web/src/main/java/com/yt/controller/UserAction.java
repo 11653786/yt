@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -85,7 +86,6 @@ public class UserAction extends BaseAction{
         user.setUserName("USERNAME1");
         userService.save(user);
 
-       List<User> user1= userService.getPage();
         return "index";
     }
 
@@ -96,31 +96,16 @@ public class UserAction extends BaseAction{
     }
 
 
-    @RequestMapping(value = "/datagrid")
+    @RequestMapping(value ="/datagrid")
     @ResponseBody
-    public Page datagrid(HttpServletRequest request){
-        Map<String,String> map=this.getParameters(request);
-        Page page= userService.getPage1(map);
-        return page;
+    public List<User> datagrid2(HttpServletRequest request){
+        Map<String,Object> map=this.getParameters(request);
+        Map<String,Object> map1=new HashMap<String, Object>();
+        map1.put("page",1);
+        map1.put("pageSize",15);
+        List<User> list= userService.getPage(map);
+        return list;
     }
-
-    @RequestMapping(value ="/datagrid1")
-    @ResponseBody
-    public List<User> datagrid1(){
-        List<User> users=new ArrayList<User>();
-        User u=new User();
-        u.setUserName(1 + "");
-        u.setId(1);
-        users.add(u);
-        users.add(u);
-        users.add(u);
-        users.add(u);
-        users.add(u);
-        users.add(u);
-        users.add(u);
-        return users;
-    }
-
 
 
 

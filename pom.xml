@@ -27,7 +27,6 @@
         <org.slf4j-version>1.5.8</org.slf4j-version>
     </properties>
     <!--框架公用的jar包放在父模块中-->
-
     <dependencies>
 
         <!--这俩包常用的啊-->
@@ -88,6 +87,12 @@
             <artifactId>mybatis-spring</artifactId>
             <version>1.2.2</version>
         </dependency>
+        <!--mybatis分页工具-->
+    <!--    <dependency>
+            <groupId>com.github.miemiedev</groupId>
+            <artifactId>mybatis-paginator</artifactId>
+            <version>1.2.17</version>
+        </dependency>-->
 
 
 

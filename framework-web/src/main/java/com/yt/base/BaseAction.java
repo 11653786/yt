@@ -29,12 +29,12 @@ public class BaseAction {
      * @param request
      * @return
      */
-    public Map<String, String> getParameters(HttpServletRequest request) {
+    public Map<String, Object> getParameters(HttpServletRequest request) {
         if (request == null) {
             request = ((ServletRequestAttributes) RequestContextHolder.getRequestAttributes()).getRequest();
         }
         Map req = request.getParameterMap();
-        Map<String, String> p = new HashMap<String, String>();
+        Map<String, Object> p = new HashMap<String, Object>();
         if ((req != null) && (!req.isEmpty())) {
 
             Collection keys = req.keySet();
@@ -51,7 +51,12 @@ public class BaseAction {
                 if ((v != null) && ((v instanceof String))) {
                     String s = (String) v;
                     if (s.length() > 0) {
-                        p.put(key, s);
+                        if(key.equalsIgnoreCase("page") || key.equalsIgnoreCase("pageSize")){
+                           p.put(key,Integer.valueOf(s));
+                        }else{
+                            p.put(key, s);
+                        }
+
                     }
                 }
             }

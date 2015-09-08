@@ -33,4 +33,12 @@
 		<!--<typeAlias type="com.rbao.east.entity.Dictionary" alias="Dictionary" />-->
 		
 	</typeAliases>
+	<!--mybatis分页工具-->
+	<!--<plugins>-->
+		<!--<plugin-->
+				<!--interceptor="com.github.miemiedev.mybatis.paginator.OffsetLimitInterceptor">-->
+			<!--<property name="dialectClass"-->
+					  <!--value="com.github.miemiedev.mybatis.paginator.dialect.MySQLDialect" />-->
+		<!--</plugin>-->
+	<!--</plugins>-->
 </configuration>

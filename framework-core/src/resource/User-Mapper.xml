@@ -41,12 +41,8 @@
         </where>
     </select>
 
-    <select id="getPage"  resultMap="BaseResultMap">
-        select <include refid="getall" /> from t_user limit 0,1;
-    </select>
-
-    <select id="getPage1"  resultMap="BaseResultMap" parameterType="Map">
-        select id as id,username as userName from t_user where 1=1 limit #{page},#{pageSize};
+    <select id="getPage" parameterType="java.util.Map"  resultMap="BaseResultMap">
+        select <include refid="getall" /> from t_user limit #{page},#{pageSize};
     </select>
 
 
