@@ -5,6 +5,7 @@ import com.yt.entity.Account;
 import com.yt.entity.User;
 import com.yt.service.AccountService;
 import com.yt.service.UserService;
+import com.yt.util.Page;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -88,18 +89,20 @@ public class UserAction extends BaseAction{
     }
 
 
+    @RequestMapping(value ="/list")
+    public String list(){
+        return "user/list";
+    }
+
+
     @RequestMapping(value = "/datagrid")
     @ResponseBody
     public void datagrid(HttpServletRequest request){
         Map<String,String> map=this.getParameters(request);
-        userService.getPage();
+        Page page= userService.getPage1(map);
+        System.out.println(page);
     }
 
-    @RequestMapping(value = "/str")
-    @ResponseBody
-    public String str(){
-        return "str";
-    }
 
 
 
