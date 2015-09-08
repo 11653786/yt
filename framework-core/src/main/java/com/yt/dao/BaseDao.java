@@ -1,8 +1,10 @@
 package com.yt.dao;
 
 import com.yt.dao.redis.RedisDao;
+import com.yt.util.Page;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * http://www.runoob.com/bootstrap/bootstrap-v2-layout.html
@@ -17,4 +19,6 @@ public interface BaseDao<T> extends RedisDao {
     public T getByEntityId(T t);
 
     public List<T> getPage();
+
+    public Page getPage1(Map<String,String> map);
 }

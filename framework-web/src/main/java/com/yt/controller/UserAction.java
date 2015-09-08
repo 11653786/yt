@@ -1,25 +1,27 @@
 package com.yt.controller;
 
+import com.yt.base.BaseAction;
 import com.yt.entity.Account;
 import com.yt.entity.User;
+import com.yt.service.AccountService;
+import com.yt.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
-import com.yt.service.AccountService;
-import com.yt.service.UserService;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
-import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by user on 2015/8/11.
  */
 @Controller
 @RequestMapping(value = "/api/user")
-public class UserAction {
+public class UserAction extends BaseAction{
 
 
 
@@ -88,11 +90,9 @@ public class UserAction {
 
     @RequestMapping(value = "/datagrid")
     @ResponseBody
-    public User datagrid(){
-      User user=new User();
-        user.setId(1);
-        user.setUserName("hehe");
-        return user;
+    public void datagrid(HttpServletRequest request){
+        Map<String,String> map=this.getParameters(request);
+        userService.getPage();
     }
 
     @RequestMapping(value = "/str")

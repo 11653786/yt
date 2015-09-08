@@ -13,7 +13,7 @@
       <module fileurl="file://$PROJECT_DIR$/html5Angularjs/html5Angularjs.iml" filepath="$PROJECT_DIR$/html5Angularjs/html5Angularjs.iml" />
       <module fileurl="file://$PROJECT_DIR$/html5Directive2/html5Directive2.iml" filepath="$PROJECT_DIR$/html5Directive2/html5Directive2.iml" />
       <module fileurl="file://$PROJECT_DIR$/html5directive/html5directive.iml" filepath="$PROJECT_DIR$/html5directive/html5directive.iml" />
-      <module fileurl="file://$PROJECT_DIR$/html5directive-scope-require/html5directive-scope-require.iml" filepath="$PROJECT_DIR$/html5directive-scope-require/html5directive-scope-require.iml" />
+      <module fileurl="file://$PROJECT_DIR$/html5filter/html5filter.iml" filepath="$PROJECT_DIR$/html5filter/html5filter.iml" />
       <module fileurl="file://$PROJECT_DIR$/html5form/html5form.iml" filepath="$PROJECT_DIR$/html5form/html5form.iml" />
       <module fileurl="file://$PROJECT_DIR$/html5service/html5service.iml" filepath="$PROJECT_DIR$/html5service/html5service.iml" />
     </modules>

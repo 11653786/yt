@@ -63,12 +63,6 @@
     <file url="file://$PROJECT_DIR$/html5Directive2/resource/angularjs/js/angular-route.js" charset="GBK" />
     <file url="file://$PROJECT_DIR$/html5Directive2/resource/angularjs/js/angular-ui-router.js" charset="GBK" />
     <file url="file://$PROJECT_DIR$/html5Directive2/resource/angularjs/js/angular.js" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/html5directive-scope-require/html/angularjs/api/AngularJS 中文API参考手册.chm" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/html5directive-scope-require/html/angularjs/api/AngularJS中文版.pdf" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/html5directive-scope-require/html/angularjs/api/AngularJs权威指南.pdf" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/html5directive-scope-require/html/angularjs/api/用AngularJS开发下一代Web应用.pdf" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/html5directive-scope-require/resource/css" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/html5directive-scope-require/resource/js" charset="GBK" />
     <file url="file://$PROJECT_DIR$/html5directive/html/angularjs/api/AngularJS 中文API参考手册.chm" charset="GBK" />
     <file url="file://$PROJECT_DIR$/html5directive/html/angularjs/api/AngularJS中文版.pdf" charset="GBK" />
     <file url="file://$PROJECT_DIR$/html5directive/html/angularjs/api/AngularJs权威指南.pdf" charset="GBK" />
@@ -79,6 +73,7 @@
     <file url="file://$PROJECT_DIR$/html5directive/html/angularjs/js/services.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/html5directive/resource/css" charset="GBK" />
     <file url="file://$PROJECT_DIR$/html5directive/resource/js" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/html5filter/resource/angular.js" charset="GBK" />
     <file url="file://$PROJECT_DIR$/html5form/html/angularjs/api/AngularJS 中文API参考手册.chm" charset="GBK" />
     <file url="file://$PROJECT_DIR$/html5form/html/angularjs/api/AngularJS中文版.pdf" charset="GBK" />
     <file url="file://$PROJECT_DIR$/html5form/html/angularjs/api/AngularJs权威指南.pdf" charset="GBK" />

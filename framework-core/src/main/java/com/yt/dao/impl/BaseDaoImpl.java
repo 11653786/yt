@@ -4,6 +4,7 @@ import com.google.gson.reflect.TypeToken;
 import com.yt.dao.BaseDao;
 import com.yt.dao.redis.impl.RedisDaoImpl;
 import com.yt.util.JsonUtil;
+import com.yt.util.Page;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.dao.DataAccessException;
 import org.springframework.data.redis.connection.RedisConnection;
@@ -15,6 +16,7 @@ import org.springframework.transaction.annotation.Transactional;
 import javax.annotation.Resource;
 import java.lang.reflect.ParameterizedType;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by user on 2015/8/11.
@@ -98,6 +100,15 @@ public class BaseDaoImpl<T> extends RedisDaoImpl implements BaseDao<T>{
             }
         });
         return list;
+    }
+
+    public Page getPage1(Map<String,String> map){
+        List<T>  list= session.selectList(setNameSpace() + ".getPage1",map);
+        Page pages=new Page();
+        pages.setPage(Integer.valueOf(map.get("page")));
+        pages.setPageSize(Integer.valueOf(map.get("pageSize")));
+        pages.setList(list);
+        return pages;
     }
 
 
