@@ -82,7 +82,7 @@ myapp.service("myservice",function(myfactory,$http){
   this.pageSize=this.list.length;
   this.pages={obj:this.obj,list:this.list,pageSize:this.pageSize};
   this.getPages=function(){
-    $http({method:'post',url:'/api/user/datagrid.html',params:{page:1,pageSize:10}}).
+    $http({method:'post',url:'/api/user/datagrid.do',params:{page:1,pageSize:10}}).
             success(function(response) {
               alert(123);
             }).error(function(){

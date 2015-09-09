@@ -100,9 +100,6 @@ public class UserAction extends BaseAction{
     @ResponseBody
     public List<User> datagrid2(HttpServletRequest request){
         Map<String,Object> map=this.getParameters(request);
-        Map<String,Object> map1=new HashMap<String, Object>();
-        map1.put("page",1);
-        map1.put("pageSize",15);
         List<User> list= userService.getPage(map);
         return list;
     }

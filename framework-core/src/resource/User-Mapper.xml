@@ -44,6 +44,4 @@
     <select id="getPage" parameterType="java.util.Map"  resultMap="BaseResultMap">
         select <include refid="getall" /> from t_user limit #{page},#{pageSize};
     </select>
-
-
 </mapper>
