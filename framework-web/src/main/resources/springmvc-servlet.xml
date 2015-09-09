@@ -18,6 +18,15 @@
 	<mvc:annotation-driven />
 
 
+	<bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter" >
+		<property name="messageConverters">
+			<list>
+				<bean class="org.springframework.http.converter.json.MappingJacksonHttpMessageConverter" />
+			</list>
+		</property>
+	</bean>
+
+
 	<!--<mvc:annotation-driven>-->
 		<!--<mvc:message-converters register-defaults="true">-->
 			<!--<bean class="org.springframework.http.converter.StringHttpMessageConverter">-->

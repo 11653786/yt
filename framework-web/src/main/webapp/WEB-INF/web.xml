@@ -24,10 +24,11 @@
         </init-param>
         <load-on-startup>1</load-on-startup>
     </servlet>
-
+    <!-- http://blog.csdn.net/jia20003/article/details/21411771-->
+    <!-- 这里千万不要改成*.html否则返回json有问题-->
     <servlet-mapping>
         <servlet-name>dispatcher</servlet-name>
-        <url-pattern>*.html</url-pattern>
+        <url-pattern>*.do</url-pattern>
     </servlet-mapping>
 
     <!-- 解决工程编码过滤器 -->
