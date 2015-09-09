@@ -9,7 +9,6 @@
       <module fileurl="file://$PROJECT_DIR$/framework-utils/framework-utils.iml" filepath="$PROJECT_DIR$/framework-utils/framework-utils.iml" />
       <module fileurl="file://$PROJECT_DIR$/framework-web/framework-web.iml" filepath="$PROJECT_DIR$/framework-web/framework-web.iml" />
       <module fileurl="file://$PROJECT_DIR$/framework-webservice/framework-webservice.iml" filepath="$PROJECT_DIR$/framework-webservice/framework-webservice.iml" />
-      <module fileurl="file://$PROJECT_DIR$/html5/html5.iml" filepath="$PROJECT_DIR$/html5/html5.iml" />
       <module fileurl="file://$PROJECT_DIR$/html5Angularjs/html5Angularjs.iml" filepath="$PROJECT_DIR$/html5Angularjs/html5Angularjs.iml" />
       <module fileurl="file://$PROJECT_DIR$/html5Directive2/html5Directive2.iml" filepath="$PROJECT_DIR$/html5Directive2/html5Directive2.iml" />
       <module fileurl="file://$PROJECT_DIR$/html5directive/html5directive.iml" filepath="$PROJECT_DIR$/html5directive/html5directive.iml" />

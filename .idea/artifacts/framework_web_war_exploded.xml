@@ -1,20 +1,26 @@
 <component name="ArtifactManager">
-  <artifact type="exploded-war" name="web2">
-    <output-path>$PROJECT_DIR$/out/artifacts/web2</output-path>
+  <artifact type="exploded-war" name="framework-web:war exploded">
+    <output-path>$PROJECT_DIR$/framework-web/target/framework-web</output-path>
     <root id="root">
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
           <element id="module-output" name="framework-web" />
-          <element id="module-output" name="framework-service" />
-          <element id="module-output" name="framework-core" />
-          <element id="module-output" name="framework-utils" />
-          <element id="module-output" name="framework-entity" />
         </element>
         <element id="directory" name="lib">
+          <element id="archive" name="framework-service-1.0-SNAPSHOT.jar">
+            <element id="module-output" name="framework-service" />
+          </element>
+          <element id="archive" name="framework-core-1.0-SNAPSHOT.jar">
+            <element id="module-output" name="framework-core" />
+          </element>
+          <element id="archive" name="framework-utils-1.0-SNAPSHOT.jar">
+            <element id="module-output" name="framework-utils" />
+          </element>
+          <element id="archive" name="framework-entity-1.0-SNAPSHOT.jar">
+            <element id="module-output" name="framework-entity" />
+          </element>
           <element id="library" level="project" name="Maven: antlr:antlr:2.7.7" />
           <element id="library" level="project" name="Maven: org.apache.avro:avro:1.7.6" />
-          <element id="library" level="project" name="Maven: org.codehaus.jackson:jackson-core-asl:1.9.13" />
-          <element id="library" level="project" name="Maven: org.codehaus.jackson:jackson-mapper-asl:1.9.13" />
           <element id="library" level="project" name="Maven: com.thoughtworks.paranamer:paranamer:2.3" />
           <element id="library" level="project" name="Maven: org.xerial.snappy:snappy-java:1.0.5" />
           <element id="library" level="project" name="Maven: org.apache.commons:commons-compress:1.4.1" />
@@ -75,7 +81,7 @@
           <element id="library" level="project" name="Maven: org.hibernate:hibernate-entitymanager:4.3.2.Final" />
           <element id="library" level="project" name="Maven: org.hibernate.javax.persistence:hibernate-jpa-2.0-api:1.0.0.Final" />
           <element id="library" level="project" name="Maven: com.google.code.gson:gson:2.3.1" />
-          <element id="library" level="project" name="Maven: log4j:log4j:1.2.5" />
+          <element id="library" level="project" name="Maven: log4j:log4j:1.2.17" />
           <element id="library" level="project" name="Maven: javax.persistence:persistence-api:1.0" />
           <element id="library" level="project" name="Maven: ognl:ognl:3.0.6" />
           <element id="library" level="project" name="Maven: javassist:javassist:3.11.0.GA" />
@@ -84,13 +90,18 @@
           <element id="library" level="project" name="Maven: aopalliance:aopalliance:1.0" />
           <element id="library" level="project" name="Maven: cglib:cglib:2.2" />
           <element id="library" level="project" name="Maven: asm:asm:3.1" />
-          <element id="library" level="project" name="Maven: org.slf4j:slf4j-api:1.5.8" />
-          <element id="library" level="project" name="Maven: org.slf4j:slf4j-log4j12:1.5.8" />
+          <element id="library" level="project" name="Maven: org.slf4j:slf4j-api:1.6.6" />
+          <element id="library" level="project" name="Maven: org.slf4j:slf4j-log4j12:1.6.6" />
           <element id="library" level="project" name="Maven: javax.inject:javax.inject:1" />
           <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-core:2.4.4" />
           <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-databind:2.4.4" />
           <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-annotations:2.4.4" />
+          <element id="library" level="project" name="Maven: org.codehaus.jackson:jackson-mapper-asl:1.9.13" />
+          <element id="library" level="project" name="Maven: org.codehaus.jackson:jackson-core-asl:1.9.13" />
         </element>
+      </element>
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/framework-web/target/framework-web/META-INF/MANIFEST.MF" />
       </element>
       <element id="javaee-facet-resources" facet="framework-web/web/Web" />
     </root>

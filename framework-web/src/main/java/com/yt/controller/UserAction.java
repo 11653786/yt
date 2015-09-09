@@ -107,6 +107,15 @@ public class UserAction extends BaseAction{
         return list;
     }
 
+    @RequestMapping(value ="/users")
+    @ResponseBody
+    public User list(HttpServletRequest request){
+       User user=new User();
+        user.setId(1);
+        user.setUserName("hehe");
+        return user;
+    }
+
 
 
 }
