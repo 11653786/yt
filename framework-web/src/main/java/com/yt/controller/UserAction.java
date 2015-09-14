@@ -1,6 +1,7 @@
 package com.yt.controller;
 
 import com.yt.base.BaseAction;
+import com.yt.dao.mongo.MongoDao;
 import com.yt.entity.Account;
 import com.yt.entity.User;
 import com.yt.service.AccountService;
@@ -32,6 +33,9 @@ public class UserAction extends BaseAction{
     private UserService userService;
     @Autowired
     private AccountService accountService;
+
+    @Autowired
+    private MongoDao mongoDao;
 
 
     @RequestMapping(value = "/index")
@@ -112,6 +116,12 @@ public class UserAction extends BaseAction{
         user.setUserName("hehe");
         return user;
     }
+
+    @RequestMapping(value ="/mongotest")
+    public void mongotest(HttpServletRequest request){
+        mongoDao.test();
+    }
+
 
 
 
