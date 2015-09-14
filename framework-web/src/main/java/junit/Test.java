@@ -1,10 +1,10 @@
 package junit;
 
-import org.springframework.context.support.ClassPathXmlApplicationContext;
-import org.springframework.dao.DataAccessException;
-import org.springframework.data.redis.connection.RedisConnection;
-import org.springframework.data.redis.core.RedisCallback;
+import com.caucho.hessian.client.HessianProxyFactory;
+import com.yt.webservice.hessian.HessianService;
 import org.springframework.data.redis.core.RedisTemplate;
+
+import java.net.MalformedURLException;
 
 
 /**
@@ -13,15 +13,15 @@ import org.springframework.data.redis.core.RedisTemplate;
 public class Test {
     static RedisTemplate redisTemplate;
     public static void main(String[] args) {
-        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
-        redisTemplate = context.getBean(RedisTemplate.class);
-        redisTemplate.execute(new RedisCallback<Boolean>() {
-
-            public Boolean doInRedis(RedisConnection connection) throws DataAccessException {
-                connection.set(redisTemplate.getStringSerializer().serialize("kk"),
-                        redisTemplate.getStringSerializer().serialize("na1231231me"));
-                return true;
-            }
-        });
+        //hessian测试调用方法
+        String url="http://localhost:8080/hessian/webservice/hessianService.hessian";
+        HessianProxyFactory factory=new HessianProxyFactory();
+        try {
+            HessianService hs=(HessianService)factory.create(HessianService.class,url);
+            System.out.println(hs);
+            hs.hello("hello,world!");
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        }
     }
 }

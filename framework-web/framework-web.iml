@@ -120,6 +120,8 @@
         <SOURCES />
       </library>
     </orderEntry>
+    <orderEntry type="module" module-name="framework-webservice" />
+    <orderEntry type="library" name="Maven: com.caucho:hessian:4.0.7" level="project" />
     <orderEntry type="module" module-name="framework-service" />
     <orderEntry type="module" module-name="framework-core" />
     <orderEntry type="module" module-name="framework-utils" />

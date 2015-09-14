@@ -435,6 +435,5 @@
             <artifactId>jackson-core-asl</artifactId>
             <version>${jackson.asl-version}</version>
         </dependency>
-
     </dependencies>
 </project>

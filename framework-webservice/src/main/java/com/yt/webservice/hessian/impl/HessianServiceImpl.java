@@ -8,6 +8,7 @@ import com.yt.webservice.hessian.HessianService;
 public class HessianServiceImpl implements HessianService{
 
     public void hello(String name) {
+
         System.out.println("hello: "+name);
     }
 }

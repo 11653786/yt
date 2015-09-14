@@ -7,6 +7,10 @@
           <element id="module-output" name="framework-web" />
         </element>
         <element id="directory" name="lib">
+          <element id="archive" name="framework-webservice-1.0-SNAPSHOT.jar">
+            <element id="module-output" name="framework-webservice" />
+          </element>
+          <element id="library" level="project" name="Maven: com.caucho:hessian:4.0.7" />
           <element id="archive" name="framework-service-1.0-SNAPSHOT.jar">
             <element id="module-output" name="framework-service" />
           </element>

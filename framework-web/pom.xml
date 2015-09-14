@@ -13,7 +13,7 @@
     <dependencies>
         <dependency>
             <groupId>com.yt.maven</groupId>
-            <artifactId>framework-service</artifactId>
+            <artifactId>framework-webservice</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
         <dependency>
