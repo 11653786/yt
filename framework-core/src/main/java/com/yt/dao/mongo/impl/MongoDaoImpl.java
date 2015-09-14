@@ -13,7 +13,7 @@ import java.util.Set;
 
 @Repository
 @Transactional
-public class MongoDaoImpl implements MongoDao{
+public class MongoDaoImpl<T> implements MongoDao<T>{
 
     private Class<T> entityClass;
 

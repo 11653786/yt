@@ -4,6 +4,7 @@ import com.yt.base.BaseAction;
 import com.yt.dao.mongo.MongoDao;
 import com.yt.entity.Account;
 import com.yt.entity.User;
+import com.yt.entity.mongodb.ModelMongo;
 import com.yt.service.AccountService;
 import com.yt.service.UserService;
 import com.yt.util.Page;
@@ -15,10 +16,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /**
  * Created by user on 2015/8/11.
@@ -117,9 +115,20 @@ public class UserAction extends BaseAction{
         return user;
     }
 
+    /**
+     * mongodb连接成功!
+     * @param request
+     */
     @RequestMapping(value ="/mongotest")
     public void mongotest(HttpServletRequest request){
         mongoDao.test();
+        ModelMongo modelMongo=new ModelMongo();
+        Random random=new Random();
+        modelMongo.setId(random.nextInt(1000));
+        modelMongo.setAge(random.nextInt(1000));
+        modelMongo.setName("mongodb测试111111"+random.nextInt(1000));
+        modelMongo.setSex("女11"+random.nextInt(1000));
+        mongoDao.save(modelMongo);
     }
 
 
