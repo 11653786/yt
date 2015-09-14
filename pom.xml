@@ -435,5 +435,28 @@
             <artifactId>jackson-core-asl</artifactId>
             <version>${jackson.asl-version}</version>
         </dependency>
+
+
+
+        <!-- mongodb的java驱动 -->
+        <dependency>
+            <groupId>org.mongodb</groupId>
+            <artifactId>mongo-java-driver</artifactId>
+            <version>2.11.0</version>
+        </dependency>
+        <!-- mongodb -->
+
+        <!-- mongodb spring,mongodn的数据源啊 -->
+        <dependency>
+            <groupId>org.springframework.data</groupId>
+            <artifactId>spring-data-mongodb</artifactId>
+            <version>1.1.1.RELEASE</version>
+        </dependency>
+        <!-- mongodb spring -->
+
+
+
+
+
     </dependencies>
 </project>

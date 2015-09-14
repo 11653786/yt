@@ -1,6 +1,7 @@
 package junit;
 
 import com.caucho.hessian.client.HessianProxyFactory;
+import com.yt.webservice.hessian.HelloService;
 import com.yt.webservice.hessian.HessianService;
 import org.springframework.data.redis.core.RedisTemplate;
 
@@ -14,12 +15,12 @@ public class Test {
     static RedisTemplate redisTemplate;
     public static void main(String[] args) {
         //hessian测试调用方法
-        String url="http://localhost:8080/hessian/webservice/hessianService.hessian";
+        String url="http://localhost:8080/hessian/webservice/helloService.hessian";
         HessianProxyFactory factory=new HessianProxyFactory();
         try {
-            HessianService hs=(HessianService)factory.create(HessianService.class,url);
+            HelloService hs=(HelloService)factory.create(HelloService.class,url);
             System.out.println(hs);
-            hs.hello("hello,world!");
+            hs.init();
         } catch (MalformedURLException e) {
             e.printStackTrace();
         }
