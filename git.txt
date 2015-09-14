@@ -9,3 +9,7 @@ git remote add origin https://github.com/11653786/yt.git
 git push -u origin master
 很烦躁的说。就这里打账号密码
 
+
+数据库隔离级别
+http://blog.sina.com.cn/s/blog_8020e4110101bfc6.html
+

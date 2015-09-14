@@ -48,6 +48,22 @@
 
 
 
+    <servlet>
+        <servlet-name>hessian</servlet-name>
+        <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+        <init-param>
+            <param-name>contextConfigLocation</param-name>
+            <param-value>hessian-simple.xml</param-value>
+        </init-param>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>hessian</servlet-name>
+        <url-pattern>*.htm</url-pattern>
+    </servlet-mapping>
+
+
+
     <!--log4j-->
     <!--<context-param>-->
         <!--<param-name>log4jConfigLocation</param-name>-->

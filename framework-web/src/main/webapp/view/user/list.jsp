@@ -84,7 +84,7 @@ myapp.service("myservice",function(myfactory,$http){
   this.getPages=function(){
     $http({method:'post',url:'/api/user/datagrid.do',params:{page:1,pageSize:10}}).
             success(function(response) {
-              alert(123);
+              alert(response);
             }).error(function(){
               alert(4);
             });

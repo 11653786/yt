@@ -436,7 +436,5 @@
             <version>${jackson.asl-version}</version>
         </dependency>
 
-
-
     </dependencies>
 </project>
