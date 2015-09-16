@@ -38,12 +38,17 @@ public class MongoDaoImpl<T> implements MongoDao<T> {
 
     /**
      * 保存一个对象到mongodb
-     *
+     * mongodb 的 insert()、save()  ，区别主要是：若存在主键，insert()  不做操作，而save() 则更改原来的内容为新内容。
      * @param bean
      * @return
      */
     public T save(T bean) {
         mongoTemplate.save(bean);
+        return bean;
+    }
+
+    public T insertEntity(T bean) {
+         mongoTemplate.insert(bean);
         return bean;
     }
 

@@ -19,6 +19,8 @@ public interface MongoDao<T> {
      */
     public T save(T bean);
 
+    public T insertEntity(T bean);
+
     public void test();
 
     public T findOneByWhere(Map<String,Object> map);

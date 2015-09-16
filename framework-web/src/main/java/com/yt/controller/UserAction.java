@@ -2,9 +2,11 @@ package com.yt.controller;
 
 import com.yt.base.BaseAction;
 import com.yt.dao.base.mongo.MongoDao;
+import com.yt.dao.entity.dao.MongoAddressMongoDao;
 import com.yt.dao.entity.dao.MongoModelUserDao;
 import com.yt.entity.Account;
 import com.yt.entity.User;
+import com.yt.entity.mongodb.AddressMongo;
 import com.yt.entity.mongodb.ModelMongo;
 import com.yt.service.AccountService;
 import com.yt.service.UserService;
@@ -36,6 +38,9 @@ public class UserAction extends BaseAction{
 
     @Autowired
     private MongoModelUserDao modelUserDao;
+
+    @Autowired
+    private MongoAddressMongoDao addressMongoDao;
 
 
     @RequestMapping(value = "/index")
@@ -129,7 +134,7 @@ public class UserAction extends BaseAction{
         modelMongo.setId(random.nextInt(1000));
         modelMongo.setAge(random.nextInt(1000));
         modelMongo.setName("mongodb测试111111"+random.nextInt(1000));
-        modelMongo.setSex("女11"+random.nextInt(1000));
+        modelMongo.setSex("女11" + random.nextInt(1000));
         modelUserDao.save(modelMongo);
     }
 
@@ -137,8 +142,27 @@ public class UserAction extends BaseAction{
     @RequestMapping(value ="/mongowhere")
     public void mongowhere(HttpServletRequest request){
         ModelMongo modelMongo=  modelUserDao.findOneByWhere(null);
-        System.out.println(modelMongo);
+        System.out.println(modelMongo + "," + modelMongo.getId());
     }
+
+    @RequestMapping(value ="/saveAddress")
+    public void saveAddress(HttpServletRequest request){
+        AddressMongo addressMongo=new AddressMongo();
+        addressMongo.setAddressName("hehe");
+        addressMongo.setArea("西安");
+        addressMongo.setMobile("15207183027"+1);
+        try{
+            addressMongoDao.insert(addressMongo);
+        }
+        catch (Exception e){
+        System.out.println(""+e.getMessage());
+        }
+
+
+    }
+
+
+
 
 
 
