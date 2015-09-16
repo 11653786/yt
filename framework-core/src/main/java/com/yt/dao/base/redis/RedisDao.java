@@ -8,8 +8,8 @@ import java.util.Map;
 public interface RedisDao {
 
     /**
-     * 删除
-     * 存入string类型最好用gson转换成json在存
+     * 鍒犻櫎
+     * 瀛樺叆string绫诲瀷鏈�濂界敤gson杞崲鎴恓son鍦ㄥ瓨
      * @param keyValue
      * @return
      */
@@ -19,7 +19,7 @@ public interface RedisDao {
     public boolean redisRemove(String key);
 
     /**
-     * 判断当前 key是否存在
+     * 鍒ゆ柇褰撳墠 key鏄惁瀛樺湪
      * @param key
      * @return
      */

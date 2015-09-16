@@ -27,7 +27,7 @@ public class RedisDaoImpl implements RedisDao {
 
 
     /**
-     * 获取 key
+     * 鑾峰彇 key
      * <br>------------------------------<br>
      */
     protected RedisSerializer<String> getRedisSerializer() {
@@ -47,7 +47,7 @@ public class RedisDaoImpl implements RedisDao {
     }
 
     public boolean redisRemove(String key) {
-        //如果存在
+        //濡傛灉瀛樺湪
         if (exists(key)) {
             redisTemplate.delete(key);
             return true;

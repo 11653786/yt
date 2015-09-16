@@ -57,7 +57,7 @@ public class BaseDaoImpl<T> extends RedisDaoImpl implements BaseDao<T> {
     }
 
     public void save(T t) {
-        //ÕâÀïÊÇÃû¿Õ¼ä¼ÓÉÏ·½·¨Ãñ³Æ¾ÍĞĞÁË
+        //è¿™é‡Œæ˜¯åç©ºé—´åŠ ä¸Šæ–¹æ³•æ°‘ç§°å°±è¡Œäº†
         session.insert(setNameSpace()+".save",t);
     }
 
@@ -78,18 +78,18 @@ public class BaseDaoImpl<T> extends RedisDaoImpl implements BaseDao<T> {
                 byte[] value = redisConnection.get(key);
                 // redisConnection.exists(key);
                 if(value==null){
-                    //´ÓÊı¾İÖĞ²éÑ¯
+                    //ä»æ•°æ®ä¸­æŸ¥è¯¢
                     List<T>  sessionList= session.selectList(setNameSpace() + ".getPage");
                     System.out.println("session....");
-                    //ÓÃ¹È¸èµÄgson°ü×ª»»³Étring,ÔÚ°ÑstringĞòÁĞ»¯³Ébyte[]
+                    //ç”¨è°·æ­Œçš„gsonåŒ…è½¬æ¢æˆtring,åœ¨æŠŠstringåºåˆ—åŒ–æˆbyte[]
                     String sessionListStr=JsonUtil.toJson(sessionList);
                     byte[] values=serializer.serialize(sessionListStr);
-                    //redis±£´æ
+                    //redisä¿å­˜
                     redisConnection.set(key,values);
-                    //redisÉèÖÃ³¬Ê±Ê±¼ä,ÕâÀï¾­µäµÄ»°¿ÉÒÔ,¼ÆËã¾àÀëÃ¿ÌìÁè³¿12µãµÄÊ±ºòÈ»ºó½øĞĞ¼ÆËã±£´æÊ±¼ä
-                    redisConnection.expire(key,redisSaveTime); //µ¥Î»Ãë
+                    //redisè®¾ç½®è¶…æ—¶æ—¶é—´,è¿™é‡Œç»å…¸çš„è¯å¯ä»¥,è®¡ç®—è·ç¦»æ¯å¤©å‡Œæ™¨12ç‚¹çš„æ—¶å€™ç„¶åè¿›è¡Œè®¡ç®—ä¿å­˜æ—¶é—´
+                    redisConnection.expire(key,redisSaveTime); //å•ä½ç§’
                     return sessionList;
-                }else{      //Èç¹û»º´æÖĞÓĞµÄ»°
+                }else{      //å¦‚æœç¼“å­˜ä¸­æœ‰çš„è¯
                     byte[] redisbyte=value;
                     System.out.println("redis....");
                     String redisListStr=serializer.deserialize(redisbyte);

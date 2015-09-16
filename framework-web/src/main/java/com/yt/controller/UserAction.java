@@ -65,9 +65,9 @@ public class UserAction extends BaseAction{
     public String formSub(String email,String username){
         User saveUser=new User();
         saveUser.setUserName(username);
- //       userService.save(saveUser);
+        //       userService.save(saveUser);
         Account account=new Account();
-      //  account.setAccountId("1231");
+        //  account.setAccountId("1231");
         account.setAccountName(email);
         accountService.save(account);
         return "ok";
@@ -111,14 +111,14 @@ public class UserAction extends BaseAction{
     @RequestMapping(value ="/users")
     @ResponseBody
     public User list(HttpServletRequest request){
-       User user=new User();
+        User user=new User();
         user.setId(1);
         user.setUserName("hehe");
         return user;
     }
 
     /**
-     * mongodb¡¨Ω”≥…π¶!
+     * mongodbËøûÊé•ÊàêÂäü!
      * @param request
      */
     @RequestMapping(value ="/mongotest")
@@ -128,15 +128,15 @@ public class UserAction extends BaseAction{
         Random random=new Random();
         modelMongo.setId(random.nextInt(1000));
         modelMongo.setAge(random.nextInt(1000));
-        modelMongo.setName("mongodb≤‚ ‘111111"+random.nextInt(1000));
-        modelMongo.setSex("≈Æ11"+random.nextInt(1000));
+        modelMongo.setName("mongodbÊµãËØï111111"+random.nextInt(1000));
+        modelMongo.setSex("Â•≥11"+random.nextInt(1000));
         modelUserDao.save(modelMongo);
     }
 
 
     @RequestMapping(value ="/mongowhere")
     public void mongowhere(HttpServletRequest request){
-       ModelMongo modelMongo=  modelUserDao.findOneByWhere(null);
+        ModelMongo modelMongo=  modelUserDao.findOneByWhere(null);
         System.out.println(modelMongo);
     }
 

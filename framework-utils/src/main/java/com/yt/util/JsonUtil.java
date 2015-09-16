@@ -5,7 +5,7 @@ import com.google.gson.Gson;
 import java.lang.reflect.Type;
 
 /**
- * Java¶ÔÏóºÍJSON×Ö·û´®Ïà»¥×ª»¯¹¤¾ßÀà
+ * Javaå¯¹è±¡å’ŒJSONå­—ç¬¦ä¸²ç›¸äº’è½¬åŒ–å·¥å…·ç±»
  * @author penghuaiyi
  * @date 2013-08-10
  */
@@ -14,7 +14,7 @@ public final class JsonUtil {
     private JsonUtil(){}
 
     /**
-     * ¶ÔÏó×ª»»³Éjson×Ö·û´®
+     * å¯¹è±¡è½¬æ¢æˆjsonå­—ç¬¦ä¸²
      * @param obj
      * @return
      */
@@ -24,7 +24,7 @@ public final class JsonUtil {
     }
 
     /**
-     * json×Ö·û´®×ª³É¶ÔÏó
+     * jsonå­—ç¬¦ä¸²è½¬æˆå¯¹è±¡
      * @param str
      * @param type
      * @return
@@ -35,7 +35,7 @@ public final class JsonUtil {
     }
 
     /**
-     * json×Ö·û´®×ª³É¶ÔÏó
+     * jsonå­—ç¬¦ä¸²è½¬æˆå¯¹è±¡
      * @param str
      * @param type
      * @return
