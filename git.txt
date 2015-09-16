@@ -13,3 +13,14 @@ git push -u origin master
 数据库隔离级别
 http://blog.sina.com.cn/s/blog_8020e4110101bfc6.html
 
+
+√: 可能出现    ×: 不会出现
+
+脏读	不可重复读	幻读
+Read uncommitted	√	√	√
+Read committed	×	√	√
+Repeatable read	×	×	√
+Serializable	×	×	×
+三大缓存框架...
+http://blog.csdn.net/jationxiaozi/article/details/8509732
+
