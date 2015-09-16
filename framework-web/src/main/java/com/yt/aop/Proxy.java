@@ -24,7 +24,7 @@ public class Proxy {
     private UserService userService;
 
 
-    @Pointcut("execution(public * com.yt.dao.BaseDao.save(..))")
+    @Pointcut("execution(public * com.yt.dao.base.BaseDao.save(..))")
     private void saveMethod(){}//定义一个切入点
 
 

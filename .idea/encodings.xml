@@ -3,10 +3,10 @@
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/framework-core" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/framework-core/src/main/java/com/yt/dao/BaseDao.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/framework-core/src/main/java/com/yt/dao/impl/BaseDaoImpl.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/framework-core/src/main/java/com/yt/dao/redis/RedisDao.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/framework-core/src/main/java/com/yt/dao/redis/impl/RedisDaoImpl.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/framework-core/src/main/java/com/yt/dao/base/BaseDao.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/framework-core/src/main/java/com/yt/dao/base/impl/BaseDaoImpl.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/framework-core/src/main/java/com/yt/dao/base/redis/RedisDao.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/framework-core/src/main/java/com/yt/dao/base/redis/impl/RedisDaoImpl.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/framework-core/src/resource/Account-Mapper.xml" charset="GBK" />
     <file url="file://$PROJECT_DIR$/framework-entity" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/framework-entity/src/main/java/com/yt/entity/Account.java" charset="GBK" />

@@ -1,4 +1,4 @@
-package com.yt.dao.redis;
+package com.yt.dao.base.redis;
 
 import java.util.Map;
 

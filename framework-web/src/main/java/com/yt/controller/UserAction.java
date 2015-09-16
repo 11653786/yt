@@ -1,13 +1,13 @@
 package com.yt.controller;
 
 import com.yt.base.BaseAction;
-import com.yt.dao.mongo.MongoDao;
+import com.yt.dao.base.mongo.MongoDao;
+import com.yt.dao.entity.dao.MongoModelUserDao;
 import com.yt.entity.Account;
 import com.yt.entity.User;
 import com.yt.entity.mongodb.ModelMongo;
 import com.yt.service.AccountService;
 import com.yt.service.UserService;
-import com.yt.util.Page;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -32,8 +32,10 @@ public class UserAction extends BaseAction{
     @Autowired
     private AccountService accountService;
 
+
+
     @Autowired
-    private MongoDao mongoDao;
+    private MongoModelUserDao modelUserDao;
 
 
     @RequestMapping(value = "/index")
@@ -121,14 +123,21 @@ public class UserAction extends BaseAction{
      */
     @RequestMapping(value ="/mongotest")
     public void mongotest(HttpServletRequest request){
-        mongoDao.test();
+        modelUserDao.test();
         ModelMongo modelMongo=new ModelMongo();
         Random random=new Random();
         modelMongo.setId(random.nextInt(1000));
         modelMongo.setAge(random.nextInt(1000));
         modelMongo.setName("mongodb≤‚ ‘111111"+random.nextInt(1000));
         modelMongo.setSex("≈Æ11"+random.nextInt(1000));
-        mongoDao.save(modelMongo);
+        modelUserDao.save(modelMongo);
+    }
+
+
+    @RequestMapping(value ="/mongowhere")
+    public void mongowhere(HttpServletRequest request){
+       ModelMongo modelMongo=  modelUserDao.findOneByWhere(null);
+        System.out.println(modelMongo);
     }
 
 

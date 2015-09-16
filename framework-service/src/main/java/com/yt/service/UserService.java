@@ -1,6 +1,6 @@
 package com.yt.service;
 
-import com.yt.dao.BaseDao;
+import com.yt.dao.base.BaseDao;
 import com.yt.entity.User;
 
 /**

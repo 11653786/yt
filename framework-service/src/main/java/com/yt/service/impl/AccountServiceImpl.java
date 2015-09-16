@@ -1,6 +1,6 @@
 package com.yt.service.impl;
 
-import com.yt.dao.impl.BaseDaoImpl;
+import com.yt.dao.base.impl.BaseDaoImpl;
 import com.yt.entity.Account;
 import com.yt.service.AccountService;
 import org.springframework.stereotype.Service;
