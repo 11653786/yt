@@ -141,22 +141,19 @@ public class UserAction extends BaseAction{
 
     @RequestMapping(value ="/mongowhere")
     public void mongowhere(HttpServletRequest request){
-        ModelMongo modelMongo=  modelUserDao.findOneByWhere(null);
+        ModelMongo modelMongo=  modelUserDao.getById(0);
         System.out.println(modelMongo + "," + modelMongo.getId());
+        modelUserDao.getTotal();
     }
 
     @RequestMapping(value ="/saveAddress")
     public void saveAddress(HttpServletRequest request){
         AddressMongo addressMongo=new AddressMongo();
+        addressMongo.setAddressId(addressMongoDao.getTotal().intValue());
         addressMongo.setAddressName("hehe");
         addressMongo.setArea("西安");
-        addressMongo.setMobile("15207183027"+1);
-        try{
-            addressMongoDao.insert(addressMongo);
-        }
-        catch (Exception e){
-        System.out.println(""+e.getMessage());
-        }
+        addressMongo.setMobile("15207183027" + 1);
+         addressMongoDao.insertEntity(addressMongo);
 
 
     }

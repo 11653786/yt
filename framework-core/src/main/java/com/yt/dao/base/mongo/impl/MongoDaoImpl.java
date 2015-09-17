@@ -2,12 +2,15 @@ package com.yt.dao.base.mongo.impl;
 
 import com.mongodb.DB;
 import com.yt.dao.base.mongo.MongoDao;
+import com.yt.entity.mongodb.ModelMongo;
+import com.yt.util.Utils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.stereotype.Repository;
 
+import javax.persistence.PrePersist;
 import javax.transaction.Transactional;
 import java.lang.reflect.ParameterizedType;
 import java.util.Map;
@@ -19,22 +22,17 @@ public class MongoDaoImpl<T> implements MongoDao<T> {
 
     private Class<T> entityClass;
 
+    private int _id;
+
 
     @Autowired
     protected MongoTemplate mongoTemplate;
-
-
 
     public Class<T> getEntityClass() {
         this.entityClass = (Class<T>) ((ParameterizedType) this.getClass().getGenericSuperclass()).getActualTypeArguments()[0];
         System.out.println("className: " + this.entityClass.getSimpleName());
         return entityClass;
     }
-
-
-
-
-
 
     /**
      * 保存一个对象到mongodb
@@ -48,8 +46,15 @@ public class MongoDaoImpl<T> implements MongoDao<T> {
     }
 
     public T insertEntity(T bean) {
-         mongoTemplate.insert(bean);
+
+        try{
+            mongoTemplate.insert(bean);
+        }
+        catch(Exception e){
+            System.out.println(e.getStackTrace()+","+e.getMessage());
+        }
         return bean;
+
     }
 
     public void test() {
@@ -62,18 +67,21 @@ public class MongoDaoImpl<T> implements MongoDao<T> {
     }
 
 
-    public T findOneByWhere(Map<String,Object> map){
-        Query mongodbQuery = new Query();
-        T t=null;
-        try{
-            mongodbQuery.addCriteria(Criteria.where("name").is("mongo1啊啊"));
-            Class<T> clazz=getEntityClass();
-            t=  mongoTemplate.findOne(mongodbQuery,clazz);
-        }
-        catch(Exception e){
-        System.out.println(e.getStackTrace()+","+e.getMessage());
-        }
-        return t;
+
+
+    public T getById(int _id) {
+        Query query=new Query();
+        Criteria criteria=new Criteria();
+        criteria.where("_id").is(_id);
+        query.addCriteria(criteria);
+      return   mongoTemplate.findOne(query,getEntityClass());
+    }
+
+    public  Long getTotal(){
+        Query query=new Query();
+        long total= mongoTemplate.count(query,getEntityClass());
+        System.out.println(total);
+        return total;
     }
 
 

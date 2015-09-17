@@ -17,11 +17,16 @@ public interface MongoDao<T> {
      * @param bean
      * @return
      */
+
     public T save(T bean);
 
     public T insertEntity(T bean);
 
     public void test();
 
-    public T findOneByWhere(Map<String,Object> map);
+    public T getById(int _id);
+
+    public  Long getTotal();
+
+
 }

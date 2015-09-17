@@ -53,5 +53,28 @@ public class Proxy {
         System.out.println("out");
     }
 
+        //环绕的ProceedingJoinPoint 可以获取返回参数，只有环绕可以使用
+//    @Around("execution(public * com.rbao.east.service.sina.impl.DepositSendServiceImpl.balanceFreeze(..))")
+//    private void balanceFreeze(ProceedingJoinPoint point){
+//        Object[] args = point.getArgs();
+//
+//        for(Object obj:args){
+//            System.out.println(obj);
+//        }
+//
+//        try {
+//            Object result = point.proceed();
+//            System.out.println(result);
+//
+//        } catch (Throwable e) {
+//            /**
+//             * @author yt
+//             * @date 2015年9月17日
+//             * 英科信息有限公司
+//             */
+//        }
+//
+//    }
+
 
 }

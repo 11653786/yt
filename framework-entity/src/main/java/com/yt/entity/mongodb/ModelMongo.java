@@ -2,6 +2,9 @@ package com.yt.entity.mongodb;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.data.mongodb.core.query.Query;
+
+import javax.persistence.PrePersist;
 
 /**
  * mongodb实体类
