@@ -11,6 +11,9 @@ import com.yt.entity.mongodb.ModelMongo;
 import com.yt.service.AccountService;
 import com.yt.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.mongodb.core.query.Criteria;
+import org.springframework.data.mongodb.core.query.Query;
+import org.springframework.data.mongodb.core.query.Update;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -143,18 +146,21 @@ public class UserAction extends BaseAction{
     public void mongowhere(HttpServletRequest request){
         ModelMongo modelMongo=  modelUserDao.getById(0);
         System.out.println(modelMongo + "," + modelMongo.getId());
-        modelUserDao.getTotal();
+
     }
 
     @RequestMapping(value ="/saveAddress")
     public void saveAddress(HttpServletRequest request){
-        AddressMongo addressMongo=new AddressMongo();
-        addressMongo.setAddressId(addressMongoDao.getTotal().intValue());
-        addressMongo.setAddressName("hehe");
-        addressMongo.setArea("西安");
-        addressMongo.setMobile("15207183027" + 1);
-         addressMongoDao.insertEntity(addressMongo);
-
+        modelUserDao.getTotal(new Query());
+        Query query=new Query();
+        Criteria criteria=new Criteria();
+        criteria.where("_id").is(0);
+        query.addCriteria(criteria);
+        Update update=Update.update("name", "杨涛");
+        modelUserDao.update(query, update);
+        modelUserDao.test();
+        ModelMongo modelMongo= modelUserDao.getById(0);
+        modelUserDao.remove(modelMongo,null);
 
     }
 

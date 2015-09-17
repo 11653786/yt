@@ -2,6 +2,8 @@ package com.yt.dao.base.mongo;
 
 import com.yt.entity.mongodb.ModelMongo;
 import org.apache.poi.ss.formula.functions.T;
+import org.springframework.data.mongodb.core.query.Query;
+import org.springframework.data.mongodb.core.query.Update;
 
 import java.util.List;
 import java.util.Map;
@@ -26,7 +28,16 @@ public interface MongoDao<T> {
 
     public T getById(int _id);
 
-    public  Long getTotal();
+    public  Long getTotal(Query query);
+
+    public List<T> getList(Query query);
+
+    public void update(Query query,Update update);
+
+    public void remove(T bean,String collectionName);
+
+
+
 
 
 }

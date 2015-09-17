@@ -8,11 +8,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
+import org.springframework.data.mongodb.core.query.Update;
 import org.springframework.stereotype.Repository;
 
 import javax.persistence.PrePersist;
 import javax.transaction.Transactional;
 import java.lang.reflect.ParameterizedType;
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
@@ -77,13 +79,30 @@ public class MongoDaoImpl<T> implements MongoDao<T> {
       return   mongoTemplate.findOne(query,getEntityClass());
     }
 
-    public  Long getTotal(){
-        Query query=new Query();
+    public  Long getTotal(Query query){
         long total= mongoTemplate.count(query,getEntityClass());
         System.out.println(total);
         return total;
     }
 
+    public void update(Query query,Update update){
+        mongoTemplate.updateFirst(query,update,getEntityClass());
+
+    }
+
+    public void remove(T bean,String collectionName) {
+        if(!Utils.CheckNotNull(collectionName)){
+            mongoTemplate.remove(bean);
+        }else{
+            mongoTemplate.getDb().getName();
+          //  mongoTemplate.remove();
+        }
+    }
+
+
+    public List<T> getList(Query query) {
+        return mongoTemplate.find(query,getEntityClass());
+    }
 
 
 }
