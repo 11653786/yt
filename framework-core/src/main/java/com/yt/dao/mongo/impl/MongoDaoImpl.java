@@ -1,13 +1,13 @@
 package com.yt.dao.mongo.impl;
 
-import com.mongodb.DB;
+import com.mongodb.*;
 import com.yt.dao.mongo.MongoDao;
 import com.yt.util.Utils;
+import com.yt.util.mongoUtil.MongoUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.data.mongodb.core.MongoTemplate;
-import org.springframework.data.mongodb.core.aggregation.Aggregation;
-import org.springframework.data.mongodb.core.aggregation.ProjectionOperation;
-import org.springframework.data.mongodb.core.aggregation.UnwindOperation;
+import org.springframework.data.mongodb.core.aggregation.*;
 import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.data.mongodb.core.query.Update;
@@ -15,8 +15,12 @@ import org.springframework.stereotype.Repository;
 
 import javax.transaction.Transactional;
 import java.lang.reflect.ParameterizedType;
+import java.rmi.UnknownHostException;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
+
+import static org.springframework.data.mongodb.core.aggregation.Aggregation.*;
 
 @Repository
 @Transactional
@@ -97,10 +101,6 @@ public class MongoDaoImpl<T> implements MongoDao<T> {
         }
     }
 
-    public List<T> getGroupList(String name) {
-        return null;
-    }
-
 
     public List<T> getList(Query query,Integer page,Integer pageSize) {
 
@@ -113,27 +113,35 @@ public class MongoDaoImpl<T> implements MongoDao<T> {
         return mongoTemplate.find(query,getEntityClass());
     }
 
-    public void groupBy1(String collectionname){
-        //project("name", "netPrice") // will generate {$project: {name: 1, netPrice: 1}}
-        //选择所需要的字段
-        ProjectionOperation project=Aggregation.project("");
-        UnwindOperation project1=Aggregation.unwind("");
-        Aggregation agg=Aggregation.newAggregation(Aggregation.project(""));
+    public void groupBy(String collectionname,DBObject...objs){
+        try{
+            //$match，使用where去查询,查询字段name,￥eq等于,"hehe"的
+            BasicDBObject where=new BasicDBObject(MongoUtils.$match,new BasicDBObject("name",new BasicDBObject(MongoUtils.$eq,"hehe")));
+            //sql:select max(*),name from rb_user where name="hehe";
+            //这个_id不是id字段,而是重新把$_id这个id字段武装成主键,mongodb
+            //groupby以后会重新分表没有了主键,要重新设置主键,设置name字段为主键
+            BasicDBObject groupby=new BasicDBObject(MongoUtils.$group,new BasicDBObject("_id","$name").append("count", new BasicDBObject("$sum",1)));   //递增为1
+            //大于0,这个必须放在groupby最后
+            BasicDBObject having=new BasicDBObject(MongoUtils.$match,new BasicDBObject("count",new BasicDBObject(MongoUtils.$gt,0)));
+            //sort,1表示升序,-1表示降序
+            BasicDBObject orderBy=new BasicDBObject(MongoUtils.$orderBy,new BasicDBObject("count",-1));
+            //从第0页开始
+            BasicDBObject skin=new BasicDBObject(MongoUtils.$skip,0);
+            //每页显示2条
+            BasicDBObject limit=new BasicDBObject(MongoUtils.$limit,2);
 
 
-
-//        Aggregation agg;
-//        agg = newAggregation(
-//                project("frags","cat1","publishdate"),//挑选所需的字段
-//                match(Criteria.where("frags.isnew").is(Boolean.TRUE).and("cat1")),//筛选符合条件的记录
-//                unwind("frags"),//如果有MASTER-ITEM关系的表，需同时JOIN这两张表的，展开子项LIST，且是内链接，即如果父和子的关联ID没有的就不会输出
-//
-//                match(Criteria.where("frags.isnew").is(Boolean.TRUE)), group("cat1").count().as("updateCount")//增加COUNT为分组后输出的字段
-//                        .last("publishdate").as("publishDate"),//增加publishDate为分组后输出的字段
-//                project("publishDate","cat1","updateCount")//重新挑选字段
-//                        .and("cat1").previousOperation()//为前一操作所产生的ID FIELD建立别名
-//        );
-
+           // 2. {'$group':{'Id:''$author','count':{'$sum':1}}} 这样就会将作者按照名字排序，某个作者名字每出现一次，就会对每个作者的count加一。
+            //注意使用了group语句以后显示字段的字段就失效了
+            AggregationOutput output=mongoTemplate.getDb().getCollection("rb_user").aggregate(groupby,having,orderBy,skin,limit);
+            Iterable<DBObject> result =output.results();
+            Iterator<DBObject> results=result.iterator();
+            while(results.hasNext()){
+                System.out.println(results.next());
+            }
+        }catch (Exception e){
+            System.out.println(e.getMessage());
+        }
     }
 
 

@@ -20,6 +20,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.util.List;
 import java.util.Map;
+import java.util.Random;
 
 /**
  * Created by user on 2015/8/11.
@@ -113,7 +114,8 @@ public class UserAction extends BaseAction{
     public User list(HttpServletRequest request){
         User user=new User();
         user.setId(1);
-        user.setUserName("hehe");
+        Random random=new Random();
+        user.setUserName("hehe"+random.nextInt());
         return user;
     }
 
@@ -126,7 +128,8 @@ public class UserAction extends BaseAction{
         userDaoMongo.test();
         UserMongo mongo=new UserMongo();
         mongo.set_id(userDaoMongo.getTotal(new Query()).intValue());
-        mongo.setName("hehe");
+        Random random=new Random();
+        mongo.setName("hehe"+random.nextInt(10));
         mongo.setAge("16岁");
         userDaoMongo.insertEntity(mongo);
     }
@@ -167,12 +170,21 @@ public class UserAction extends BaseAction{
     }
 
     @RequestMapping(value ="/groupby")
-    public void groupby(HttpServletRequest request){
-        UserMongo userMongo=userDaoMongo.getById(3);
-        userMongo.setName("测试名称!");
-        userDaoMongo.saveEntity(userMongo);
+    public void groupBy(HttpServletRequest request){
+        userDaoMongo.groupBy("");
     }
 
+
+    @RequestMapping(value ="/getList")
+    public void getList(HttpServletRequest request){
+       List<UserMongo> list=userDaoMongo.getList(new Query(),0,2);
+        System.out.println("人数: " + list.size());
+    }
+
+    @RequestMapping(value ="/testSave")
+    public void testSave(HttpServletRequest request){
+
+    }
 
 
 

@@ -1,5 +1,6 @@
 package com.yt.dao.mongo;
 
+import com.mongodb.DBObject;
 import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.data.mongodb.core.query.Update;
 
@@ -33,9 +34,8 @@ public interface MongoDao<T>{
 
     public void remove(T bean,String collectionName);
 
-    public List<T> getGroupList(String name);
 
-    public void groupBy1(String collectionname);
+    public void groupBy(String collectionname,DBObject...obj);
 
 
 
