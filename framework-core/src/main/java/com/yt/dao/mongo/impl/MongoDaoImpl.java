@@ -1,21 +1,21 @@
-package com.yt.dao.base.mongo.impl;
+package com.yt.dao.mongo.impl;
 
 import com.mongodb.DB;
-import com.yt.dao.base.mongo.MongoDao;
-import com.yt.entity.mongodb.ModelMongo;
+import com.yt.dao.mongo.MongoDao;
 import com.yt.util.Utils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoTemplate;
+import org.springframework.data.mongodb.core.aggregation.Aggregation;
+import org.springframework.data.mongodb.core.aggregation.ProjectionOperation;
+import org.springframework.data.mongodb.core.aggregation.UnwindOperation;
 import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.data.mongodb.core.query.Update;
 import org.springframework.stereotype.Repository;
 
-import javax.persistence.PrePersist;
 import javax.transaction.Transactional;
 import java.lang.reflect.ParameterizedType;
 import java.util.List;
-import java.util.Map;
 import java.util.Set;
 
 @Repository
@@ -38,11 +38,11 @@ public class MongoDaoImpl<T> implements MongoDao<T> {
 
     /**
      * 保存一个对象到mongodb
-     * mongodb 的 insert()、save()  ，区别主要是：若存在主键，insert()  不做操作，而save() 则更改原来的内容为新内容。
+     * mongo 的 insert()、save()  ，区别主要是：若存在主键，insert()  不做操作，而save() 则更改原来的内容为新内容。
      * @param bean
      * @return
      */
-    public T save(T bean) {
+    public T saveEntity(T bean) {
         mongoTemplate.save(bean);
         return bean;
     }
@@ -86,23 +86,59 @@ public class MongoDaoImpl<T> implements MongoDao<T> {
     }
 
     public void update(Query query,Update update){
-        mongoTemplate.updateFirst(query,update,getEntityClass());
-
+        mongoTemplate.updateFirst(query, update, getEntityClass());
     }
 
     public void remove(T bean,String collectionName) {
         if(!Utils.CheckNotNull(collectionName)){
             mongoTemplate.remove(bean);
         }else{
-            mongoTemplate.getDb().getName();
-          //  mongoTemplate.remove();
+            mongoTemplate.remove(bean, collectionName);
         }
     }
 
+    public List<T> getGroupList(String name) {
+        return null;
+    }
 
-    public List<T> getList(Query query) {
+
+    public List<T> getList(Query query,Integer page,Integer pageSize) {
+
+        if(Utils.CheckNotNull(page) && Utils.CheckNotNull(pageSize)){
+            //从第page跳开始查
+            query.skip(page);
+            //每页pageSize条
+            query.limit(pageSize);
+        }
         return mongoTemplate.find(query,getEntityClass());
     }
+
+    public void groupBy1(String collectionname){
+        //project("name", "netPrice") // will generate {$project: {name: 1, netPrice: 1}}
+        //选择所需要的字段
+        ProjectionOperation project=Aggregation.project("");
+        UnwindOperation project1=Aggregation.unwind("");
+        Aggregation agg=Aggregation.newAggregation(Aggregation.project(""));
+
+
+
+//        Aggregation agg;
+//        agg = newAggregation(
+//                project("frags","cat1","publishdate"),//挑选所需的字段
+//                match(Criteria.where("frags.isnew").is(Boolean.TRUE).and("cat1")),//筛选符合条件的记录
+//                unwind("frags"),//如果有MASTER-ITEM关系的表，需同时JOIN这两张表的，展开子项LIST，且是内链接，即如果父和子的关联ID没有的就不会输出
+//
+//                match(Criteria.where("frags.isnew").is(Boolean.TRUE)), group("cat1").count().as("updateCount")//增加COUNT为分组后输出的字段
+//                        .last("publishdate").as("publishDate"),//增加publishDate为分组后输出的字段
+//                project("publishDate","cat1","updateCount")//重新挑选字段
+//                        .and("cat1").previousOperation()//为前一操作所产生的ID FIELD建立别名
+//        );
+
+    }
+
+
+
+
 
 
 }

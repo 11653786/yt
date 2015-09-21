@@ -444,15 +444,15 @@
             <artifactId>mongo-java-driver</artifactId>
             <version>2.11.0</version>
         </dependency>
-        <!-- mongodb -->
+        <!-- mongo -->
 
-        <!-- mongodb spring,mongodn的数据源啊 -->
+        <!-- mongo spring,mongodn的数据源啊,别下1.1的日了狗了, -->
         <dependency>
             <groupId>org.springframework.data</groupId>
             <artifactId>spring-data-mongodb</artifactId>
-            <version>1.1.1.RELEASE</version>
+            <version>1.8.0.RELEASE</version>
         </dependency>
-        <!-- mongodb spring -->
+        <!-- mongo spring -->
 
 
 

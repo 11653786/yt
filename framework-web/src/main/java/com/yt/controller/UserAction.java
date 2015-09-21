@@ -1,13 +1,10 @@
 package com.yt.controller;
 
 import com.yt.base.BaseAction;
-import com.yt.dao.base.mongo.MongoDao;
-import com.yt.dao.entity.dao.MongoAddressMongoDao;
-import com.yt.dao.entity.dao.MongoModelUserDao;
-import com.yt.entity.Account;
-import com.yt.entity.User;
-import com.yt.entity.mongodb.AddressMongo;
-import com.yt.entity.mongodb.ModelMongo;
+import com.yt.dao.mongo.dao.UserDaoMongo;
+import com.yt.entity.base.Account;
+import com.yt.entity.base.User;
+import com.yt.entity.mongo.UserMongo;
 import com.yt.service.AccountService;
 import com.yt.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,7 +18,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
-import java.util.*;
+import java.util.List;
+import java.util.Map;
 
 /**
  * Created by user on 2015/8/11.
@@ -37,14 +35,8 @@ public class UserAction extends BaseAction{
     @Autowired
     private AccountService accountService;
 
-
-
     @Autowired
-    private MongoModelUserDao modelUserDao;
-
-    @Autowired
-    private MongoAddressMongoDao addressMongoDao;
-
+    private UserDaoMongo userDaoMongo;
 
     @RequestMapping(value = "/index")
     public String index() {
@@ -83,7 +75,7 @@ public class UserAction extends BaseAction{
 
     @RequestMapping(value = "/save")
     public String saveSession(HttpSession session){
-        session.setAttribute("hehe","hehe1");
+        session.setAttribute("hehe", "hehe1");
         session.setMaxInactiveInterval(3600 * 3600);
         System.out.println(session.getAttribute("hehe"));
         return "index";
@@ -131,40 +123,55 @@ public class UserAction extends BaseAction{
      */
     @RequestMapping(value ="/mongotest")
     public void mongotest(HttpServletRequest request){
-        modelUserDao.test();
-        ModelMongo modelMongo=new ModelMongo();
-        Random random=new Random();
-        modelMongo.setId(random.nextInt(1000));
-        modelMongo.setAge(random.nextInt(1000));
-        modelMongo.setName("mongodb测试111111"+random.nextInt(1000));
-        modelMongo.setSex("女11" + random.nextInt(1000));
-        modelUserDao.save(modelMongo);
+        userDaoMongo.test();
+        UserMongo mongo=new UserMongo();
+        mongo.set_id(userDaoMongo.getTotal(new Query()).intValue());
+        mongo.setName("hehe");
+        mongo.setAge("16岁");
+        userDaoMongo.insertEntity(mongo);
     }
 
 
-    @RequestMapping(value ="/mongowhere")
+    @RequestMapping(value ="/getById")
     public void mongowhere(HttpServletRequest request){
-        ModelMongo modelMongo=  modelUserDao.getById(0);
-        System.out.println(modelMongo + "," + modelMongo.getId());
-
+        UserMongo userMongo=userDaoMongo.getById(0);
+        System.out.println(userMongo.toString());
     }
 
-    @RequestMapping(value ="/saveAddress")
+    /**
+     * mongo的updateFitst方法必须先查询出来再修改
+     * @param request
+     */
+    @RequestMapping(value ="/update")
     public void saveAddress(HttpServletRequest request){
-        modelUserDao.getTotal(new Query());
         Query query=new Query();
         Criteria criteria=new Criteria();
         criteria.where("_id").is(0);
         query.addCriteria(criteria);
-        Update update=Update.update("name", "杨涛");
-        modelUserDao.update(query, update);
-        modelUserDao.test();
-        ModelMongo modelMongo= modelUserDao.getById(0);
-        modelUserDao.remove(modelMongo,null);
+        Update update=Update.update("name", "张三");
+        userDaoMongo.update(query, update);
+    }
 
+    @RequestMapping(value ="/remove")
+    public void getlimitList(HttpServletRequest request){
+        UserMongo userMongo=userDaoMongo.getById(0);
+        userDaoMongo.remove(userMongo, "rb_user");
     }
 
 
+    @RequestMapping(value ="/saveOrUpdate")
+    public void saveOrUpdate(HttpServletRequest request){
+        UserMongo userMongo=userDaoMongo.getById(3);
+        userMongo.setName("测试名称!");
+        userDaoMongo.saveEntity(userMongo);
+    }
+
+    @RequestMapping(value ="/groupby")
+    public void groupby(HttpServletRequest request){
+        UserMongo userMongo=userDaoMongo.getById(3);
+        userMongo.setName("测试名称!");
+        userDaoMongo.saveEntity(userMongo);
+    }
 
 
 

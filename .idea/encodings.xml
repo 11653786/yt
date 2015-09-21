@@ -9,9 +9,9 @@
     <file url="file://$PROJECT_DIR$/framework-core/src/main/java/com/yt/dao/base/redis/impl/RedisDaoImpl.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/framework-core/src/resource/Account-Mapper.xml" charset="GBK" />
     <file url="file://$PROJECT_DIR$/framework-entity" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/framework-entity/src/main/java/com/yt/entity/Account.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/framework-entity/src/main/java/com/yt/entity/User.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/framework-entity/src/main/java/com/yt/entity/book.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/framework-entity/src/main/java/com/yt/entity/base/Account.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/framework-entity/src/main/java/com/yt/entity/base/User.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/framework-entity/src/main/java/com/yt/entity/base/book.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/framework-service" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/framework-service/src/main/java/com/yt/service/AccountService.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/framework-service/src/main/java/com/yt/service/UserService.java" charset="UTF-8" />

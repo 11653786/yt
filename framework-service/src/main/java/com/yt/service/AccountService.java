@@ -1,7 +1,7 @@
 package com.yt.service;
 
 import com.yt.dao.base.BaseDao;
-import com.yt.entity.Account;
+import com.yt.entity.base.Account;
 
 /**
  * Created by user on 2015/8/26.

@@ -1,16 +1,13 @@
 package com.yt.aop;
 
-import com.yt.entity.Account;
+import com.yt.entity.base.Account;
 import com.yt.service.UserService;
 import org.aspectj.lang.JoinPoint;
-import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Pointcut;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-
-import java.lang.reflect.Field;
 
 /**
  * Created by user on 2015/9/6.

@@ -1,17 +1,14 @@
-package com.yt.dao.base.mongo;
+package com.yt.dao.mongo;
 
-import com.yt.entity.mongodb.ModelMongo;
-import org.apache.poi.ss.formula.functions.T;
 import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.data.mongodb.core.query.Update;
 
 import java.util.List;
-import java.util.Map;
 
 /**
  * Created by user on 2015/9/14.
  */
-public interface MongoDao<T> {
+public interface MongoDao<T>{
 
     /**
      * 保存一个对象到mongodb
@@ -20,7 +17,7 @@ public interface MongoDao<T> {
      * @return
      */
 
-    public T save(T bean);
+    public T saveEntity(T bean);
 
     public T insertEntity(T bean);
 
@@ -30,12 +27,15 @@ public interface MongoDao<T> {
 
     public  Long getTotal(Query query);
 
-    public List<T> getList(Query query);
+    public List<T> getList(Query query,Integer page,Integer pageSize);
 
     public void update(Query query,Update update);
 
     public void remove(T bean,String collectionName);
 
+    public List<T> getGroupList(String name);
+
+    public void groupBy1(String collectionname);
 
 
 
