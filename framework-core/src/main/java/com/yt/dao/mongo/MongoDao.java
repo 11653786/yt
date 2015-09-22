@@ -1,6 +1,8 @@
 package com.yt.dao.mongo;
 
+import com.mongodb.BasicDBObject;
 import com.mongodb.DBObject;
+import com.yt.dao.base.redis.RedisDao;
 import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.data.mongodb.core.query.Update;
 
@@ -37,6 +39,20 @@ public interface MongoDao<T>{
 
     public void groupBy(String collectionname,DBObject...obj);
 
+    public T getDboejctById(int id);
+
+    /**
+     * 前面是查询的条件,后面是要修改的数据
+     * @param where
+     * @param set
+     */
+    public void updateDBObject(BasicDBObject where,BasicDBObject set);
+
+    public List<T> getListDbObject(BasicDBObject where);
+
+    public void deleteByIdDB(int _id);
+
+    public List<T> getList2();
 
 
 

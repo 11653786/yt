@@ -7,6 +7,8 @@ LIMIT           $limit
 SUM()           $sum
 COUNT()         $sum
 
+http://hongmin118.iteye.com/blog/2047325    and,or,in
+
 
 http://blog.csdn.net/miyatang/article/details/20997313,sql和mongo对照表
 http://docs.mongodb.org/manual/reference/operator/query/ 官方文档

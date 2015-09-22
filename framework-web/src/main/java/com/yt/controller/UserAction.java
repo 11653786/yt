@@ -1,5 +1,6 @@
 package com.yt.controller;
 
+import com.mongodb.BasicDBObject;
 import com.yt.base.BaseAction;
 import com.yt.dao.mongo.dao.UserDaoMongo;
 import com.yt.entity.base.Account;
@@ -7,6 +8,7 @@ import com.yt.entity.base.User;
 import com.yt.entity.mongo.UserMongo;
 import com.yt.service.AccountService;
 import com.yt.service.UserService;
+import com.yt.util.mongoUtil.MongoUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
@@ -181,12 +183,28 @@ public class UserAction extends BaseAction{
         System.out.println("人数: " + list.size());
     }
 
-    @RequestMapping(value ="/testSave")
+    @RequestMapping(value ="/getDboejctById")
     public void testSave(HttpServletRequest request){
-
+        userDaoMongo.getDboejctById(0);
     }
 
 
+    @RequestMapping(value ="/updatedb")
+    public void updatedb(HttpServletRequest request){
+        BasicDBObject where=new BasicDBObject();
+        //全部改成15岁
+        where.put("name","hehe");
+        BasicDBObject set=new BasicDBObject(MongoUtils.$set,new BasicDBObject("age","12"));
+        userDaoMongo.updateDBObject(where, set);
+    }
+
+    @RequestMapping(value ="/getListdb")
+    public void getListdb(HttpServletRequest request){
+        BasicDBObject where=new BasicDBObject();
+        userDaoMongo.getListDbObject(where);
+        userDaoMongo.deleteByIdDB(3);
+        userDaoMongo.getList2();
+    }
 
 
 }

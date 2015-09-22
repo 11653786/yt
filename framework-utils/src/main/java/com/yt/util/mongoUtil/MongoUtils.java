@@ -35,5 +35,7 @@ public class MongoUtils {
 
     public static String $skip="$skip";          //page
 
+    public static String $set="$set";           //set
+
 
 }
