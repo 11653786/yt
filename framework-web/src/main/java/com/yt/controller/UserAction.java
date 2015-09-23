@@ -225,15 +225,14 @@ public class UserAction extends BaseAction{
 
             BasicDBList where1=new BasicDBList();
             where1.add(new BasicDBObject("_id", new BasicDBObject(MongoUtils.$gt, 6)));
-            where1.add(new BasicDBObject("_id", new BasicDBObject(MongoUtils.$lt, 10)));
-            BasicDBObject and=new BasicDBObject();
-           //条件2
-            and.put(MongoUtils.$and, where1);
-            //条件1
-            or.put(MongoUtils.$or,where);
-            //条件3就是用and连接条件1和2
-            or.put(MongoUtils.$and,and);
-            //sql  select * from where _id>4 or name=hehe4 and (id>6 and id<10);
+            BasicDBList where2=new BasicDBList();
+            where2.add(new BasicDBObject("_id", new BasicDBObject(MongoUtils.$lt, 10)));
+            //表示where or where 1 and 如果后面没有就去掉了and
+            or.put(MongoUtils.$or, where);
+            or.put(MongoUtils.$and,where1);
+            or.put(MongoUtils.$and,where2);
+            //and查询
+            //查询id大于4,或者名称等于hehe4的
             List<UserMongo> LIST= userDaoMongo.getlist(or);
             for(UserMongo u:LIST){
                 System.out.println(u);
