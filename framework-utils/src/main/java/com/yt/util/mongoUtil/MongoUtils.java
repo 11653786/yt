@@ -27,6 +27,8 @@ public class MongoUtils {
 
     public static String $gt="$gt";             //大于
 
+    public static String $gte="$gte";             //大于等于
+
     public static String $group="$group";       //分组查询用的,group by
 
     public static String $orderBy="$sort";
@@ -36,6 +38,12 @@ public class MongoUtils {
     public static String $skip="$skip";          //page
 
     public static String $set="$set";           //set
+
+    public static String $and="$and";           //用法和sql一样先写字段在写
+
+    public static String $or="$or";             //or查询
+
+    public static String $lt="$lt";             //小于
 
 
 }

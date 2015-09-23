@@ -48,6 +48,8 @@ public interface MongoDao<T>{
 
     public List<T> getList2();
 
+    public String getCollectionName();
+
 
 
 }

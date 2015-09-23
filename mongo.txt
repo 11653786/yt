@@ -37,3 +37,16 @@ http://www.2cto.com/database/201412/365520.html 官方实例中文解释
 
 4. ｛"$limit":5｝ 这个结果的显示为当前结果的前五个文档。
 
+
+http://docs.mongodb.org/manual/reference/operator/query/  普通的条件查询
+http://docs.mongodb.org/manual/meta/aggregation-quick-reference/    //聚合的条件查询
+
+ "$and": [
+
+                {"$or": [{"reported": {"$exists": false}}, {"reported": 0}]},
+                {"$or": [{"hidden": {"$exists": false}}, {"hidden":1}]}
+          ]
+          ,"_id":1081
+
+
+http://blog.csdn.net/mydeman/article/details/6652387 mongo多字段进行的条件查询

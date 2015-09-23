@@ -24,7 +24,7 @@ public final class JsonUtil {
     }
 
     /**
-     * json字符串转成对象
+     * json字符串转成对象,用于list
      * @param str
      * @param type
      * @return

@@ -1,8 +1,11 @@
 package com.yt.dao.mongo.impl;
 
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 import com.mongodb.*;
 import com.yt.dao.mongo.MongoDao;
 import com.yt.util.JsonUtil;
+import com.yt.util.ListUtil;
 import com.yt.util.Utils;
 import com.yt.util.mongoUtil.MongoUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -123,18 +126,11 @@ public class MongoDaoImpl<T> implements MongoDao<T> {
      * @return
      */
     public List<T> getList(BasicDBObject where) {
-        try{
             DBCursor cursor = getDbCollection().find(where).skip(0).limit(10).sort(new BasicDBObject("age", -1));
             List<DBObject> list = cursor.toArray();
-            for(DBObject db:list){
-                System.out.println(db);
-            }
-        }
-        catch (Exception e){
-            System.out.println(e.getMessage());
-        }
-
-        return null;
+            String str=JsonUtil.toJson(list);
+             List<T>  retList =  JsonUtil.fromJson(str,new TypeToken<List<T>>() {}.getType());
+         return retList;
     }
 
 
@@ -142,11 +138,8 @@ public class MongoDaoImpl<T> implements MongoDao<T> {
         BasicDBObject where = new BasicDBObject(MongoUtils.$match, new BasicDBObject("name", new BasicDBObject(MongoUtils.$eq, "hehe3")));
         AggregationOutput output = getDbCollection().aggregate(where);
         Iterable<DBObject> result = output.results();
-        Iterator<DBObject> results = result.iterator();
-        while (results.hasNext()) {
-            System.out.println(results.next());
-        }
-        return null;
+        List<T> list=  ListUtil.IteratorToList(result,new TypeToken<List<T>>() {}.getType());
+        return list;
     }
 
 

@@ -49,4 +49,14 @@ public class UserMongo {
     public void setUserDesc(String userDesc) {
         this.userDesc = userDesc;
     }
+
+    @Override
+    public String toString() {
+        return "UserMongo{" +
+                "_id=" + _id +
+                ", name='" + name + '\'' +
+                ", age='" + age + '\'' +
+                ", userDesc='" + userDesc + '\'' +
+                '}';
+    }
 }

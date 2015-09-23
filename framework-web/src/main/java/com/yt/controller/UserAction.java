@@ -1,5 +1,6 @@
 package com.yt.controller;
 
+import com.mongodb.BasicDBList;
 import com.mongodb.BasicDBObject;
 import com.yt.base.BaseAction;
 import com.yt.dao.mongo.dao.UserDaoMongo;
@@ -177,11 +178,69 @@ public class UserAction extends BaseAction{
         userDaoMongo.update(where, set);
     }
 
-    @RequestMapping(value ="/getListdb")
-    public void getListdb(HttpServletRequest request){
+    @RequestMapping(value ="/getList")
+    public void getList(HttpServletRequest request){
         BasicDBObject where=new BasicDBObject();
         userDaoMongo.getList(where);
         userDaoMongo.getList2();
+    }
+
+    @RequestMapping(value ="/getlist")
+    public void getlist(HttpServletRequest request){
+        BasicDBList where = new BasicDBList();
+
+        //id大于4
+        try{
+            //id大于4
+            where.add(new BasicDBObject("_id", new BasicDBObject(MongoUtils.$gt, 4)));
+            //并且名字等于hehe4
+            where.add(new BasicDBObject("name", new BasicDBObject(MongoUtils.$eq, "hehe4")));
+            //mongo的or和and还有in写法是不一样的
+            BasicDBObject or=new BasicDBObject();
+            //or查询
+            or.put(MongoUtils.$or,where);
+            //and查询
+            //查询id大于4,或者名称等于hehe4的
+            List<UserMongo> LIST= userDaoMongo.getlist(or);
+            System.out.println(LIST.size());
+        }catch(Exception e){
+            System.out.println(e.getMessage());
+        }
+    }
+
+
+    @RequestMapping(value ="/getlist1")
+    public void getlist1(HttpServletRequest request){
+        BasicDBList where = new BasicDBList();
+        //id大于4
+        try{
+            //id大于4
+            where.add(new BasicDBObject("_id", new BasicDBObject(MongoUtils.$gt, 4)));
+            //并且名字等于hehe4
+            where.add(new BasicDBObject("name", new BasicDBObject(MongoUtils.$eq, "hehe4")));
+            //mongo的or和and还有in写法是不一样的
+            BasicDBObject or=new BasicDBObject();
+            //or查询
+            //表示_id>4并且或者名称==hehe4
+
+            BasicDBList where1=new BasicDBList();
+            where1.add(new BasicDBObject("_id", new BasicDBObject(MongoUtils.$gt, 6)));
+            where1.add(new BasicDBObject("_id", new BasicDBObject(MongoUtils.$lt, 10)));
+            BasicDBObject and=new BasicDBObject();
+           //条件2
+            and.put(MongoUtils.$and, where1);
+            //条件1
+            or.put(MongoUtils.$or,where);
+            //条件3就是用and连接条件1和2
+            or.put(MongoUtils.$and,and);
+            //sql  select * from where _id>4 or name=hehe4 and (id>6 and id<10);
+            List<UserMongo> LIST= userDaoMongo.getlist(or);
+            for(UserMongo u:LIST){
+                System.out.println(u);
+            }
+        }catch(Exception e){
+            System.out.println(e.getMessage());
+        }
     }
 
 
