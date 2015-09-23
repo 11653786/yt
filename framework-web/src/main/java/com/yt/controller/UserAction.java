@@ -117,7 +117,7 @@ public class UserAction extends BaseAction{
         User user=new User();
         user.setId(1);
         Random random=new Random();
-        user.setUserName("hehe"+random.nextInt());
+        user.setUserName("hehe" + random.nextInt());
         return user;
     }
 
@@ -127,40 +127,27 @@ public class UserAction extends BaseAction{
      */
     @RequestMapping(value ="/mongotest")
     public void mongotest(HttpServletRequest request){
-        userDaoMongo.test();
         UserMongo mongo=new UserMongo();
-        mongo.set_id(userDaoMongo.getTotal(new Query()).intValue());
+        long total=userDaoMongo.getTotal();
+        mongo.set_id(Integer.valueOf(String.valueOf(total)));
         Random random=new Random();
         mongo.setName("hehe"+random.nextInt(10));
         mongo.setAge("16岁");
-        userDaoMongo.insertEntity(mongo);
+        userDaoMongo.insert(mongo);
     }
 
 
     @RequestMapping(value ="/getById")
     public void mongowhere(HttpServletRequest request){
-        UserMongo userMongo=userDaoMongo.getById(0);
-        System.out.println(userMongo.toString());
+        UserMongo userMongo=userDaoMongo.getById(4);
+        System.out.println(userMongo);
     }
 
-    /**
-     * mongo的updateFitst方法必须先查询出来再修改
-     * @param request
-     */
-    @RequestMapping(value ="/update")
-    public void saveAddress(HttpServletRequest request){
-        Query query=new Query();
-        Criteria criteria=new Criteria();
-        criteria.where("_id").is(0);
-        query.addCriteria(criteria);
-        Update update=Update.update("name", "张三");
-        userDaoMongo.update(query, update);
-    }
 
     @RequestMapping(value ="/remove")
     public void getlimitList(HttpServletRequest request){
-        UserMongo userMongo=userDaoMongo.getById(0);
-        userDaoMongo.remove(userMongo, "rb_user");
+        UserMongo userMongo=userDaoMongo.getById(1);
+        userDaoMongo.remove(0);
     }
 
 
@@ -168,7 +155,7 @@ public class UserAction extends BaseAction{
     public void saveOrUpdate(HttpServletRequest request){
         UserMongo userMongo=userDaoMongo.getById(3);
         userMongo.setName("测试名称!");
-        userDaoMongo.saveEntity(userMongo);
+        userDaoMongo.saveOrUpdate(userMongo);
     }
 
     @RequestMapping(value ="/groupby")
@@ -177,32 +164,23 @@ public class UserAction extends BaseAction{
     }
 
 
-    @RequestMapping(value ="/getList")
-    public void getList(HttpServletRequest request){
-       List<UserMongo> list=userDaoMongo.getList(new Query(),0,2);
-        System.out.println("人数: " + list.size());
-    }
-
-    @RequestMapping(value ="/getDboejctById")
-    public void testSave(HttpServletRequest request){
-        userDaoMongo.getDboejctById(0);
-    }
 
 
-    @RequestMapping(value ="/updatedb")
-    public void updatedb(HttpServletRequest request){
+
+
+    @RequestMapping(value ="/update")
+    public void update(HttpServletRequest request){
         BasicDBObject where=new BasicDBObject();
         //全部改成15岁
         where.put("name","hehe");
         BasicDBObject set=new BasicDBObject(MongoUtils.$set,new BasicDBObject("age","12"));
-        userDaoMongo.updateDBObject(where, set);
+        userDaoMongo.update(where, set);
     }
 
     @RequestMapping(value ="/getListdb")
     public void getListdb(HttpServletRequest request){
         BasicDBObject where=new BasicDBObject();
-        userDaoMongo.getListDbObject(where);
-        userDaoMongo.deleteByIdDB(3);
+        userDaoMongo.getList(where);
         userDaoMongo.getList2();
     }
 

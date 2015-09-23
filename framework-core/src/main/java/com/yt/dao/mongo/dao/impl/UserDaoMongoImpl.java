@@ -12,4 +12,5 @@ import org.springframework.transaction.annotation.Transactional;
 @Repository
 @Transactional
 public class UserDaoMongoImpl extends MongoDaoImpl<UserMongo> implements UserDaoMongo {
+
 }

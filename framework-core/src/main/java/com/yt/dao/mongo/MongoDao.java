@@ -20,37 +20,31 @@ public interface MongoDao<T>{
      * @return
      */
 
-    public T saveEntity(T bean);
+    public T saveOrUpdate(T bean);
 
-    public T insertEntity(T bean);
+    public T insert(T bean);
 
-    public void test();
 
     public T getById(int _id);
 
-    public  Long getTotal(Query query);
+    public  Long getTotal();
 
-    public List<T> getList(Query query,Integer page,Integer pageSize);
 
-    public void update(Query query,Update update);
-
-    public void remove(T bean,String collectionName);
 
 
     public void groupBy(String collectionname,DBObject...obj);
 
-    public T getDboejctById(int id);
 
     /**
      * 前面是查询的条件,后面是要修改的数据
      * @param where
      * @param set
      */
-    public void updateDBObject(BasicDBObject where,BasicDBObject set);
+    public void update(BasicDBObject where,BasicDBObject set);
 
-    public List<T> getListDbObject(BasicDBObject where);
+    public List<T> getList(BasicDBObject where);
 
-    public void deleteByIdDB(int _id);
+    public void remove(int _id);
 
     public List<T> getList2();
 

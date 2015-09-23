@@ -1,29 +1,21 @@
 package com.yt.dao.mongo.impl;
 
 import com.mongodb.*;
-import com.mongodb.util.StringParseUtil;
 import com.yt.dao.mongo.MongoDao;
+import com.yt.util.JsonUtil;
 import com.yt.util.Utils;
 import com.yt.util.mongoUtil.MongoUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Sort;
 import org.springframework.data.mongodb.core.MongoTemplate;
-import org.springframework.data.mongodb.core.aggregation.*;
 import org.springframework.data.mongodb.core.mapping.Document;
-import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
-import org.springframework.data.mongodb.core.query.Update;
 import org.springframework.stereotype.Repository;
 
+import javax.persistence.Basic;
 import javax.transaction.Transactional;
-import java.lang.annotation.Annotation;
 import java.lang.reflect.*;
-import java.rmi.UnknownHostException;
 import java.util.Iterator;
 import java.util.List;
-import java.util.Set;
-
-import static org.springframework.data.mongodb.core.aggregation.Aggregation.*;
 
 @Repository
 @Transactional
@@ -50,69 +42,27 @@ public class MongoDaoImpl<T> implements MongoDao<T> {
      * @param bean
      * @return
      */
-    public T saveEntity(T bean) {
+    public T saveOrUpdate(T bean) {
         mongoTemplate.save(bean);
         return bean;
     }
 
-    public T insertEntity(T bean) {
-
-        try {
+    public T insert(T bean) {
             mongoTemplate.insert(bean);
-        } catch (Exception e) {
-            System.out.println(e.getStackTrace() + "," + e.getMessage());
-        }
         return bean;
 
     }
 
-    public void test() {
-        Set<String> colls = this.mongoTemplate.getCollectionNames();
-        for (String coll : colls) {
-            System.out.println("CollectionName=" + coll);
-        }
-        DB db = this.mongoTemplate.getDb();
-        System.out.println("db=" + db.toString());
+
+
+
+
+
+    public Long getTotal() {
+        return  getDbCollection().count();
     }
 
 
-    public T getById(int _id) {
-        Query query = new Query();
-        Criteria criteria = new Criteria();
-        criteria.where("_id").is(_id);
-        query.addCriteria(criteria);
-        return mongoTemplate.findOne(query, getEntityClass());
-    }
-
-    public Long getTotal(Query query) {
-        long total = mongoTemplate.count(query, getEntityClass());
-        System.out.println(total);
-        return total;
-    }
-
-    public void update(Query query, Update update) {
-        mongoTemplate.updateFirst(query, update, getEntityClass());
-    }
-
-    public void remove(T bean, String collectionName) {
-        if (!Utils.CheckNotNull(collectionName)) {
-            mongoTemplate.remove(bean);
-        } else {
-            mongoTemplate.remove(bean, collectionName);
-        }
-    }
-
-
-    public List<T> getList(Query query, Integer page, Integer pageSize) {
-
-        if (Utils.CheckNotNull(page) && Utils.CheckNotNull(pageSize)) {
-            //从第page跳开始查
-            query.skip(page);
-            //每页pageSize条
-            query.limit(pageSize);
-        }
-        return mongoTemplate.find(query, getEntityClass());
-    }
 
     public void groupBy(String collectionname, DBObject... objs) {
         try {
@@ -130,8 +80,6 @@ public class MongoDaoImpl<T> implements MongoDao<T> {
             BasicDBObject skin = new BasicDBObject(MongoUtils.$skip, 0);
             //每页显示2条
             BasicDBObject limit = new BasicDBObject(MongoUtils.$limit, 2);
-
-
             // 2. {'$group':{'Id:''$author','count':{'$sum':1}}} 这样就会将作者按照名字排序，某个作者名字每出现一次，就会对每个作者的count加一。
             //注意使用了group语句以后显示字段的字段就失效了
             AggregationOutput output = mongoTemplate.getDb().getCollection("rb_user").aggregate(groupby, having, orderBy, skin, limit);
@@ -151,15 +99,12 @@ public class MongoDaoImpl<T> implements MongoDao<T> {
      * @param id
      * @return
      */
-    public T getDboejctById(int id) {
-        BasicDBObject where = new BasicDBObject(MongoUtils.$match, new BasicDBObject("_id", new BasicDBObject(MongoUtils.$eq, id)));
-        AggregationOutput output = getDbCollection().aggregate(where);
-        Iterable<DBObject> result = output.results();
-        Iterator<DBObject> results = result.iterator();
-        while (results.hasNext()) {
-            System.out.println(results.next());
-        }
-        return null;
+    public T getById(int id) {
+            BasicDBObject where = new BasicDBObject(new BasicDBObject("_id", id));
+            DBObject db= getDbCollection().findOne(where);
+            String jsonStr=JsonUtil.toJson(db);
+            T t=JsonUtil.fromJson(jsonStr,getEntityClass());
+        return t;
     }
 
     /**
@@ -167,14 +112,8 @@ public class MongoDaoImpl<T> implements MongoDao<T> {
      * @param where
      * @param set
      */
-    public void updateDBObject(BasicDBObject where,BasicDBObject set) {
-        try{
-            //getDbCollection().update(where,set);
+    public void update(BasicDBObject where,BasicDBObject set) {
             getDbCollection().updateMulti(where,set);
-        }
-        catch (Exception e){
-            System.out.println(e.getMessage());
-        }
     }
 
 
@@ -183,7 +122,7 @@ public class MongoDaoImpl<T> implements MongoDao<T> {
      * @param where
      * @return
      */
-    public List<T> getListDbObject(BasicDBObject where) {
+    public List<T> getList(BasicDBObject where) {
         try{
             DBCursor cursor = getDbCollection().find(where).skip(0).limit(10).sort(new BasicDBObject("age", -1));
             List<DBObject> list = cursor.toArray();
@@ -211,14 +150,9 @@ public class MongoDaoImpl<T> implements MongoDao<T> {
     }
 
 
-    public void deleteByIdDB(int _id){
+    public void remove(int _id){
         BasicDBObject where=new BasicDBObject("_id",_id);
-        try{
-            getDbCollection().remove(where);
-        }
-        catch (Exception e){
-            System.out.println(e.getMessage());
-        }
+       getDbCollection().remove(where);
     }
 
     /**
