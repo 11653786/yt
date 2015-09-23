@@ -219,7 +219,6 @@ public class MongoDaoImpl<T> implements MongoDao<T> {
         catch (Exception e){
             System.out.println(e.getMessage());
         }
-
     }
 
     /**
