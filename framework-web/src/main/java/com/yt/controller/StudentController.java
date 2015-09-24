@@ -44,10 +44,15 @@ public class StudentController extends BaseAction{
 
     @RequestMapping(value ="/getlist")
     public void getlist(){
-       List<Student> list= studentService.getMyList();
-        for(Student s:list){
-        System.out.println(s.toString());
+       List<Student> list= studentService.getMyList(15,Student.StudentSex.woman.getSex(),"张三6");
+        try{
+            for(int a=0;a<list.size();a++){
+                System.out.println(list.get(a));
+            }
+        }catch (Exception e){
+        System.out.println(e.getMessage());
         }
+
     }
 
 }

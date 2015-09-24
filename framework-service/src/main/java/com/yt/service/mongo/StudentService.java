@@ -8,7 +8,7 @@ import java.util.List;
 /**
  * Created by user on 2015/9/24.
  */
-public interface StudentService extends StudentDao{
+public interface StudentService{
 
-    public List<Student> getMyList();
+    public List<Student> getMyList(Integer age,String sex,String name);
 }

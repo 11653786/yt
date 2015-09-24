@@ -45,5 +45,7 @@ public class MongoUtils {
 
     public static String $lt="$lt";             //小于
 
+    public static String $ne="$ne";             //不等于
+
 
 }
