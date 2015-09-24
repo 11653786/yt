@@ -1,0 +1,14 @@
+package com.yt.service.mongo;
+
+import com.yt.dao.mongo.dao.StudentDao;
+import com.yt.entity.mongo.Student;
+
+import java.util.List;
+
+/**
+ * Created by user on 2015/9/24.
+ */
+public interface StudentService extends StudentDao{
+
+    public List<Student> getMyList();
+}

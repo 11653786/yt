@@ -3,6 +3,7 @@ package com.yt.controller;
 import com.mongodb.BasicDBList;
 import com.mongodb.BasicDBObject;
 import com.yt.base.BaseAction;
+import com.yt.dao.mongo.dao.StudentDao;
 import com.yt.dao.mongo.dao.UserDaoMongo;
 import com.yt.entity.base.Account;
 import com.yt.entity.base.User;
@@ -41,6 +42,9 @@ public class UserAction extends BaseAction{
 
     @Autowired
     private UserDaoMongo userDaoMongo;
+    @Autowired
+    private StudentDao studentDao;
+
 
     @RequestMapping(value = "/index")
     public String index() {
@@ -212,28 +216,9 @@ public class UserAction extends BaseAction{
     @RequestMapping(value ="/getlist1")
     public void getlist1(HttpServletRequest request){
         BasicDBList where = new BasicDBList();
-        //id大于4
         try{
-            //id大于4
-            where.add(new BasicDBObject("_id", new BasicDBObject(MongoUtils.$gt, 4)));
-            //并且名字等于hehe4
-            where.add(new BasicDBObject("name", new BasicDBObject(MongoUtils.$eq, "hehe4")));
-            //mongo的or和and还有in写法是不一样的
-            BasicDBObject or=new BasicDBObject();
-            //or查询
-            //表示_id>4并且或者名称==hehe4
 
-            BasicDBList where1=new BasicDBList();
-            where1.add(new BasicDBObject("_id", new BasicDBObject(MongoUtils.$gt, 6)));
-            BasicDBList where2=new BasicDBList();
-            where2.add(new BasicDBObject("_id", new BasicDBObject(MongoUtils.$lt, 10)));
-            //表示where or where 1 and 如果后面没有就去掉了and
-            or.put(MongoUtils.$or, where);
-            or.put(MongoUtils.$and,where1);
-            or.put(MongoUtils.$and,where2);
-            //and查询
-            //查询id大于4,或者名称等于hehe4的
-            List<UserMongo> LIST= userDaoMongo.getlist(or);
+            List<UserMongo> LIST= userDaoMongo.getlist(null);
             for(UserMongo u:LIST){
                 System.out.println(u);
             }

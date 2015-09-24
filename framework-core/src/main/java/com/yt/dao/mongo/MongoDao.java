@@ -27,7 +27,7 @@ public interface MongoDao<T>{
 
     public T getById(int _id);
 
-    public  Long getTotal();
+    public  long getTotal();
 
 
 

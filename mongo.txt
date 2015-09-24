@@ -50,3 +50,5 @@ http://docs.mongodb.org/manual/meta/aggregation-quick-reference/    //聚合的�
 
 
 http://blog.csdn.net/mydeman/article/details/6652387 mongo多字段进行的条件查询
+
+http://my.oschina.net/vdroid/blog/464518条件查询的所有例子

@@ -61,7 +61,7 @@ public class MongoDaoImpl<T> implements MongoDao<T> {
 
 
 
-    public Long getTotal() {
+    public long getTotal() {
         return  getDbCollection().count();
     }
 
