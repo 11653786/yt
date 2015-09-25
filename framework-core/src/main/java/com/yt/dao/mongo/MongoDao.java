@@ -1,6 +1,7 @@
 package com.yt.dao.mongo;
 
 import com.mongodb.BasicDBObject;
+import com.mongodb.DBCollection;
 import com.mongodb.DBObject;
 import com.yt.dao.base.redis.RedisDao;
 import org.springframework.data.mongodb.core.query.Query;
@@ -49,6 +50,8 @@ public interface MongoDao<T>{
     public List<T> getList2();
 
     public String getCollectionName();
+
+    public DBCollection getDbCollection();
 
 
 

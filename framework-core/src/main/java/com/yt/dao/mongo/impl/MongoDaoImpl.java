@@ -74,7 +74,7 @@ public class MongoDaoImpl<T> implements MongoDao<T> {
             //sql:select max(*),name from rb_user where name="hehe";
             //这个_id不是id字段,而是重新把$_id这个id字段武装成主键,mongodb
             //groupby以后会重新分表没有了主键,要重新设置主键,设置name字段为主键
-            BasicDBObject groupby = new BasicDBObject(MongoUtils.$group, new BasicDBObject("_id", "$name").append("count1", new BasicDBObject("$sum", 1)));   //递增为1
+            BasicDBObject groupby = new BasicDBObject(MongoUtils.$group, new BasicDBObject("_id", "$name").append("count1", new BasicDBObject(MongoUtils.$sum, 1)));   //递增为1
             //大于0,这个必须放在groupby最后
             BasicDBObject having = new BasicDBObject(MongoUtils.$match, new BasicDBObject("count1", new BasicDBObject(MongoUtils.$gt, 0)));
             //sort,1表示升序,-1表示降序

@@ -1,18 +1,20 @@
 package com.yt.service.mongo.impl;
 
-import com.mongodb.BasicDBList;
-import com.mongodb.BasicDBObject;
-import com.mongodb.DBObject;
+import com.google.gson.reflect.TypeToken;
+import com.mongodb.*;
 import com.yt.dao.mongo.dao.StudentDao;
 import com.yt.dao.mongo.dao.impl.StudentDaoImpl;
 import com.yt.entity.mongo.Student;
 import com.yt.service.mongo.StudentService;
+import com.yt.util.JsonUtil;
+import com.yt.util.ListUtil;
 import com.yt.util.Utils;
 import com.yt.util.mongoUtil.MongoUtils;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
+import java.util.Iterator;
 import java.util.List;
 
 /**
@@ -66,5 +68,18 @@ public class StudentServiceImpl  implements StudentService{
         return  studentDao.getList(finals);
 
     }
+
+    public void getAvg(String fieldName) {
+        BasicDBObject where=new BasicDBObject();
+        //按照名称分组计算当前分组学员的年龄
+        where.put(MongoUtils.$group,new BasicDBObject("_id","$name").append("avg",new BasicDBObject(MongoUtils.$avg,"$age")));
+        AggregationOutput out=studentDao.getDbCollection().aggregate(where);
+        Iterable<DBObject> iterable=out.results();
+        Iterator<DBObject> iterator=iterable.iterator();
+        while(iterator.hasNext()){
+            System.out.println(iterator.next());
+        }
+    }
+
 
 }

@@ -52,7 +52,15 @@ public class StudentController extends BaseAction{
         }catch (Exception e){
         System.out.println(e.getMessage());
         }
+    }
 
+    @RequestMapping(value ="/avg")
+    public void avg(){
+        try{
+            studentService.getAvg("hehe");
+        }catch (Exception e){
+            System.out.println(e.getMessage());
+        }
     }
 
 }

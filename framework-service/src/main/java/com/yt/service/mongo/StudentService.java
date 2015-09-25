@@ -11,4 +11,6 @@ import java.util.List;
 public interface StudentService{
 
     public List<Student> getMyList(Integer age,String sex,String name);
+
+    public void getAvg(String fieldName);
 }

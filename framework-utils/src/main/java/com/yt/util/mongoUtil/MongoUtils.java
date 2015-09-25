@@ -49,5 +49,9 @@ public class MongoUtils {
 
     public static String $in="$in";             //在
 
+    public static String $avg="$avg";           //平均
+
+    public static String $sum="$sum";
+
 
 }

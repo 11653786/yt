@@ -22,7 +22,6 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
-        <module name="framework" />
         <module name="framework-core" />
         <module name="framework-entity" />
         <module name="framework-service" />
