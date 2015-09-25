@@ -35,21 +35,34 @@ public class StudentServiceImpl  implements StudentService{
         if(Utils.CheckNotNull(sex)){
             list1.add(new BasicDBObject("sex",new BasicDBObject(MongoUtils.$eq,sex)));
         }
-        dbObject.put(MongoUtils.$and,list1);
-
+        dbObject.put(MongoUtils.$and, list1);
 
         BasicDBList list2=new BasicDBList();
-        if(Utils.CheckNotNull(name)){
+        list2.add(new BasicDBObject("name", new BasicDBObject(MongoUtils.$ne, "张三6")));
+        list2.add(new BasicDBObject("name", new BasicDBObject(MongoUtils.$ne, "张三3")));
+        BasicDBObject dbObject2=new BasicDBObject();
+        dbObject2.put(MongoUtils.$and, list2);
 
-        BasicDBObject basic=new BasicDBObject("name",new BasicDBObject(MongoUtils.$ne,name));
-            list2.add(basic);
-        }
+        //in查询
+        BasicDBList inList=new BasicDBList();
+        inList.add(24);
+        inList.add(15);
+        //in的条件
+        BasicDBObject in=new BasicDBObject();
+        in.put("age", new BasicDBObject(MongoUtils.$in, inList));
+        BasicDBList finalList=new BasicDBList();
+        finalList.add(dbObject);
+        finalList.add(dbObject2);
+        BasicDBObject finalObject=new BasicDBObject();
+        finalObject.put(MongoUtils.$and, finalList);
 
-        BasicDBList list3=new BasicDBList();
-        list3.add(dbObject);
-        list3.add(list2);
+        //in的查询and where 4个条件
+        BasicDBList list4=new BasicDBList();
+        list4.add(finalObject);
+        list4.add(in);
         BasicDBObject finals=new BasicDBObject();
-        finals.put(MongoUtils.$and,list3);
+        finals.put(MongoUtils.$and,list4);
+
         return  studentDao.getList(finals);
 
     }

@@ -47,5 +47,7 @@ public class MongoUtils {
 
     public static String $ne="$ne";             //不等于
 
+    public static String $in="$in";             //在
+
 
 }
