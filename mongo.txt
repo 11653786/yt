@@ -57,3 +57,6 @@ http://www.cnblogs.com/stephen-liu74/archive/2012/08/03/2553803.html js mongo
 
 
 http://www.cnblogs.com/zhwl/p/3523472.html min.max.avg
+
+
+http://garyli.iteye.com/blog/2079158        mongotemplate 聚合查询

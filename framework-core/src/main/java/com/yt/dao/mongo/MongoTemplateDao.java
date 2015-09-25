@@ -1,0 +1,36 @@
+package com.yt.dao.mongo;
+
+import com.mongodb.BasicDBObject;
+import com.mongodb.DBObject;
+import org.springframework.data.mongodb.core.query.Criteria;
+import org.springframework.data.mongodb.core.query.Query;
+import org.springframework.data.mongodb.core.query.Update;
+
+import java.util.List;
+
+/**
+ * Created by user on 2015/9/25.
+ */
+public interface MongoTemplateDao<T> {
+
+    public T saveOrUpdate(T bean);
+
+    public T insert(T bean);
+
+    public T getById(int _id);
+
+    public long getCount();
+
+    public void groupBy(String collectionname, DBObject... obj);
+    /**
+     * 前面是查询的条件,后面是要修改的数据
+     *
+     * @param where
+     * @param set
+     */
+    public void update(Criteria criteria,Update update);
+
+    public List<T> getList();
+
+    public void remove();
+}

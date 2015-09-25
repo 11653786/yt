@@ -2,9 +2,13 @@ package com.yt.controller;
 
 import com.yt.base.BaseAction;
 import com.yt.dao.mongo.dao.StudentDao;
+import com.yt.dao.mongotemplate.StudentDaoM;
 import com.yt.entity.mongo.Student;
 import com.yt.service.mongo.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.mongodb.core.query.Criteria;
+import org.springframework.data.mongodb.core.query.Query;
+import org.springframework.data.mongodb.core.query.Update;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -23,6 +27,8 @@ public class StudentController extends BaseAction{
     private StudentDao studentDao;
     @Autowired
     private StudentService studentService;
+    @Autowired
+    private StudentDaoM studentDaoM;
 
     @RequestMapping(value ="/save")
     public void save(){
@@ -58,6 +64,27 @@ public class StudentController extends BaseAction{
     public void avg(){
         try{
             studentService.getAvg("hehe");
+        }catch (Exception e){
+            System.out.println(e.getMessage());
+        }
+    }
+
+    @RequestMapping(value ="/getByIdM")
+    public void getByIdM(){
+        try{
+           Student student= studentDaoM.getById(1);
+            System.out.println(student);
+            long count=studentDaoM.getCount();
+            System.out.println(count);
+         List<Student> students=  studentDaoM.getList();
+            for(Student s:students){
+                System.out.println(s);
+            }
+            Criteria criteria=Criteria.where("_id").is(2);
+            Update update=Update.update("name","杨涛");
+            studentDaoM.update(criteria,update);
+
+
         }catch (Exception e){
             System.out.println(e.getMessage());
         }
