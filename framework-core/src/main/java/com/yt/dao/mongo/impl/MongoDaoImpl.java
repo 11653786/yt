@@ -161,7 +161,7 @@ public class MongoDaoImpl<T> implements MongoDao<T> {
             collectionName = document.collection();
             if (!Utils.CheckNotNull(collectionName)) collectionName = getEntityClass().getName();
         } else {
-            collectionName = getEntityClass().getName();
+            collectionName = getEntityClass().getSimpleName();
         }
         return collectionName;
     }

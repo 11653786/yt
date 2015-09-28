@@ -32,5 +32,10 @@ public interface MongoTemplateDao<T> {
 
     public List<T> getList();
 
-    public void remove();
+    public void remove(T t);
+
+
+    public void remove(Query query);
+
+    public T findAndRemove(Query query);
 }

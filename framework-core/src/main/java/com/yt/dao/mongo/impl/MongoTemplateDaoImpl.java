@@ -59,7 +59,7 @@ public class MongoTemplateDaoImpl<T> implements MongoTemplateDao<T> {
     }
 
     public long getCount() {
-     return mongoTemplate.count(new Query(),getEntityClass());
+     return mongoTemplate.count(new Query(), getEntityClass());
     }
 
     public void groupBy(String collectionname, DBObject... obj) {
@@ -76,7 +76,34 @@ public class MongoTemplateDaoImpl<T> implements MongoTemplateDao<T> {
         return list;
     }
 
-    public void remove() {
-
+    public void remove(T t) {
+        mongoTemplate.remove(t,getCollectionName());
     }
+
+    public void remove(Query query){
+        mongoTemplate.remove(query,getEntityClass());
+    }
+
+    public T findAndRemove(Query query) {
+        return mongoTemplate.findAndRemove(query,getEntityClass());
+    }
+
+
+    /**
+     * 哥哥的代码写的很巧妙啊...
+     * 获取mongo实体的名称
+     * @return
+     */
+    public String getCollectionName() {
+        Document document = getEntityClass().getAnnotation(Document.class);
+        String collectionName = null;
+        if (Utils.CheckNotNull(document)) {
+            collectionName = document.collection();
+            if (!Utils.CheckNotNull(collectionName)) collectionName = getEntityClass().getName();
+        } else {
+            collectionName = getEntityClass().getSimpleName();
+        }
+        return collectionName;
+    }
+
 }
