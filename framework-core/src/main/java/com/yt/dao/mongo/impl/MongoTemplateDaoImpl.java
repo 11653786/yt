@@ -1,5 +1,6 @@
 package com.yt.dao.mongo.impl;
 
+import com.mongodb.BasicDBList;
 import com.mongodb.BasicDBObject;
 import com.mongodb.DBCollection;
 import com.mongodb.DBObject;
@@ -12,6 +13,8 @@ import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.aggregation.Aggregation;
 import org.springframework.data.mongodb.core.aggregation.AggregationResults;
 import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.data.mongodb.core.mapreduce.GroupBy;
+import org.springframework.data.mongodb.core.mapreduce.GroupByResults;
 import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.data.mongodb.core.query.Update;
@@ -19,7 +22,9 @@ import org.springframework.stereotype.Repository;
 
 import javax.transaction.Transactional;
 import java.lang.reflect.ParameterizedType;
+import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by user on 2015/9/25.
@@ -62,8 +67,22 @@ public class MongoTemplateDaoImpl<T> implements MongoTemplateDao<T> {
      return mongoTemplate.count(new Query(), getEntityClass());
     }
 
-    public void groupBy(String collectionname, DBObject... obj) {
 
+    //http://my.oschina.net/zhzhenqin/blog/99846
+    public void groupBy() {
+        String reduce = "function(doc, aggr){aggr.count += 1;}";
+        Query query = Query.query(Criteria.where("age").exists(true));
+        //显示age字段,,查询的条件是query,重新组建count字段,初始值为0，递增规则
+        DBObject result = mongoTemplate.getCollection(getCollectionName()).group(new BasicDBObject("age", 1), query.getQueryObject(),new BasicDBObject("count", 0), reduce);
+        Map map = result.toMap();
+        System.out.println(map);
+    }
+
+    public void distinct(){
+        List result=getDbCollection().distinct("name");
+        for(Object obj:result){
+            System.out.println(obj);
+        }
     }
 
     public void update(Criteria criteria,Update update) {
@@ -119,6 +138,10 @@ public class MongoTemplateDaoImpl<T> implements MongoTemplateDao<T> {
             collectionName = getEntityClass().getSimpleName();
         }
         return collectionName;
+    }
+
+    public DBCollection getDbCollection() {
+        return mongoTemplate.getDb().getCollection(getCollectionName());
     }
 
 }

@@ -21,7 +21,7 @@ public interface MongoTemplateDao<T> {
 
     public long getCount();
 
-    public void groupBy(String collectionname, DBObject... obj);
+    public void groupBy();
     /**
      * 前面是查询的条件,后面是要修改的数据
      *
@@ -40,4 +40,6 @@ public interface MongoTemplateDao<T> {
     public T findAndRemove(Query query);
 
     public void Aggreation(Query query);
+
+    public void distinct();
 }

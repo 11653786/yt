@@ -86,10 +86,20 @@ public class StudentController extends BaseAction{
 //            Student student1=studentDaoM.getById(id);
 //            studentDaoM.remove(student1);
             studentDaoM.Aggreation(new Query());
-
         }catch (Exception e){
             System.out.println(e.getMessage());
         }
+    }
+
+    @RequestMapping(value ="/groupby")
+    public void groupby(){
+
+        studentDaoM.findField();
+        System.out.println("-----------------------");
+        studentDaoM.distinct();
+        System.out.println("-----------------------");
+        studentDaoM.groupBy();
+        System.out.println("-----------------------");
     }
 
 }

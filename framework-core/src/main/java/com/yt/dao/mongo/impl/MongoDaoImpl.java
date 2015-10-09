@@ -85,7 +85,7 @@ public class MongoDaoImpl<T> implements MongoDao<T> {
             BasicDBObject limit = new BasicDBObject(MongoUtils.$limit, 2);
             // 2. {'$group':{'Id:''$author','count':{'$sum':1}}} 这样就会将作者按照名字排序，某个作者名字每出现一次，就会对每个作者的count加一。
             //注意使用了group语句以后显示字段的字段就失效了
-            AggregationOutput output = mongoTemplate.getDb().getCollection("rb_user").aggregate(groupby, having, orderBy, skin, limit);
+            AggregationOutput output = mongoTemplate.getDb().getCollection(getCollectionName()).aggregate(groupby, having, orderBy, skin, limit);
             Iterable<DBObject> result = output.results();
             Iterator<DBObject> results = result.iterator();
             while (results.hasNext()) {
