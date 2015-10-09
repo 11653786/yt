@@ -133,14 +133,17 @@ public class MongoTemplateDaoImpl<T> implements MongoTemplateDao<T> {
 
 
         BasicDBObject fields= new BasicDBObject();
-        fields.put("_id",1);
+        fields.put("_id", 1);
         fields.put("name", 1);
         fields.put("sex", 1);
         BasicDBObject where= new BasicDBObject();
-        where.append("_id",new BasicDBObject(MongoUtils.$gte,4));
-        where.append("name",new BasicDBObject(MongoUtils.$eq,"张三"));
-        where.put("sex",new BasicDBObject(MongoUtils.$eq,"1"));
+        where.append("_id", new BasicDBObject(MongoUtils.$gte, 4));
+        where.append("name", new BasicDBObject(MongoUtils.$eq, "张三"));
+        //每页显示2条
         DBCursor cursor =getDbCollection().find(where,fields);
+        cursor.skip(0);
+        cursor.limit(10);
+        cursor.sort(new BasicDBObject("_id",-1));
         List<DBObject> list2=cursor.toArray();
         for(DBObject dbObject:list2){
             System.out.println(dbObject);
