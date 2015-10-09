@@ -53,5 +53,7 @@ public interface MongoDao<T>{
 
     public DBCollection getDbCollection();
 
+    public void findField();
+
 
 }

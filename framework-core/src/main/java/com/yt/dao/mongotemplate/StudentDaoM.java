@@ -8,7 +8,6 @@ import com.yt.entity.mongo.Student;
  */
 public interface StudentDaoM extends MongoTemplateDao<Student>{
 
-    public void groupBy1();
 
-    public void findField();
+
 }

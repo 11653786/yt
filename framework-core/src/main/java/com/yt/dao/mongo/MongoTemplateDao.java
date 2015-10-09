@@ -42,4 +42,6 @@ public interface MongoTemplateDao<T> {
     public void Aggreation(Query query);
 
     public void distinct();
+
+    public void findField();
 }

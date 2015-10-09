@@ -94,11 +94,14 @@ public class StudentController extends BaseAction{
     @RequestMapping(value ="/groupby")
     public void groupby(){
 
-        studentDaoM.findField();
-        System.out.println("-----------------------");
-        studentDaoM.distinct();
         System.out.println("-----------------------");
         studentDaoM.groupBy();
+        System.out.println("-----------------------");
+    }
+
+    @RequestMapping(value ="/findfield")
+    public void findField(){
+        studentDaoM.findField();
         System.out.println("-----------------------");
     }
 

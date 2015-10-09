@@ -4,13 +4,16 @@ import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.mongodb.*;
 import com.yt.dao.mongo.MongoDao;
+import com.yt.entity.mongo.Student;
 import com.yt.util.JsonUtil;
 import com.yt.util.ListUtil;
 import com.yt.util.Utils;
 import com.yt.util.mongoUtil.MongoUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.stereotype.Repository;
 
@@ -138,7 +141,8 @@ public class MongoDaoImpl<T> implements MongoDao<T> {
         BasicDBObject where = new BasicDBObject(MongoUtils.$match, new BasicDBObject("name", new BasicDBObject(MongoUtils.$eq, "hehe3")));
         AggregationOutput output = getDbCollection().aggregate(where);
         Iterable<DBObject> result = output.results();
-        List<T> list=  ListUtil.IteratorToList(result,new TypeToken<List<T>>() {}.getType());
+        List<T> list=  ListUtil.IteratorToList(result, new TypeToken<List<T>>() {
+        }.getType());
         return list;
     }
 
@@ -165,6 +169,35 @@ public class MongoDaoImpl<T> implements MongoDao<T> {
         }
         return collectionName;
     }
+
+
+    public void findField() {
+        Query query=new Query();
+        query.with(new Sort(new Sort.Order(Sort.Direction.ASC, "_id")));
+        query.skip(0);
+        query.limit(10);
+        Criteria criteria=Criteria.where("name").is("张三");
+        query.addCriteria(criteria);
+        List<Student> list= mongoTemplate.find(query, Student.class);
+
+
+        BasicDBObject fields= new BasicDBObject();
+        fields.put("_id",1);
+        fields.put("name", 1);
+        fields.put("sex", 1);
+        BasicDBObject where= new BasicDBObject();
+        where.append("_id",new BasicDBObject(MongoUtils.$gte,4));
+        where.append("name",new BasicDBObject(MongoUtils.$eq,"张三"));
+        where.put("sex",new BasicDBObject(MongoUtils.$eq,"1"));
+        DBCursor cursor =getDbCollection().find(where,fields);
+        List<DBObject> list2=cursor.toArray();
+        for(DBObject dbObject:list2){
+            System.out.println(dbObject);
+        }
+    }
+
+
+
 
     public DBCollection getDbCollection() {
         return mongoTemplate.getDb().getCollection(getCollectionName());
