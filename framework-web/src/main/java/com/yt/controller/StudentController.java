@@ -10,6 +10,7 @@ import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.data.mongodb.core.query.Update;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.servlet.http.HttpServletRequest;
@@ -109,7 +110,7 @@ public class StudentController extends BaseAction{
 
     @RequestMapping(value ="/savesession")
     public void saveSession(HttpSession session,HttpServletRequest request){
-        session.setAttribute("yt114","heheeehehe");
+        session.setAttribute("yt114", "heheeehehe");
         for(int a=0;a<=10;a++){
         session.setAttribute("lisi"+a,"li"+a);
 
@@ -127,6 +128,21 @@ public class StudentController extends BaseAction{
     public void removesession(HttpSession session){
         System.out.println(session.getAttribute("yt114"));
         session.removeAttribute("lisi1");
+    }
+
+
+    @RequestMapping(value ="/session")
+    public void session(HttpServletRequest request,HttpSession session) {
+        Random random=new Random();
+        int int1= random.nextInt();
+        System.out.println(int1);
+        session.setAttribute("user","text"+int1);
+    }
+
+    @RequestMapping(value ="/session1")
+    public String session1(HttpServletRequest request,HttpSession session,Model model) {
+        model.addAttribute("user", session.getAttribute("user"));
+        return "student/list";
     }
 
 

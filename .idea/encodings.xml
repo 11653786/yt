@@ -34,6 +34,8 @@
     <file url="file://$PROJECT_DIR$/framework-web/src/main/webapp/index.jsp" charset="GBK" />
     <file url="file://$PROJECT_DIR$/framework-web/src/main/webapp/resource" charset="GBK" />
     <file url="file://$PROJECT_DIR$/framework-web/src/main/webapp/view" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/framework-web/src/main/webapp/view/student" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/framework-web/src/main/webapp/view/student/list.jsp" charset="GBK" />
     <file url="file://$PROJECT_DIR$/framework-webservice" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/html5/fonts" charset="GBK" />
     <file url="file://$PROJECT_DIR$/html5/html/angularjs/api/AngularJS 中文API参考手册.chm" charset="GBK" />
