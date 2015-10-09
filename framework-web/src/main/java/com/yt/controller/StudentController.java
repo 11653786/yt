@@ -70,7 +70,7 @@ public class StudentController extends BaseAction{
     }
 
     @RequestMapping(value ="/getByIdM")
-    public void getByIdM(){
+    public void getByIdM(int id){
         try{
            Student student= studentDaoM.getById(1);
             System.out.println(student);
@@ -80,10 +80,12 @@ public class StudentController extends BaseAction{
             for(Student s:students){
                 System.out.println(s);
             }
-            Criteria criteria=Criteria.where("_id").is(2);
-            Update update=Update.update("name","杨涛");
-            studentDaoM.update(criteria,update);
-
+//            Criteria criteria=Criteria.where("_id").is(2);
+//            Update update=Update.update("name","杨涛");
+//            studentDaoM.update(criteria,update);
+//            Student student1=studentDaoM.getById(id);
+//            studentDaoM.remove(student1);
+            studentDaoM.Aggreation(new Query());
 
         }catch (Exception e){
             System.out.println(e.getMessage());

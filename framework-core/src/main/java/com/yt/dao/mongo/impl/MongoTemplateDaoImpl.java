@@ -10,6 +10,7 @@ import org.apache.poi.ss.formula.functions.T;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.aggregation.Aggregation;
+import org.springframework.data.mongodb.core.aggregation.AggregationResults;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
@@ -52,8 +53,7 @@ public class MongoTemplateDaoImpl<T> implements MongoTemplateDao<T> {
 
     public T getById(int _id) {
         Query query=new Query();
-        Criteria where=new Criteria();
-        where.where("_id").is(_id);
+        Criteria where=new Criteria().where("_id").is(_id);
         query.addCriteria(where);
       return mongoTemplate.findOne(query, getEntityClass());
     }
@@ -86,6 +86,21 @@ public class MongoTemplateDaoImpl<T> implements MongoTemplateDao<T> {
 
     public T findAndRemove(Query query) {
         return mongoTemplate.findAndRemove(query,getEntityClass());
+    }
+
+    public void Aggreation(Query query) {
+        try{
+            Aggregation agg=Aggregation.newAggregation(Aggregation.match(Criteria.where("_id").gt(5)));
+            AggregationResults<T> results = mongoTemplate.aggregate(agg, getCollectionName(), getEntityClass());
+            List<T> list=results.getMappedResults();
+            for(int a=0;a<list.size();a++){
+                System.out.println(list.get(a));
+            }
+        }
+        catch(Exception e){
+            System.out.println(e.getMessage());
+        }
+
     }
 
 

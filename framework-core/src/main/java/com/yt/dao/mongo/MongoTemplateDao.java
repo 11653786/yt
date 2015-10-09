@@ -38,4 +38,6 @@ public interface MongoTemplateDao<T> {
     public void remove(Query query);
 
     public T findAndRemove(Query query);
+
+    public void Aggreation(Query query);
 }
