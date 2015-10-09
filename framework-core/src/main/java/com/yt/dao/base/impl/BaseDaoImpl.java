@@ -28,7 +28,7 @@ public class BaseDaoImpl<T> extends RedisDaoImpl implements BaseDao<T> {
     private String packageName="com.yt.entity.";
     private String houzhuiMapper="Mapper";
 
-    long redisSaveTime=10;
+    long redisSaveTime=1000;
 
     @Resource
     private SqlSession session;
