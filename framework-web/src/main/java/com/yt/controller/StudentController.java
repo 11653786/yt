@@ -12,6 +12,8 @@ import org.springframework.data.mongodb.core.query.Update;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import java.util.List;
 import java.util.Random;
 
@@ -104,5 +106,25 @@ public class StudentController extends BaseAction{
         studentDaoM.findField();
         System.out.println("-----------------------");
     }
+
+    @RequestMapping(value ="/savesession")
+    public void saveSession(HttpSession session,HttpServletRequest request){
+        for(int a=0;a<=10;a++){
+        session.setAttribute("lisi"+a,"li"+a);
+        }
+    }
+
+    @RequestMapping(value ="/getsession")
+    public void getSession(HttpSession session,HttpServletRequest request){
+        for(int a=0;a<=10;a++){
+            System.out.println(session.getAttribute("lisi" + a));
+        }
+    }
+
+    @RequestMapping(value = "/removesession")
+    public void removesession(HttpSession session){
+        session.removeAttribute("lisi1");
+    }
+
 
 }
