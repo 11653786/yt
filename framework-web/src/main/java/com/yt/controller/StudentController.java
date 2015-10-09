@@ -109,8 +109,10 @@ public class StudentController extends BaseAction{
 
     @RequestMapping(value ="/savesession")
     public void saveSession(HttpSession session,HttpServletRequest request){
+        session.setAttribute("yt114","heheeehehe");
         for(int a=0;a<=10;a++){
         session.setAttribute("lisi"+a,"li"+a);
+
         }
     }
 
@@ -123,6 +125,7 @@ public class StudentController extends BaseAction{
 
     @RequestMapping(value = "/removesession")
     public void removesession(HttpSession session){
+        System.out.println(session.getAttribute("yt114"));
         session.removeAttribute("lisi1");
     }
 
