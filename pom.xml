@@ -90,13 +90,11 @@
             <version>1.2.2</version>
         </dependency>
         <!--mybatis分页工具-->
-    <!--    <dependency>
-            <groupId>com.github.miemiedev</groupId>
-            <artifactId>mybatis-paginator</artifactId>
-            <version>1.2.17</version>
-        </dependency>-->
-
-
+        <!--    <dependency>
+                <groupId>com.github.miemiedev</groupId>
+                <artifactId>mybatis-paginator</artifactId>
+                <version>1.2.17</version>
+            </dependency>-->
 
 
         <!--支付宝用的httpclient包-->
@@ -333,7 +331,6 @@
         </dependency>
 
 
-
         <dependency>
             <groupId>javax.persistence</groupId>
             <artifactId>persistence-api</artifactId>
@@ -359,7 +356,6 @@
             <artifactId>javassist</artifactId>
             <version>3.11.0.GA</version>
         </dependency>
-
 
 
         <dependency>
@@ -399,6 +395,31 @@
             <version>${org.slf4j-version}</version>
         </dependency>
 
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>jcl-over-slf4j</artifactId>
+            <version>${org.slf4j-version}</version>
+        </dependency>
+
+
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-core</artifactId>
+            <version>1.1.2</version>
+        </dependency>
+
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+            <version>1.1.2</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.logback-extensions</groupId>
+            <artifactId>logback-ext-spring</artifactId>
+            <version>0.1.2</version>
+        </dependency>
+
 
         <dependency>
             <groupId>javax.inject</groupId>
@@ -407,22 +428,22 @@
         </dependency>
         <!--springMvc 返回json需要的包-->
         <dependency>
-        <groupId>com.fasterxml.jackson.core</groupId>
-        <artifactId>jackson-core</artifactId>
-        <version>2.4.4</version>
-    </dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-core</artifactId>
+            <version>2.4.4</version>
+        </dependency>
 
-    <dependency>
-        <groupId>com.fasterxml.jackson.core</groupId>
-        <artifactId>jackson-databind</artifactId>
-        <version>2.4.4</version>
-    </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>2.4.4</version>
+        </dependency>
 
-    <dependency>
-        <groupId>com.fasterxml.jackson.core</groupId>
-        <artifactId>jackson-annotations</artifactId>
-        <version>2.4.4</version>
-    </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-annotations</artifactId>
+            <version>2.4.4</version>
+        </dependency>
 
 
         <dependency>
@@ -436,7 +457,6 @@
             <artifactId>jackson-core-asl</artifactId>
             <version>${jackson.asl-version}</version>
         </dependency>
-
 
 
         <!-- mongodb的java驱动 -->
@@ -454,9 +474,6 @@
             <version>1.8.0.RELEASE</version>
         </dependency>
         <!-- mongo spring -->
-
-
-
 
 
     </dependencies>
