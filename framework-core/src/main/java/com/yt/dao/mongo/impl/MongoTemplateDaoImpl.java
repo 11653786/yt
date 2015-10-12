@@ -72,7 +72,7 @@ public class MongoTemplateDaoImpl<T> implements MongoTemplateDao<T> {
         String reduce = "function(doc, aggr){aggr.count += 1;}";
         Query query = Query.query(Criteria.where("age").exists(true));
         //显示age字段,,查询的条件是query,重新组建count字段,初始值为0，递增规则
-        DBObject result = mongoTemplate.getCollection(getCollectionName()).group(new BasicDBObject("age", 1), query.getQueryObject(),new BasicDBObject("count", 0), reduce);
+        DBObject result = getDbCollection().group(new BasicDBObject("age", 1), query.getQueryObject(),new BasicDBObject("count", 0), reduce);
         Map map = result.toMap();
         System.out.println(map);
     }
