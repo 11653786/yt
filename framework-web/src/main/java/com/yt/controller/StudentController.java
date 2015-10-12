@@ -96,7 +96,6 @@ public class StudentController extends BaseAction{
 
     @RequestMapping(value ="/groupby")
     public void groupby(){
-
         System.out.println("-----------------------");
         studentDaoM.groupBy();
         System.out.println("-----------------------");
@@ -136,13 +135,18 @@ public class StudentController extends BaseAction{
         Random random=new Random();
         int int1= random.nextInt();
         System.out.println(int1);
-        session.setAttribute("user","text"+int1);
+        session.setAttribute("user", "text" + int1);
     }
 
     @RequestMapping(value ="/session1")
     public String session1(HttpServletRequest request,HttpSession session,Model model) {
         model.addAttribute("user", session.getAttribute("user"));
         return "student/list";
+    }
+
+    @RequestMapping(value = "/in")
+    public void in(){
+        studentDaoM.in();
     }
 
 

@@ -44,4 +44,6 @@ public interface MongoTemplateDao<T> {
     public void distinct();
 
     public void findField();
+
+    public void in();
 }

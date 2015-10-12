@@ -168,6 +168,30 @@ public class MongoTemplateDaoImpl<T> implements MongoTemplateDao<T> {
         return collectionName;
     }
 
+
+    public void in(){
+
+//        DBObject queryCondition = new BasicDBObject();
+//        //age in [13, 47]
+//        queryCondition = new BasicDBObject();
+//        BasicDBList values = new BasicDBList();
+//        values.add(13);
+//        values.add(47);
+//        queryCondition.put("age", new BasicDBObject("$in", values));
+//
+//        DBCursor dbCursor = coll.find(queryCondition);
+        BasicDBObject  in = new BasicDBObject();
+        in.put("name",new BasicDBObject(MongoUtils.$in, new String[] {"张三"}));
+        DBCursor cursor= getDbCollection().find(in);
+        List<DBObject> list=cursor.toArray();
+        System.out.println(list.size());
+        for(DBObject db:list){
+        System.out.println(db);
+        }
+
+    }
+
+
     public DBCollection getDbCollection() {
         return mongoTemplate.getDb().getCollection(getCollectionName());
     }
