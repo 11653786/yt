@@ -5,6 +5,8 @@ import com.yt.dao.mongo.dao.StudentDao;
 import com.yt.dao.mongotemplate.StudentDaoM;
 import com.yt.entity.mongo.Student;
 import com.yt.service.mongo.StudentService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
@@ -24,6 +26,9 @@ import java.util.Random;
 @Controller
 @RequestMapping(value="api/student")
 public class StudentController extends BaseAction{
+
+    private Logger log = LoggerFactory.getLogger(StudentController.class);
+
 
 
     @Autowired
@@ -96,6 +101,7 @@ public class StudentController extends BaseAction{
 
     @RequestMapping(value ="/groupby")
     public void groupby(){
+        log.info("hehe11");
         System.out.println("-----------------------");
         studentDaoM.groupBy();
         System.out.println("-----------------------");
