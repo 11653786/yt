@@ -1,11 +1,10 @@
-package com.yt.dao.mongo.dao.impl;
+package com.yt.dao.user.impl;
 
 import com.google.gson.reflect.TypeToken;
-import com.mongodb.BasicDBList;
 import com.mongodb.BasicDBObject;
 import com.mongodb.DBCursor;
 import com.mongodb.DBObject;
-import com.yt.dao.mongo.dao.UserDaoMongo;
+import com.yt.dao.user.UserDaoMongo;
 import com.yt.dao.mongo.impl.MongoDaoImpl;
 import com.yt.entity.mongo.UserMongo;
 import com.yt.util.JsonUtil;

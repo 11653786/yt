@@ -1,4 +1,4 @@
-package com.yt.dao.mongo.dao;
+package com.yt.dao.student;
 
 import com.mongodb.BasicDBList;
 import com.mongodb.BasicDBObject;

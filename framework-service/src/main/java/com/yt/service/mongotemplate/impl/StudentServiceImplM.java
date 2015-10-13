@@ -1,6 +1,6 @@
 package com.yt.service.mongotemplate.impl;
 
-import com.yt.dao.mongotemplate.StudentDaoM;
+import com.yt.dao.student.StudentDaoM;
 import com.yt.service.mongotemplate.StudentServiceM;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

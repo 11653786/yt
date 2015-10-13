@@ -1,6 +1,6 @@
 package com.yt.dao.base;
 
-import com.yt.dao.base.redis.RedisDao;
+import com.yt.dao.redis.RedisDao;
 
 import java.util.List;
 import java.util.Map;

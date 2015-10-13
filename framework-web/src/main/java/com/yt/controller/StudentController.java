@@ -1,16 +1,14 @@
 package com.yt.controller;
 
 import com.yt.base.BaseAction;
-import com.yt.dao.mongo.dao.StudentDao;
-import com.yt.dao.mongotemplate.StudentDaoM;
+import com.yt.dao.student.StudentDao;
+import com.yt.dao.student.StudentDaoM;
 import com.yt.entity.mongo.Student;
 import com.yt.service.mongo.StudentService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
-import org.springframework.data.mongodb.core.query.Update;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;

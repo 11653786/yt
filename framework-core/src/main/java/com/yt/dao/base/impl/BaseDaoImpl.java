@@ -2,7 +2,7 @@ package com.yt.dao.base.impl;
 
 import com.google.gson.reflect.TypeToken;
 import com.yt.dao.base.BaseDao;
-import com.yt.dao.base.redis.impl.RedisDaoImpl;
+import com.yt.dao.redis.impl.RedisDaoImpl;
 import com.yt.util.JsonUtil;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.dao.DataAccessException;

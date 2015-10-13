@@ -5,8 +5,8 @@
     <file url="file://$PROJECT_DIR$/framework-core" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/framework-core/src/main/java/com/yt/dao/base/BaseDao.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/framework-core/src/main/java/com/yt/dao/base/impl/BaseDaoImpl.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/framework-core/src/main/java/com/yt/dao/base/redis/RedisDao.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/framework-core/src/main/java/com/yt/dao/base/redis/impl/RedisDaoImpl.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/framework-core/src/main/java/com/yt/dao/redis/RedisDao.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/framework-core/src/main/java/com/yt/dao/redis/impl/RedisDaoImpl.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/framework-core/src/resource/Account-Mapper.xml" charset="GBK" />
     <file url="file://$PROJECT_DIR$/framework-entity" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/framework-entity/src/main/java/com/yt/entity/base/Account.java" charset="UTF-8" />
