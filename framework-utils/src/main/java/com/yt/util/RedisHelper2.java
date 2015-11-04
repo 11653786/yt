@@ -21,27 +21,13 @@ public class RedisHelper2 {
      * 静态代码块初始化连接池
      */
     static {
-        properties = new Properties();
-        InputStream in = RedisHelper.class.getClassLoader().getResourceAsStream("redis.properties");
-        try {
-            properties.load(in);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        String host = properties.getProperty("redis.ip");
-        int port = Integer.parseInt(properties.getProperty("redis.port"));
-        int maxTotal = Integer.parseInt(properties.getProperty("redis.maxTotal"));
-        int maxIdle = Integer.parseInt(properties.getProperty("redis.maxIdle"));
-        int minIdle = Integer.parseInt(properties.getProperty("redis.minIdle"));
-        int maxWait = Integer.parseInt(properties.getProperty("redis.maxWait"));
-        boolean testOnBorrow = Boolean.parseBoolean(properties.getProperty("redis.testOnBorrow"));
         config = new JedisPoolConfig();//初始化连接池
-        config.setMaxTotal(maxTotal);
-        config.setMaxIdle(maxIdle);
-        config.setMinIdle(minIdle);
-        config.setMaxWaitMillis(maxWait);
-        config.setTestOnBorrow(testOnBorrow);
-        jedisPool = new JedisPool(config, host, port, 0);
+        config.setMaxTotal(RedisHelper.maxTotal);
+        config.setMaxIdle(RedisHelper.maxIdle);
+        config.setMinIdle(RedisHelper.minIdle);
+        config.setMaxWaitMillis(RedisHelper.maxWait);
+        config.setTestOnBorrow(RedisHelper.testOnBorrow);
+        jedisPool = new JedisPool(config, RedisHelper.host, RedisHelper.port, 0);
     }
 
     /**

@@ -22,7 +22,7 @@ public class RedisHelper {
     public final static String  host = "127.0.0.1";
     public final static int port = 6379;
     public final static int maxTotal =500;
-    public final static int maxIdle = 250;
+    public final static int maxIdle = 300;
     public final static int minIdle = 100;
     public final static int maxWait = 1000;
     public final static boolean testOnBorrow =true;
