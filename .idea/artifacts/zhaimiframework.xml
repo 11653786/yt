@@ -1,28 +1,18 @@
 <component name="ArtifactManager">
-  <artifact type="exploded-war" name="framework-web:war exploded">
-    <output-path>$PROJECT_DIR$/framework-web/target/framework-web</output-path>
+  <artifact type="exploded-war" name="zhaimiframework">
+    <output-path>$PROJECT_DIR$/out/artifacts/zhaimiframework</output-path>
     <root id="root">
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
           <element id="module-output" name="framework-web" />
+          <element id="module-output" name="framework-webservice" />
+          <element id="module-output" name="framework-service" />
+          <element id="module-output" name="framework-core" />
+          <element id="module-output" name="framework-utils" />
+          <element id="module-output" name="framework-entity" />
         </element>
         <element id="directory" name="lib">
-          <element id="archive" name="framework-webservice-1.0-SNAPSHOT.jar">
-            <element id="module-output" name="framework-webservice" />
-          </element>
           <element id="library" level="project" name="Maven: com.caucho:hessian:4.0.7" />
-          <element id="archive" name="framework-service-1.0-SNAPSHOT.jar">
-            <element id="module-output" name="framework-service" />
-          </element>
-          <element id="archive" name="framework-core-1.0-SNAPSHOT.jar">
-            <element id="module-output" name="framework-core" />
-          </element>
-          <element id="archive" name="framework-utils-1.0-SNAPSHOT.jar">
-            <element id="module-output" name="framework-utils" />
-          </element>
-          <element id="archive" name="framework-entity-1.0-SNAPSHOT.jar">
-            <element id="module-output" name="framework-entity" />
-          </element>
           <element id="library" level="project" name="Maven: antlr:antlr:2.7.7" />
           <element id="library" level="project" name="Maven: org.apache.avro:avro:1.7.6" />
           <element id="library" level="project" name="Maven: com.thoughtworks.paranamer:paranamer:2.3" />
@@ -110,9 +100,6 @@
           <element id="library" level="project" name="Maven: org.springframework.data:spring-data-mongodb:1.8.0.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework.data:spring-data-commons:1.11.0.RELEASE" />
         </element>
-      </element>
-      <element id="directory" name="META-INF">
-        <element id="file-copy" path="$PROJECT_DIR$/framework-web/target/framework-web/META-INF/MANIFEST.MF" />
       </element>
       <element id="javaee-facet-resources" facet="framework-web/web/Web" />
     </root>

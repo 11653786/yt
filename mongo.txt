@@ -60,3 +60,15 @@ http://www.cnblogs.com/zhwl/p/3523472.html min.max.avg
 
 
 http://garyli.iteye.com/blog/2079158        mongotemplate 聚合查询
+
+
+
+cd到
+ /usr/local/Cellar/mongodb/3.0.7/bin
+ 打命令
+mongod --dbpath \data
+
+
+
+
+: 17 files, 158M
