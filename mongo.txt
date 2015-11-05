@@ -70,5 +70,8 @@ mongod --dbpath \data
 
 
 
+mongodb命令,http://blog.csdn.net/shirdrn/article/details/7105539
+db.createUser({user:"admin",pwd:"admin",roles:[]})
+
 
 : 17 files, 158M
