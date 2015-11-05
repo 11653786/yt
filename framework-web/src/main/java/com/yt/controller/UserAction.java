@@ -10,6 +10,7 @@ import com.yt.entity.base.User;
 import com.yt.entity.mongo.UserMongo;
 import com.yt.service.AccountService;
 import com.yt.service.UserService;
+import com.yt.util.RedisHelper;
 import com.yt.util.mongoUtil.MongoUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -50,6 +51,7 @@ public class UserAction extends BaseAction{
         //  account.setAccountId("1231");
         account.setAccountName("heheehe1");
         accountService.save(account);
+        RedisHelper.set(0,"key1","value1");
         return "index";
     }
 

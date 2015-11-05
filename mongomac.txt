@@ -1,2 +1,3 @@
+mongod --dbpath \data
 /usr/local/Cellar/mongodb/3.0.7: 17 files, 158M 本地电脑路径
 http://www.cnblogs.com/junqilian/p/4109580.html
