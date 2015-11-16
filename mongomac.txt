@@ -11,3 +11,23 @@ show dbs,只有local库
 先创建一个超级管理员
 use admin
 db.createUser({user:"yearnfar",pwd:"123456",roles:[]})
+
+
+
+注册验证帐号 3.0
+http://ibruce.info/2015/03/03/mongodb3-auth/
+use admin
+db.createUser(
+  {
+    user: "buru",
+    pwd: "12345678",
+    roles: [ { role: "userAdminAnyDatabase", db: "admin" } ]
+  }
+)
+
+
+db.auth({"buru","123456"});
+
+mongo 127.0.0.1:27017/test -u buru -p 12345678
+
+mongo登陆

@@ -474,7 +474,17 @@
             <version>1.8.0.RELEASE</version>
         </dependency>
         <!-- mongo spring -->
+        <!--<dependency>-->
+            <!--<groupId>org.springframework.data</groupId>-->
+            <!--<artifactId>spring-data-commons</artifactId>-->
+            <!--<version>1.11.0.RELEASE</version>-->
+        <!--</dependency>-->
 
+        <!--<dependency>-->
+            <!--<groupId>org.springframework.data</groupId>-->
+            <!--<artifactId>spring-data-commons-core</artifactId>-->
+            <!--<version>1.4.1.RELEASE</version>-->
+        <!--</dependency>-->
 
     </dependencies>
 </project>

@@ -9,64 +9,81 @@
            http://www.springframework.org/schema/context/spring-context.xsd
            http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd">
 
-	<!-- controller鎵弿璁剧疆-->
-	<context:component-scan base-package="com.yt.controller" use-default-filters="false">
-		<context:include-filter type="annotation"      expression="org.springframework.stereotype.Controller" />
-	</context:component-scan>
+    <!-- controller鎵弿璁剧疆-->
+    <context:component-scan base-package="com.yt.controller" use-default-filters="false">
+        <context:include-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
+    </context:component-scan>
+
+    <context:component-scan base-package="com.yt.exception"/>
+
+    <!-- 启动Springmvc注解驱动 -->
+    <mvc:annotation-driven/>
+
+    <!-- 返回json 方法二 需要导入 jackson-annotations.jar,jackson-core.jar,jackson-databind.jar-->
+    <bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping"/>
+    <bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter">
+        <property name="messageConverters">
+            <list>
+                <bean class="org.springframework.http.converter.StringHttpMessageConverter">
+                    <property name="supportedMediaTypes">
+                        <list>
+                            <value>text/html; charset=UTF-8</value>
+                            <value>application/json;charset=UTF-8</value>
+                        </list>
+                    </property>
+                </bean>
+                <bean class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
+                    <property name="supportedMediaTypes">
+                        <list>
+                            <value>text/html; charset=UTF-8</value>
+                            <value>application/json;charset=UTF-8</value>
+                        </list>
+                    </property>
+                </bean>
+            </list>
+        </property>
+    </bean>
 
 
-	<mvc:annotation-driven />
+    <!--<mvc:annotation-driven>-->
+    <!--<mvc:message-converters register-defaults="true">-->
+    <!--<bean class="org.springframework.http.converter.StringHttpMessageConverter">-->
+    <!--<property name="supportedMediaTypes" value="text/plain;charset=UTF-8" />-->
+    <!--</bean>-->
+    <!--</mvc:message-converters>-->
+    <!--</mvc:annotation-driven>-->
+
+    <!--瀵规ā鍨嬭鍥惧悕绉扮殑瑙ｆ瀽锛屽嵆鍦ㄦā鍨嬭鍥惧悕绉版坊鍔犲墠鍚庣紑 -->
+    <bean
+            class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <!-- 濡傛灉浣跨敤jstl鐨勮瘽锛岄厤缃笅闈㈢殑灞炴�� -->
+        <property name="viewClass"
+                  value="org.springframework.web.servlet.view.JstlView"/>
+        <property name="prefix" value="/view/"></property>
+        <property name="suffix" value=".jsp"></property>
+    </bean>
+
+    <bean id="multipartResolver"
+          class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+        <property name="defaultEncoding" value="utf-8"/>
+        <property name="maxUploadSize" value="10485760000"/>
+        <property name="maxInMemorySize" value="40960"/>
+    </bean>
 
 
-	<bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter" >
-		<property name="messageConverters">
-			<list>
-				<bean class="org.springframework.http.converter.json.MappingJacksonHttpMessageConverter" />
-			</list>
-		</property>
-	</bean>
+    <!-- 异常处理器 -->
+
+    <bean class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
+        <property name="exceptionMappings">
+            <props>
+                <prop key="java.lang.RuntimeException">error</prop>
+                <!--   <prop key="java.lang.Exception">error</prop> -->
+            </props>
+        </property>
+    </bean>
 
 
-	<!--<mvc:annotation-driven>-->
-		<!--<mvc:message-converters register-defaults="true">-->
-			<!--<bean class="org.springframework.http.converter.StringHttpMessageConverter">-->
-				<!--<property name="supportedMediaTypes" value="text/plain;charset=UTF-8" />-->
-			<!--</bean>-->
-		<!--</mvc:message-converters>-->
-	<!--</mvc:annotation-driven>-->
-
-	<!--瀵规ā鍨嬭鍥惧悕绉扮殑瑙ｆ瀽锛屽嵆鍦ㄦā鍨嬭鍥惧悕绉版坊鍔犲墠鍚庣紑 -->
-	<bean
-		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-		<!-- 濡傛灉浣跨敤jstl鐨勮瘽锛岄厤缃笅闈㈢殑灞炴�� -->
-		<property name="viewClass"
-			value="org.springframework.web.servlet.view.JstlView" />
-		<property name="prefix" value="/view/"></property>
-		<property name="suffix" value=".jsp"></property>
-	</bean>
-
-	<bean id="multipartResolver"
-		class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
-		<property name="defaultEncoding" value="utf-8" />
-		<property name="maxUploadSize" value="10485760000" />
-		<property name="maxInMemorySize" value="40960" />
-	</bean>
-
-
-
-	<!-- 异常处理器 -->
-
-	<bean class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
-		<property name="exceptionMappings">
-			<props>
-				<prop key="java.lang.RuntimeException">error</prop>
-				<!--   <prop key="java.lang.Exception">error</prop> -->
-			</props>
-		</property>
-	</bean>
-
-
-	<!--mvc闈欐�佽祫婧愭嫤鎴�-->
-	<mvc:resources location="/resource" mapping="/"/>
+    <!--mvc闈欐�佽祫婧愭嫤鎴�-->
+    <mvc:resources location="/resource" mapping="/"/>
 
 </beans>

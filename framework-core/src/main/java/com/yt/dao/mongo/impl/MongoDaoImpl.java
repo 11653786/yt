@@ -1,13 +1,12 @@
 package com.yt.dao.mongo.impl;
 
-import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.mongodb.*;
 import com.yt.dao.mongo.MongoDao;
 import com.yt.entity.mongo.Student;
 import com.yt.util.JsonUtil;
 import com.yt.util.ListUtil;
-import com.yt.util.Utils;
+import com.yt.util.StringUtils;
 import com.yt.util.mongoUtil.MongoUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
@@ -17,7 +16,6 @@ import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.stereotype.Repository;
 
-import javax.persistence.Basic;
 import javax.transaction.Transactional;
 import java.lang.reflect.*;
 import java.util.Iterator;
@@ -161,9 +159,9 @@ public class MongoDaoImpl<T> implements MongoDao<T> {
     public String getCollectionName() {
         Document document = getEntityClass().getAnnotation(Document.class);
         String collectionName = null;
-        if (Utils.CheckNotNull(document)) {
+        if (StringUtils.CheckNotNull(document)) {
             collectionName = document.collection();
-            if (!Utils.CheckNotNull(collectionName)) collectionName = getEntityClass().getName();
+            if (!StringUtils.CheckNotNull(collectionName)) collectionName = getEntityClass().getName();
         } else {
             collectionName = getEntityClass().getSimpleName();
         }

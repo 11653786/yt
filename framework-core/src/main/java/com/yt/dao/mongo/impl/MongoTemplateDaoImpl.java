@@ -3,17 +3,14 @@ package com.yt.dao.mongo.impl;
 import com.mongodb.*;
 import com.yt.dao.mongo.MongoTemplateDao;
 import com.yt.entity.mongo.Student;
-import com.yt.util.Utils;
+import com.yt.util.StringUtils;
 import com.yt.util.mongoUtil.MongoUtils;
-import org.apache.poi.ss.formula.functions.T;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.aggregation.Aggregation;
 import org.springframework.data.mongodb.core.aggregation.AggregationResults;
 import org.springframework.data.mongodb.core.mapping.Document;
-import org.springframework.data.mongodb.core.mapreduce.GroupBy;
-import org.springframework.data.mongodb.core.mapreduce.GroupByResults;
 import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.data.mongodb.core.query.Update;
@@ -21,7 +18,6 @@ import org.springframework.stereotype.Repository;
 
 import javax.transaction.Transactional;
 import java.lang.reflect.ParameterizedType;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
@@ -159,9 +155,9 @@ public class MongoTemplateDaoImpl<T> implements MongoTemplateDao<T> {
     public String getCollectionName() {
         Document document = getEntityClass().getAnnotation(Document.class);
         String collectionName = null;
-        if (Utils.CheckNotNull(document)) {
+        if (StringUtils.CheckNotNull(document)) {
             collectionName = document.collection();
-            if (!Utils.CheckNotNull(collectionName)) collectionName = getEntityClass().getName();
+            if (!StringUtils.CheckNotNull(collectionName)) collectionName = getEntityClass().getName();
         } else {
             collectionName = getEntityClass().getSimpleName();
         }

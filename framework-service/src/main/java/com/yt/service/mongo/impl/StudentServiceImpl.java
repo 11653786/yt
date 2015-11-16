@@ -4,7 +4,7 @@ import com.mongodb.*;
 import com.yt.dao.student.StudentDao;
 import com.yt.entity.mongo.Student;
 import com.yt.service.mongo.StudentService;
-import com.yt.util.Utils;
+import com.yt.util.StringUtils;
 import com.yt.util.mongoUtil.MongoUtils;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -26,11 +26,11 @@ public class StudentServiceImpl  implements StudentService{
     public List<Student> getMyList(Integer age,String sex,String name){
         BasicDBObject dbObject=new BasicDBObject();
         BasicDBList list1=new BasicDBList();
-        if(Utils.CheckNotNull(age)){
+        if(StringUtils.CheckNotNull(age)){
             list1.add(new BasicDBObject("age",new BasicDBObject(MongoUtils.$gt,age)));
 
         }
-        if(Utils.CheckNotNull(sex)){
+        if(StringUtils.CheckNotNull(sex)){
             list1.add(new BasicDBObject("sex",new BasicDBObject(MongoUtils.$eq,sex)));
         }
         dbObject.put(MongoUtils.$and, list1);
