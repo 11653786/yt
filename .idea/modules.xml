@@ -15,6 +15,7 @@
       <module fileurl="file://$PROJECT_DIR$/html5filter/html5filter.iml" filepath="$PROJECT_DIR$/html5filter/html5filter.iml" />
       <module fileurl="file://$PROJECT_DIR$/html5form/html5form.iml" filepath="$PROJECT_DIR$/html5form/html5form.iml" />
       <module fileurl="file://$PROJECT_DIR$/html5service/html5service.iml" filepath="$PROJECT_DIR$/html5service/html5service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/nodejs/nodejs.iml" filepath="$PROJECT_DIR$/nodejs/nodejs.iml" />
     </modules>
   </component>
 </project>
