@@ -8,6 +8,14 @@ var bodyParser = require('body-parser');
 var routes = require('./routes/index');
 var users = require('./routes/users');
 var member = require('./routes/member');
+var mysql = require('./mysql');
+var conn = mysql.createConnection({
+    host: 'localhost',
+    user: 'root',
+    password: '123456',
+    database: 'test',
+    port: 3306
+});
 
 var app = express();
 
