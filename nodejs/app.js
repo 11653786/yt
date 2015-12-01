@@ -16,6 +16,8 @@ var conn = mysql.createConnection({
     database: 'test',
     port: 3306
 });
+//
+conn.connect();
 
 var app = express();
 
