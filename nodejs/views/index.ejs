@@ -1,15 +1,18 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-CN">
   <head>
     <title><%= title %></title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel='stylesheet' href='/bootstrap/dist/css/bootstrap.css'>
   </head>
   <body>
+  <div class="contains"></div>
     <h1><%= title %></h1>
     <p>Welcome to <%= title %></p>
     <form method="post" action="/member/yt2">
     <input type='text' name='name'  />
     <input type='submit' value="提交"  />
+
     </form>
   </body>
 </html>

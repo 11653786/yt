@@ -1,12 +1,25 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-CN">
   <head>
-    <title><%= title %></title>
+    <title>datagrid</title>
+    <link rel='stylesheet' href='/bootstrap/dist/css/bootstrap.css'>
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-    666
+  <!--满布局-->
+  <div class="container-fluid">
+  <!--屏幕尺寸超过1200px的用-->
+  <div class='row'>
+  <div class='col-md-3 topleft' style=height:100%"">
+  <ul>
+  <li ><a href="">首页</a></li>
+  </ul>
+  </div>
+  <div class='col-md-9 topright' style="height:100%">
+  <table class='table'>
+  </table>
+  </div>
+  </div>
+  </div>
   </body>
 </html>

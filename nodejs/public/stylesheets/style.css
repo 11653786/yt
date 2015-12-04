@@ -1,1 +1,30 @@
-body{padding:50px;font:14px "Lucida Grande",Helvetica,Arial,sans-serif}a{color:#00B7FF}
+body {
+    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif
+}
+
+a {
+    color: #00B7FF
+}
+
+.topleft {
+    height: 1920px;
+    background: #2e2e2e;
+}
+
+.topright {
+    height: 1920px;
+    background: #ffffff;
+}
+
+.topleft ul {
+    float: left;
+}
+
+.topleft ul li {
+    height: 30px;
+    text-align: left;
+    margin: 0px;
+    padding: 0px;
+    list-style-type: none;
+    border: 1px #c8c8c8 solid;
+}
