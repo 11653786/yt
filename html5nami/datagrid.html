@@ -6,7 +6,11 @@
 </head>
 <body>
 <div ng-controller="datagridcontroller">
-    {{name}}
+    {{name}}<br>
+    数据绑定:ng-model:<input type="text" name="name" ng-model="ng_model"/>,{{ng_model}}<br>
+    循环ng-repeat:
+    <div><span ng-repeat="item in items">{{item}},</span></div>
+    ng-click,和angularjs.copy联合使用:
 </div>
 </body>
 </html>
