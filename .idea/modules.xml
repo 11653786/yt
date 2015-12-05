@@ -9,13 +9,8 @@
       <module fileurl="file://$PROJECT_DIR$/framework-utils/framework-utils.iml" filepath="$PROJECT_DIR$/framework-utils/framework-utils.iml" />
       <module fileurl="file://$PROJECT_DIR$/framework-web/framework-web.iml" filepath="$PROJECT_DIR$/framework-web/framework-web.iml" />
       <module fileurl="file://$PROJECT_DIR$/framework-webservice/framework-webservice.iml" filepath="$PROJECT_DIR$/framework-webservice/framework-webservice.iml" />
-      <module fileurl="file://$PROJECT_DIR$/html5Angularjs/html5Angularjs.iml" filepath="$PROJECT_DIR$/html5Angularjs/html5Angularjs.iml" />
-      <module fileurl="file://$PROJECT_DIR$/html5Directive2/html5Directive2.iml" filepath="$PROJECT_DIR$/html5Directive2/html5Directive2.iml" />
-      <module fileurl="file://$PROJECT_DIR$/html5directive/html5directive.iml" filepath="$PROJECT_DIR$/html5directive/html5directive.iml" />
-      <module fileurl="file://$PROJECT_DIR$/html5filter/html5filter.iml" filepath="$PROJECT_DIR$/html5filter/html5filter.iml" />
-      <module fileurl="file://$PROJECT_DIR$/html5form/html5form.iml" filepath="$PROJECT_DIR$/html5form/html5form.iml" />
-      <module fileurl="file://$PROJECT_DIR$/html5service/html5service.iml" filepath="$PROJECT_DIR$/html5service/html5service.iml" />
-      <module fileurl="file://$PROJECT_DIR$/nodejs/nodejs.iml" filepath="$PROJECT_DIR$/nodejs/nodejs.iml" />
+      <module fileurl="file://$PROJECT_DIR$/html5nami/html5nami.iml" filepath="$PROJECT_DIR$/html5nami/html5nami.iml" />
+      <module fileurl="file://$PROJECT_DIR$/nodejs1/nodejs1.iml" filepath="$PROJECT_DIR$/nodejs1/nodejs1.iml" />
     </modules>
   </component>
 </project>

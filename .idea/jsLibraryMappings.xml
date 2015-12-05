@@ -1,13 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="JavaScriptLibraryMappings">
-    <file url="file://$PROJECT_DIR$/html5Angularjs" libraries="{Node.js v4.2.2 Core Modules}" />
-    <file url="file://$PROJECT_DIR$/html5Directive2" libraries="{Node.js v4.2.2 Core Modules}" />
-    <file url="file://$PROJECT_DIR$/html5directive" libraries="{Node.js v4.2.2 Core Modules}" />
-    <file url="file://$PROJECT_DIR$/html5filter" libraries="{Node.js v4.2.2 Core Modules}" />
-    <file url="file://$PROJECT_DIR$/html5form" libraries="{Node.js v4.2.2 Core Modules}" />
-    <file url="file://$PROJECT_DIR$/html5service" libraries="{Node.js v4.2.2 Core Modules}" />
-    <file url="file://$PROJECT_DIR$/nodejs" libraries="{Node.js v4.2.2 Core Modules}" />
     <includedPredefinedLibrary name="Node.js Globals" />
   </component>
 </project>

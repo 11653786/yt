@@ -3,97 +3,10 @@
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/framework-core" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/framework-core/src/main/java/com/yt/dao/base/BaseDao.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/framework-core/src/main/java/com/yt/dao/base/impl/BaseDaoImpl.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/framework-core/src/main/java/com/yt/dao/redis/RedisDao.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/framework-core/src/main/java/com/yt/dao/redis/impl/RedisDaoImpl.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/framework-core/src/resource/Account-Mapper.xml" charset="GBK" />
     <file url="file://$PROJECT_DIR$/framework-entity" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/framework-entity/src/main/java/com/yt/entity/base/Account.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/framework-entity/src/main/java/com/yt/entity/base/User.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/framework-entity/src/main/java/com/yt/entity/base/book.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/framework-service" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/framework-service/src/main/java/com/yt/service/AccountService.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/framework-service/src/main/java/com/yt/service/UserService.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/framework-service/src/main/java/com/yt/service/impl/AccountServiceImpl.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/framework-service/src/main/java/com/yt/service/impl/UserServiceImpl.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/framework-utils" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/framework-utils/src/main/java/com/yt/util/JsonUtil.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/framework-utils/src/main/java/com/yt/util/StringUtils.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/framework-web" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/framework-web/src/main/java/com/yt/controller/AngularjsAction.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/framework-web/src/main/java/com/yt/controller/UserAction.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/framework-web/src/main/java/junit" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/framework-web/src/main/resources/applicationContext.xml" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/framework-web/src/main/resources/jdbc.properties" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/framework-web/src/main/resources/log4j.properties" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/framework-web/src/main/resources/mybatis.xml" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/framework-web/src/main/resources/redis.properties" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/framework-web/src/main/resources/springmvc-servlet.xml" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/framework-web/src/main/webapp/WEB-INF" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/framework-web/src/main/webapp/index.jsp" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/framework-web/src/main/webapp/resource" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/framework-web/src/main/webapp/view" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/framework-web/src/main/webapp/view/student" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/framework-web/src/main/webapp/view/student/list.jsp" charset="GBK" />
     <file url="file://$PROJECT_DIR$/framework-webservice" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/html5/fonts" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/html5/html/angularjs/api/AngularJS 中文API参考手册.chm" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/html5/html/angularjs/api/AngularJS中文版.pdf" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/html5/html/angularjs/api/AngularJs权威指南.pdf" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/html5/html/angularjs/api/用AngularJS开发下一代Web应用.pdf" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/html5/html/angularjs/js/app.js" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/html5/html/angularjs/js/controllers.js" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/html5/html/angularjs/js/directives.js" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/html5/html/angularjs/js/filters.js" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/html5/html/angularjs/js/services.js" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/html5/resource/css" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/html5/resource/js" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/html5Angularjs/fonts" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/html5Angularjs/html/angularjs/api/AngularJS 中文API参考手册.chm" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/html5Angularjs/html/angularjs/api/AngularJS中文版.pdf" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/html5Angularjs/html/angularjs/api/AngularJs权威指南.pdf" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/html5Angularjs/html/angularjs/api/用AngularJS开发下一代Web应用.pdf" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/html5Angularjs/html/angularjs/js/app.js" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/html5Angularjs/html/angularjs/js/controllers.js" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/html5Angularjs/html/angularjs/js/directives.js" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/html5Angularjs/html/angularjs/js/filters.js" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/html5Angularjs/html/angularjs/js/services.js" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/html5Angularjs/resource/css" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/html5Angularjs/resource/js" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/html5Directive2/resource/angularjs/js/angular-animate.js" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/html5Directive2/resource/angularjs/js/angular-route.js" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/html5Directive2/resource/angularjs/js/angular-ui-router.js" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/html5Directive2/resource/angularjs/js/angular.js" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/html5directive/html/angularjs/api/AngularJS 中文API参考手册.chm" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/html5directive/html/angularjs/api/AngularJS中文版.pdf" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/html5directive/html/angularjs/api/AngularJs权威指南.pdf" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/html5directive/html/angularjs/api/用AngularJS开发下一代Web应用.pdf" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/html5directive/html/angularjs/js/app.js" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/html5directive/html/angularjs/js/directives.js" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/html5directive/html/angularjs/js/filters.js" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/html5directive/html/angularjs/js/services.js" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/html5directive/resource/css" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/html5directive/resource/js" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/html5filter/resource/angular.js" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/html5form/html/angularjs/api/AngularJS 中文API参考手册.chm" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/html5form/html/angularjs/api/AngularJS中文版.pdf" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/html5form/html/angularjs/api/AngularJs权威指南.pdf" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/html5form/html/angularjs/api/用AngularJS开发下一代Web应用.pdf" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/html5form/resource/css" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/html5form/resource/js" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/html5service/fonts" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/html5service/html/angularjs/api/AngularJS 中文API参考手册.chm" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/html5service/html/angularjs/api/AngularJS中文版.pdf" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/html5service/html/angularjs/api/AngularJs权威指南.pdf" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/html5service/html/angularjs/api/用AngularJS开发下一代Web应用.pdf" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/html5service/html/angularjs/js/app.js" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/html5service/html/angularjs/js/controllers.js" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/html5service/html/angularjs/js/directives.js" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/html5service/html/angularjs/js/filters.js" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/html5service/html/angularjs/js/services.js" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/html5service/resource/css" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/html5service/resource/js" charset="GBK" />
-    <file url="PROJECT" charset="UTF-8" />
   </component>
 </project>
