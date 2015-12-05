@@ -18,8 +18,10 @@ var datagrid = myapp.controller('datagridcontroller', function ($scope) {
 myapp.directive('baidu', function () {
     return {
         restrict: 'EAMC',
-        //为true的时候只显示原标签内容
-        replace: true,
+        scope: {},
+        controller: function ($scope) {
+            $scope.name = "$scope.name";
+        },
         //没有使用scope,从directive中的controller里获取了{{html}}
         template: function (element, attr) {
             if (attr.baidu == "google") {
@@ -38,3 +40,35 @@ myapp.directive('baidu', function () {
         }
     }
 });
+
+//自定义百度标签
+myapp.directive('hello', function () {
+    return {
+        restrict: 'EA',
+        //transclude的使用,显示当前标签的原始内容,并且显示出template中添加的内容
+        template: '<h3>Hello, Directive, <span ng-transclude></span></h3>',
+        replace: true,
+        transclude: true
+    };
+});
+
+//复制代码
+//var app = angular.module("app", [])
+//    .directive("hello", function () {
+//        var option = {
+//            restrict: "AECM",
+//            template: "<h3>Hello, Directive, <span ng-transclude></span></h3>",
+//            replace: true,
+//            transclude: true
+//        };
+//        return option;
+//    })
+//复制代码
+//然后，在模版中说明嵌入的位置。
+//
+//template: "<h3>Hello, Directive, <span ng-transclude></span></h3>",
+
+
+//页面元素:<hello>12345678</hello>
+//最后，生成的结果如下。
+//使用transclude后显示内容:<h3>Hello, Directive, <span ng-transclude=""><span class="ng-scope">12345678</span></span></h3>
