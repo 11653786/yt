@@ -18,16 +18,23 @@ var datagrid = myapp.controller('datagridcontroller', function ($scope) {
 myapp.directive('baidu', function () {
     return {
         restrict: 'EAMC',
+        //为true的时候只显示原标签内容
+        replace: true,
         //没有使用scope,从directive中的controller里获取了{{html}}
         template: function (element, attr) {
             if (attr.baidu == "google") {
                 return "百度标签,google";
 
-            }else if(attr.baidu=='baidu'){
-                return "百度标签,baidu";
-            }else{
+            } else if (attr.baidu == 'baidu') {
+                return "<h3>百度标签,baidu</h3>";
+            } else {
                 return "其他标签,{{name}}";
             }
+        },
+        link: function (scope, element, attr) {
+            element.on("click", function () {
+                alert(attr.baidu);
+            });
         }
     }
 });
