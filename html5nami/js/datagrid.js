@@ -1,6 +1,7 @@
 var myapp = angular.module('myapp', ['ui.router', 'ngAnimate']);
 
-var datagrid = myapp.controller('datagridcontroller', function ($scope) {
+var datagrid = myapp.controller('datagridcontroller', function ($scope, userService) {
+    alert(userService.hello());
     $scope.name = "欢迎来到angularjs,angularjs文档:http://docs.angularjs.cn/api/ng/function/angular.copy";
     $scope.items = ["item1", "item2", "item3"];
     $scope.user = {name: "name", age: "18"};
@@ -52,23 +53,3 @@ myapp.directive('hello', function () {
     };
 });
 
-//复制代码
-//var app = angular.module("app", [])
-//    .directive("hello", function () {
-//        var option = {
-//            restrict: "AECM",
-//            template: "<h3>Hello, Directive, <span ng-transclude></span></h3>",
-//            replace: true,
-//            transclude: true
-//        };
-//        return option;
-//    })
-//复制代码
-//然后，在模版中说明嵌入的位置。
-//
-//template: "<h3>Hello, Directive, <span ng-transclude></span></h3>",
-
-
-//页面元素:<hello>12345678</hello>
-//最后，生成的结果如下。
-//使用transclude后显示内容:<h3>Hello, Directive, <span ng-transclude=""><span class="ng-scope">12345678</span></span></h3>
