@@ -5,10 +5,18 @@ import java.io.Serializable;
 /**
  * Created by Administrator on 2015/8/10.
  */
-public class User implements Serializable{
+public class User implements Serializable {
 
     private int id;
     private String userName;
+
+    public User() {
+    }
+
+    public User(int id, String userName) {
+        this.id = id;
+        this.userName = userName;
+    }
 
     public int getId() {
         return id;
