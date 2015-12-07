@@ -10,7 +10,7 @@ myapp.factory('userDao', function ($http) {
 
 var userService = myapp.service("userService", function ($q, $http, userDao) {
         var service = {};
-        service.getListByDao = function (userDao) {
+        service.getListByDao = function () {
             return userDao.getList();
         }
         service.hello = function () {
