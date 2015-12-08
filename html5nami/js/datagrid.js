@@ -1,8 +1,9 @@
 var myapp = angular.module('myapp', ['ui.router', 'ngAnimate']);
 
-var datagrid = myapp.controller('datagridcontroller', function ($scope, userService) {
+var datagrid = myapp.controller('datagridcontroller', function ($scope, userService,$http) {
     alert(userService.hello());
     alert(userService.getListByDao());
+    alert(userService.getUserList());
     $scope.name = "欢迎来到angularjs,angularjs文档:http://docs.angularjs.cn/api/ng/function/angular.copy";
     $scope.items = ["item1", "item2", "item3"];
     $scope.user = {name: "name", age: "18"};

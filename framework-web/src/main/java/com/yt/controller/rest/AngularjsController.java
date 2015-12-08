@@ -5,6 +5,7 @@ import com.yt.entity.base.User;
 import com.yt.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -21,7 +22,7 @@ import java.util.Map;
 public class AngularjsController extends BaseAction {
 
 
-    @RequestMapping(value = "/datagrid")
+    @RequestMapping(value = "/datagrid", method = RequestMethod.GET)
     @ResponseBody
     public List<User> datagrid2(HttpServletRequest request) {
         return getUserList();
@@ -31,7 +32,7 @@ public class AngularjsController extends BaseAction {
     private List<User> getUserList() {
         List<User> users = new ArrayList<User>();
         for (int a = 0; a < 100; a++) {
-            User user = new User(a,"name"+a);
+            User user = new User(a, "name" + a);
             users.add(user);
         }
         return users;
