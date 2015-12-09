@@ -62,6 +62,18 @@
         <url-pattern>/*</url-pattern>
     </filter-mapping>
 
+    <!--配置过滤器-->
+    <filter>
+        <filter-name>myFilter</filter-name>
+        <filter-class>com.yt.filter.MyFilter</filter-class>
+    </filter>
+    <!--映射过滤器-->
+    <filter-mapping>
+        <filter-name>myFilter</filter-name>
+        <!--“/*”表示拦截所有的请求 -->
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
     <context-param>
         <param-name>logbackConfigLocation</param-name>
         <param-value>classpath:logback.xml</param-value>
