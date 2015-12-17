@@ -14,8 +14,15 @@ myapp.config(function ($stateProvider, $urlRouterProvider) {
         views: {
             //当前页面的ui-view为''的直接显示html/form.html,也可以理解为设置首页
             '': {
-                templateUrl: "datagrid.html",
-                //controller: "datagridcontroller"
+                templateUrl: "datagrid.html"
+            }
+        }
+    }).state('user', {
+        url: "/user",
+        views: {
+            //当前页面的ui-view为''的直接显示html/form.html,也可以理解为设置首页
+            '': {
+                templateUrl: "html/user.html"
             }
         }
     })
