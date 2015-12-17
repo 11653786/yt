@@ -6,6 +6,8 @@ var datagrid = myapp.controller('datagridcontroller', function ($scope, userServ
     $scope.member = {name: "zhagnsan1", age1: "16s"};
     //点击按钮user对象被member对象替换
 
+
+
     $scope.angularcode = function () {
         angular.copy($scope.member, $scope.user);
     }
