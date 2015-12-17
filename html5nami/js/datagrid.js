@@ -1,5 +1,3 @@
-var myapp = angular.module('myapp', ['ui.router', 'ngAnimate']);
-
 var datagrid = myapp.controller('datagridcontroller', function ($scope, userService,$http) {
     alert(userService.hello());
     alert(userService.getListByDao());
