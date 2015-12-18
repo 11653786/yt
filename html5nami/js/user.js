@@ -25,9 +25,8 @@ var datagrid = myapp.controller('usercontroller', function ($scope, $interval, $
         //interpolate的作用就是把上面表达式中的name替换成data中的name
         var str1 = tmp(data1);
         var str2 = tmp(data2);
-        userService.getUserInfo().then(function(response){
-                $scope.name=response;
-        });
+        //获取http请求的信息
+        userService.getUserInfo().then(function(response){$scope.name=response;});
         alert(userService.getListByDao());
 
     });
