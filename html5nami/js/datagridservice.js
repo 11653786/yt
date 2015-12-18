@@ -9,15 +9,14 @@ myapp.factory('userDao', function ($http) {
 });
 
 myapp.service("userService", function ($q, $http, userDao) {
-        var service = {};
-        service.getListByDao = function () {
+        this.getListByDao = function () {
             return userDao.getList();
         }
-        service.hello = function () {
+        this.hello = function () {
             return "hello,world!";
         }
         //获取,'Content-Type':'application/x-www-form-urlencoded'
-        service.getUserList = function () {
+        this.getUserList = function () {
             var data = {};
             var msg = [1, 2];
             //提交表单
@@ -32,7 +31,7 @@ myapp.service("userService", function ($q, $http, userDao) {
                 });
             return msg;
         }
-        return service;
+        return this;
     }
 )
 ;
