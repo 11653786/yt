@@ -1,7 +1,7 @@
 //只有第一个controller需要写myapp其他的都不需要写
 
 //写法1,这个userdao是从datagrid中引入的
-var datagrid = myapp.controller('usercontroller', function ($scope, $interval, $timeout,$interpolate,userDao,userDao1) {
+var datagrid = myapp.controller('usercontroller', function ($scope, $interval, $timeout,$interpolate,userDao,userDao1,userService) {
     $scope.name = userDao.getList();
     $scope.userDao1List = userDao1.getList();
     $interval(function () {
@@ -26,6 +26,8 @@ var datagrid = myapp.controller('usercontroller', function ($scope, $interval, $
         //interpolate的作用就是把上面表达式中的name替换成data中的name
         var str1 = tmp(data1);
         var str2 = tmp(data2);
+
+        userService.getUserList();
 
     });
 });

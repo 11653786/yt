@@ -5,7 +5,7 @@ var datagrid = myapp.controller('datagridcontroller', function ($scope, userServ
     $scope.user.name = "zhangsan";
     $scope.member = {name: "zhagnsan1", age1: "16s"};
     //点击按钮user对象被member对象替换
-
+    ise
 
 
     $scope.angularcode = function () {

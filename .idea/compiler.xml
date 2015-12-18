@@ -31,14 +31,14 @@
         <module name="framework-webservice" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="framework" target="1.5" />
-      <module name="framework-core" target="1.5" />
-      <module name="framework-entity" target="1.5" />
-      <module name="framework-service" target="1.5" />
-      <module name="framework-utils" target="1.5" />
-      <module name="framework-web" target="1.5" />
-      <module name="framework-webservice" target="1.5" />
+    <bytecodeTargetLevel target="1.7">
+      <module name="framework" target="1.7" />
+      <module name="framework-core" target="1.7" />
+      <module name="framework-entity" target="1.7" />
+      <module name="framework-service" target="1.7" />
+      <module name="framework-utils" target="1.7" />
+      <module name="framework-web" target="1.7" />
+      <module name="framework-webservice" target="1.7" />
     </bytecodeTargetLevel>
   </component>
 </project>
