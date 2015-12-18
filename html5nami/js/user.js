@@ -28,6 +28,7 @@ var datagrid = myapp.controller('usercontroller', function ($scope, $interval, $
         userService.getUserInfo().then(function(response){
                 $scope.name=response;
         });
+        alert(userService.getListByDao());
 
     });
 });

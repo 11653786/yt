@@ -9,31 +9,32 @@ myapp.factory('userDao', function ($http) {
 });
 
 myapp.service("userService", function ($q, $http, userDao) {
-        this.getListByDao = function () {
-            return userDao.getList();
-        }
-        this.hello = function () {
-            return "hello,world!";
-        }
-        var userInfo={};
+        var userInfo = {};
+        //http://bbs.csdn.net/topics/391545203,angularjs里只要有了http请求就要这么写么
         return {
-            getUserInfo:function(){
+            //获取用户列表
+            getListByDao: function () {
+                return userDao.getList();
+            },
+            //获取hello,world!
+            hello: function () {
+                return "hello,world!";
+            },
+            //http请求
+            getUserInfo: function () {
                 // 如果已存在则直接返回
-                if(userInfo.name){
+                alert(userInfo);
+                if (userInfo.name) {
                     return $q.when(userInfo);
                 }
                 //如果不存在数据则加载
-                return $http.get('http://localhost:8080/nami/datagrid.do').then(function(res){
-                    // 把数据存到server中并返回
-                    userInfo=res.data;
-
+                return $http.get('http://localhost:8080/nami/datagrid.do').then(function (res) {
+                    //第一次发送的时候就赋给userInfo
+                    userInfo = res.data;
                     return res.data;
                 })
             }
         }
-
-
-        return this;
     }
 )
 ;
