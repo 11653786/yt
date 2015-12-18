@@ -15,22 +15,24 @@ myapp.service("userService", function ($q, $http, userDao) {
         this.hello = function () {
             return "hello,world!";
         }
-        //获取,'Content-Type':'application/x-www-form-urlencoded'
-        this.getUserList = function () {
-            var data = {};
-            var msg = [1, 2];
-            //提交表单
-            $http({
-                method: 'get',
-                url: 'http://localhost:8080/nami/datagrid.do',
-                headers: {
+        var userInfo={};
+        return {
+            getUserInfo:function(){
+                // 如果已存在则直接返回
+                if(userInfo.name){
+                    return $q.when(userInfo);
                 }
-            }).
-                success(function (response) {
-                    alert(response);
-                });
-            return msg;
+                //如果不存在数据则加载
+                return $http.get('http://localhost:8080/nami/datagrid.do').then(function(res){
+                    // 把数据存到server中并返回
+                    userInfo=res.data;
+
+                    return res.data;
+                })
+            }
         }
+
+
         return this;
     }
 )
