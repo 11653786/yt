@@ -1,7 +1,7 @@
 //只有第一个controller需要写myapp其他的都不需要写
 
 //写法1,这个userdao是从datagrid中引入的
-var datagrid = myapp.controller('usercontroller', function ($scope, $interval, $timeout,$interpolate,userDao,userDao1,userService) {
+myapp.controller('usercontroller', function ($scope, $interval, $timeout,$interpolate,userDao,userDao1,userService) {
     $scope.userDao1List = userDao1.getList();
     $interval(function () {
         console.log("每隔三秒就执行" + new Date());
