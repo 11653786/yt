@@ -23,12 +23,12 @@ myapp.service("userService", function ($q, $http, userDao) {
             //http请求
             getUserInfo: function () {
                 // 如果已存在则直接返回
-                alert(userInfo);
-                if (userInfo.name) {
+                if (userInfo.length!=undefined && userInfo.length>0) {
                     return $q.when(userInfo);
                 }
+                var url="http://localhost:8080/nami/datagrid.do";
                 //如果不存在数据则加载
-                return $http.get('http://localhost:8080/nami/datagrid.do').then(function (res) {
+                return $http.get(url).success(function (res) {
                     //第一次发送的时候就赋给userInfo
                     userInfo = res.data;
                     return res.data;
