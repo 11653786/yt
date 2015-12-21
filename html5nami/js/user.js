@@ -26,8 +26,8 @@ var datagrid = myapp.controller('usercontroller', function ($scope, $interval, $
         var str1 = tmp(data1);
         var str2 = tmp(data2);
         $scope.getListByDao=userService.getListByDao();
-        //获取http请求的信息
-        userService.getUserInfo().then(function(response){$scope.name=response;});
+        //获取http请求的信息,then=success
+        userService.getHttpList().then(function(response){$scope.name=response;});
     });
 });
 

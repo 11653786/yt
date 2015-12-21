@@ -20,10 +20,10 @@ myapp.service("userService", function ($q, $http, userDao) {
                 return "hello,world!";
             }
             //http请求
-            userService.getUserInfo=function () {
+            userService.getHttpList=function () {
                 var url="http://localhost:8080/nami/datagrid.do";
                 //如果不存在数据则加载
-                return $http.get(url);
+               return  $http({url:url,method:'get',params:{id:1,name:"test",age:3}});
             }
     }
 )
