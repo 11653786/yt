@@ -28,7 +28,6 @@ var datagrid = myapp.controller('usercontroller', function ($scope, $interval, $
         $scope.getListByDao=userService.getListByDao();
         //获取http请求的信息
         userService.getUserInfo().then(function(response){$scope.name=response;});
-
     });
 });
 
