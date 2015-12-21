@@ -10,9 +10,15 @@
     {{userDao1List}}<br>
     getListByDao:{{getListByDao}}<br>
     $watch:<input type="text" ng-model="age"  /><br>
-    <div userdirective></div><br>
-    <usertransclude ></usertransclude><br>
-    <directive ok1="{{scope1}}" ng-click="loads()">点击{scope1}</directive><br>
+    <div userdirective></div>
+    <usertransclude ></usertransclude>
+    <directive ok1="{{scope1}}" ng-click="loads()">点击{scope1}</directive>
+    <direct attribute="data[0]"></direct>
+    <direct attribute="data[1]"></direct>
+    <common></common>
+    <andone attribute="{{scope1}}"></andone>
+    <targetp ng-click="loadData()"></targetp>
+    <target></target>
 </div>
 </body>
 </html>

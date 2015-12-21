@@ -4,7 +4,7 @@
 myapp.controller('usercontroller', function ($scope, $interval, $timeout,$interpolate,userDao,userDao1,userService) {
     $scope.userDao1List = userDao1.getList();
     $scope.scope1="未隔离scope1";
-    $scope.case=[{name:"张三"},{name:"李四"}];
+    $scope.data=[{name:"张三"},{name:"李四"}];
     $interval(function () {
         console.log("每隔三秒就执行" + new Date());
     }, 3000);
