@@ -1,0 +1,9 @@
+replace:区别
+replace:false:<div userdirective=""><div>自定义标签</div></div>
+replace:true:<div userdirective="">自定义标签</div>
+scope默认false,为true时候会从父作用域继承并且创建一个新的作用域
+
+transclude:false:template: "<div >hello,<span ng-transclude>transclude!</span></div>",false时候显示标签的元素,true的时候显示transclude显示页面上的内容
+true只显示hello,false显示全部
+
+
