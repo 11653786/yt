@@ -23,11 +23,6 @@
           <element id="archive" name="framework-entity-1.0-SNAPSHOT.jar">
             <element id="module-output" name="framework-entity" />
           </element>
-          <element id="library" level="project" name="Maven: org.apache.oltu.oauth2:org.apache.oltu.oauth2.authzserver:1.0.0" />
-          <element id="library" level="project" name="Maven: org.apache.oltu.oauth2:org.apache.oltu.oauth2.dynamicreg.server:1.0.0" />
-          <element id="library" level="project" name="Maven: org.apache.oltu.oauth2:org.apache.oltu.oauth2.resourceserver:1.0.0" />
-          <element id="library" level="project" name="Maven: org.apache.oltu.oauth2:org.apache.oltu.oauth2.resourceserver-filter:1.0.0" />
-          <element id="library" level="project" name="Maven: org.apache.oltu.oauth2:org.apache.oltu.oauth2.client:1.0.0" />
           <element id="library" level="project" name="Maven: antlr:antlr:2.7.7" />
           <element id="library" level="project" name="Maven: org.apache.avro:avro:1.7.6" />
           <element id="library" level="project" name="Maven: com.thoughtworks.paranamer:paranamer:2.3" />

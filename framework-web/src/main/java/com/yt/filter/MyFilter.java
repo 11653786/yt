@@ -12,7 +12,7 @@ import java.util.Enumeration;
 /**
  * Created by yangtao on 15/12/9.
  */
-public class MyFilter extends CORSFilter {
+public class MyFilter extends CORSFilter implements Filter {
     public void init(FilterConfig filterConfig) throws ServletException {
 
     }
@@ -21,7 +21,13 @@ public class MyFilter extends CORSFilter {
         HttpServletResponse response = (HttpServletResponse) servletResponse;
         HttpServletRequest request = (HttpServletRequest) servletRequest;
         HttpUtils.setHeader(response);
+        Enumeration enumeration= request.getHeaderNames();
+        while (enumeration.hasMoreElements()){
+            String key=enumeration.nextElement().toString();
+            System.out.println(key+","+request.getHeader(key));
+        }
         filterChain.doFilter(request, response);
+
 
     }
 

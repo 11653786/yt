@@ -22,7 +22,7 @@ import java.util.Map;
 public class AngularjsController extends BaseAction {
 
 
-    @RequestMapping(value = "/datagrid", method = RequestMethod.GET)
+    @RequestMapping(value = "/datagrid", method = RequestMethod.POST)
     @ResponseBody
     public List<User> datagrid2(HttpServletRequest request) {
         return getUserList();
