@@ -4,7 +4,10 @@
 //参数1state1 是传入的参数
 //temlateUrL真实路径
 //views,一个页面上如果有多个ui-view使用,命名规则:state名@ui-view名
-myapp.config(function ($stateProvider, $urlRouterProvider,$httpProvider) {
+myapp.config(function ($stateProvider, $urlRouterProvider, $httpProvider) {
+    //创建个拦截器看看
+    $httpProvider.interceptors.push('myInterceptor');
+
     //给所有的$http请求拓展请求头
     $urlRouterProvider.otherwise("/hello");
     //匹配ui-sref=state1超链接,的属性路径为/hello,真实地址是html/form.html
@@ -37,7 +40,39 @@ myapp.config(function ($stateProvider, $urlRouterProvider,$httpProvider) {
             }
         }
     });
-})
+});
+
+/**
+ * 拦截器的注入
+ */
+myapp.factory('myInterceptor', function ($q) {
+    var interceptor = {
+        'request': function (config) {
+            // 成功的请求方法
+            return config; // 或者 $q.when(config);
+        },
+        'response': function (response) {
+            var configs=response['config'];
+            var headers=response['config']['headers'];
+
+            // 响应成功
+            return response; // 或者 $q.when(config);
+        },
+        'requestError': function (rejection) {
+            // 请求发生了错误，如果能从错误中恢复，可以返回一个新的请求或promise
+            return rejection; // 或新的promise
+            // 或者，可以通过返回一个rejection来阻止下一步
+            // return $q.reject(rejection);
+        },
+        'responseError': function (rejection) {
+            // 请求发生了错误，如果能从错误中恢复，可以返回一个新的响应或promise
+            return rejection; // 或新的promise
+            // 或者，可以通过返回一个rejection来阻止下一步
+            // return $q.reject(rejection);
+        }
+    };
+    return interceptor;
+});
 
 
 
