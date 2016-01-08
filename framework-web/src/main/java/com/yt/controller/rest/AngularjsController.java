@@ -28,6 +28,13 @@ public class AngularjsController extends BaseAction {
         return getUserList();
     }
 
+    @RequestMapping(value = "/datagrid",method =RequestMethod.GET)
+    @ResponseBody
+    public List<User> datagrid(){
+        return getUserList();
+    }
+
+
 
     private List<User> getUserList() {
         List<User> users = new ArrayList<User>();
