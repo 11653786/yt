@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
+ * 测试p文件和@value注解的使用
  * Created by Administrator on 2016/2/24 0024.
  */
 @RestController
