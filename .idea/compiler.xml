@@ -25,6 +25,7 @@
         <processorPath useClasspath="true" />
         <module name="framework-core" />
         <module name="framework-entity" />
+        <module name="framework-min" />
         <module name="framework-mq" />
         <module name="framework-service" />
         <module name="framework-utils" />

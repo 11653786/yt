@@ -14,7 +14,7 @@ import java.net.MalformedURLException;
 public class Test {
     static RedisTemplate redisTemplate;
     public static void main(String[] args) {
-        //hessian测试调用方法
+        //hessian娴嬭瘯
         String url="http://localhost:8080/hessian/webservice/helloService.hessian";
         HessianProxyFactory factory=new HessianProxyFactory();
         try {

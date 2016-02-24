@@ -12,6 +12,7 @@
         <module>framework-service</module>
         <module>framework-core</module>
         <module>framework-webservice</module>
+        <module>framework-min</module>
     </modules>
     <packaging>pom</packaging>
     <name>framework</name>
