@@ -19,6 +19,19 @@
     <!-- 启动Springmvc注解驱动 -->
     <mvc:annotation-driven/>
 
+    <!--p文件的加载和使用@Value注解-->
+    <bean id="propertyConfigurer"
+          class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="locations">
+            <list>
+                <value>classpath:*.properties</value>
+            </list>
+        </property>
+        <property name="fileEncoding" value="UTF-8" />
+    </bean>
+
+
+
 
     <mvc:annotation-driven>
         <mvc:message-converters>
