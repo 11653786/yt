@@ -4,11 +4,12 @@
     <root id="root">
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
-          <element id="module-output" name="framework-web" />
           <element id="module-output" name="framework-service" />
           <element id="module-output" name="framework-core" />
           <element id="module-output" name="framework-utils" />
           <element id="module-output" name="framework-entity" />
+          <element id="module-output" name="framework-web" />
+          <element id="module-output" name="framework-webservice" />
         </element>
         <element id="directory" name="lib">
           <element id="library" level="project" name="Maven: antlr:antlr:2.7.7" />
@@ -90,6 +91,7 @@
           <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-annotations:2.4.4" />
           <element id="library" level="project" name="Maven: org.codehaus.jackson:jackson-mapper-asl:1.9.13" />
           <element id="library" level="project" name="Maven: org.codehaus.jackson:jackson-core-asl:1.9.13" />
+          <element id="library" level="project" name="Maven: com.caucho:hessian:4.0.7" />
         </element>
       </element>
       <element id="javaee-facet-resources" facet="framework-web/web/Web" />
