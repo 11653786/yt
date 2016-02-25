@@ -4,7 +4,7 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <!--名空间别乱写写baseDao使用-->
 <mapper namespace="com.yt.entity.UserMapper">
-    <resultMap id="BaseResultMap" type="com.yt.entity.base.User">
+    <resultMap id="BaseResultMap" type="com.yt.entity.mybatis.User">
         <id column="id" property="id" jdbcType="INTEGER"></id>
         <result column="username" property="userName" jdbcType="VARCHAR"></result>
     </resultMap>
@@ -13,7 +13,7 @@
     </sql>
     <!--表名不用管根据sql自动映射?-->
     <!--在insert方法里设置了主键自动增长-->
-    <insert id="save" parameterType="com.yt.entity.base.User"  useGeneratedKeys="true" keyProperty="id" >
+    <insert id="save" parameterType="com.yt.entity.mybatis.User"  useGeneratedKeys="true" keyProperty="id" >
         insert into t_user(userName) values(#{userName})
     </insert>
     <!--返回类型我用的id所以没关系的。。。-->
@@ -29,7 +29,7 @@
         <!--</where>-->
     </select>
     <!--传入的是对象才可以用if 标签判断-->
-    <select id="getByEntityId" parameterType="com.yt.entity.base.User" resultMap="BaseResultMap">
+    <select id="getByEntityId" parameterType="com.yt.entity.mybatis.User" resultMap="BaseResultMap">
         <!--使用的include,sql where if标签-->
         select
         <include refid="getall"/>

@@ -1,6 +1,5 @@
 package com.yt.aop;
 
-import com.yt.entity.base.Account;
 import com.yt.service.mybatis.UserService;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.Around;
@@ -41,11 +40,11 @@ public class Proxy {
           Object obj= args[i]; //输出传入的参数
             //判断当前obj类型是不是account类型
             System.out.println("obj:"+obj);
-            if(obj instanceof Account){
-                    System.out.println(Account.class.getName());
-                    Account account= (Account) obj;
-                System.out.println(account);
-            }
+//            if(obj instanceof Account){
+//                    System.out.println(Account.class.getName());
+//                    Account account= (Account) obj;
+//                System.out.println(account);
+//            }
         }
         System.out.println("out");
     }

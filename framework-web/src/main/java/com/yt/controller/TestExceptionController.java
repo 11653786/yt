@@ -1,7 +1,6 @@
 package com.yt.controller;
 
-import com.yt.config.RedisConf;
-import com.yt.entity.base.User;
+import com.yt.entity.mybatis.User;
 import com.yt.exception.MyException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;
@@ -10,6 +9,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
+ * 自定义返回异常
  * Created by yangtao on 15/11/16.
  */
 @RestController

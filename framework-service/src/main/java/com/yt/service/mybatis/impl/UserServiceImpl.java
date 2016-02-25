@@ -1,7 +1,7 @@
 package com.yt.service.mybatis.impl;
 
 import com.yt.dao.base.mybatis.impl.BaseDaoImpl;
-import com.yt.entity.base.User;
+import com.yt.entity.mybatis.User;
 import com.yt.service.mybatis.UserService;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -12,11 +12,4 @@ import org.springframework.transaction.annotation.Transactional;
 @Service
 @Transactional
 public class UserServiceImpl  extends BaseDaoImpl<User> implements UserService{
-
-    public void init(){
-        super.getEntityClass();
-    }
-
-
-
 }

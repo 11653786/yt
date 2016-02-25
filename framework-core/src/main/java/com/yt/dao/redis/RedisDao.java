@@ -5,6 +5,7 @@ import java.util.Map;
 /**
  * Created by user on 2015/8/13.
  */
+@Deprecated
 public interface RedisDao {
 
     /**

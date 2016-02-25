@@ -12,6 +12,7 @@ import java.util.Map;
  * Created by user on 2015/8/13.
  */
 @Repository
+@Deprecated
 public class RedisDaoImpl implements RedisDao {
     @Autowired
     private RedisTemplate redisTemplate;
