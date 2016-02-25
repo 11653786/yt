@@ -22,6 +22,7 @@ import java.util.List;
 import java.util.Map;
 
 /**
+ * mongoTemplate
  * Created by user on 2015/9/25.
  */
 @Repository

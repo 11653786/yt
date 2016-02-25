@@ -7,8 +7,10 @@ import com.mongodb.DBObject;
 import java.util.List;
 
 /**
+ * basic mongodb
  * Created by user on 2015/9/14.
  */
+@Deprecated
 public interface MongoDao<T>{
 
     /**

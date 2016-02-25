@@ -9,6 +9,7 @@ import org.springframework.data.mongodb.core.query.Update;
 import java.util.List;
 
 /**
+ * mongoTemplate
  * Created by user on 2015/9/25.
  */
 public interface MongoTemplateDao<T> {

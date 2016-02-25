@@ -21,8 +21,13 @@ import java.lang.reflect.*;
 import java.util.Iterator;
 import java.util.List;
 
+/**
+ * basic mongodb 
+ * @param <T>
+ */
 @Repository
 @Transactional
+@Deprecated
 public class MongoDaoImpl<T> implements MongoDao<T> {
 
     private Class<T> entityClass;
