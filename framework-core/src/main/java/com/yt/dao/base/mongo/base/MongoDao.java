@@ -1,58 +1,48 @@
 package com.yt.dao.base.mongo.base;
 
-import com.mongodb.BasicDBObject;
-import com.mongodb.DBCollection;
-import com.mongodb.DBObject;
+import org.springframework.data.mongodb.core.query.Criteria;
+import org.springframework.data.mongodb.core.query.Query;
+import org.springframework.data.mongodb.core.query.Update;
 
 import java.util.List;
 
 /**
- * basic mongodb
- * Created by user on 2015/9/14.
+ * mongoTemplate
+ * Created by user on 2015/9/25.
  */
-@Deprecated
-public interface MongoDao<T>{
-
-    /**
-     * 保存一个对象到mongodb
-     *
-     * @param bean
-     * @return
-     */
+public interface MongoDao<T> {
 
     public T saveOrUpdate(T bean);
 
     public T insert(T bean);
 
-
     public T getById(int _id);
 
-    public  long getTotal();
+    public long getCount();
 
-
-
-
-    public void groupBy(String collectionname,DBObject...obj);
-
-
+    public void groupBy();
     /**
      * 前面是查询的条件,后面是要修改的数据
+     *
      * @param where
      * @param set
      */
-    public void update(BasicDBObject where,BasicDBObject set);
+    public void update(Criteria criteria,Update update);
 
-    public List<T> getList(BasicDBObject where);
+    public List<T> getList();
 
-    public void remove(int _id);
+    public void remove(T t);
 
-    public List<T> getList2();
 
-    public String getCollectionName();
+    public void remove(Query query);
 
-    public DBCollection getDbCollection();
+    public T findAndRemove(Query query);
+
+    public void Aggreation(Query query);
+
+    public void distinct();
 
     public void findField();
 
-
+    public void in();
 }
