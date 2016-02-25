@@ -1,6 +1,6 @@
 package com.yt.model;
 
-public class uu {
+public class user {
     private Integer id;
 
     private String username;

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.yt.model.uuMapper" >
-  <resultMap id="BaseResultMap" type="com.yt.model.uu" >
+<mapper namespace="com.yt.model.userMapper" >
+  <resultMap id="BaseResultMap" type="com.yt.model.user" >
     <id column="id" property="id" jdbcType="INTEGER" />
     <result column="username" property="username" jdbcType="VARCHAR" />
   </resultMap>
@@ -18,11 +18,11 @@
     delete from t_user
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="com.yt.model.uu" >
+  <insert id="insert" parameterType="com.yt.model.user" >
     insert into t_user (id, username)
     values (#{id,jdbcType=INTEGER}, #{username,jdbcType=VARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="com.yt.model.uu" >
+  <insert id="insertSelective" parameterType="com.yt.model.user" >
     insert into t_user
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="id != null" >
@@ -41,7 +41,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.yt.model.uu" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.yt.model.user" >
     update t_user
     <set >
       <if test="username != null" >
@@ -50,7 +50,7 @@
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.yt.model.uu" >
+  <update id="updateByPrimaryKey" parameterType="com.yt.model.user" >
     update t_user
     set username = #{username,jdbcType=VARCHAR}
     where id = #{id,jdbcType=INTEGER}
