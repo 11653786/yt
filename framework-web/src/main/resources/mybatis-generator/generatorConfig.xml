@@ -4,11 +4,11 @@
         "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
 
 <generatorConfiguration>
-    <classPathEntry location="D:\mysql-connector-java-5.0.4.jar"/>
+    <classPathEntry location="D:\jar\maven_jar2\mysql\mysql-connector-java\5.1.22\mysql-connector-java-5.1.22.jar"/>
 
     <context id="Mysql2Tables" targetRuntime="MyBatis3">
         <jdbcConnection driverClass="com.mysql.jdbc.Driver"
-                        connectionURL="jdbc:mysql://192.168.0.5:3306/test"
+                        connectionURL="jdbc:mysql://localhost:3306/framework"
                         userId="root"
                         password="root">
         </jdbcConnection>
@@ -17,16 +17,16 @@
             <property name="forceBigDecimals" value="false"/>
         </javaTypeResolver>
 
-        <javaModelGenerator targetPackage="com.test.model" targetProject="src">
+        <javaModelGenerator targetPackage="com.yt.model" targetProject="src">
             <property name="enableSubPackages" value="true"/>
             <property name="trimStrings" value="true"/>
         </javaModelGenerator>
 
-        <sqlMapGenerator targetPackage="com.test.mapper" targetProject="src">
+        <sqlMapGenerator targetPackage="com.yt.model" targetProject="src">
             <property name="enableSubPackages" value="true"/>
         </sqlMapGenerator>
 
-        <javaClientGenerator type="XMLMAPPER" targetPackage="com.test.mapper" targetProject="src">
+        <javaClientGenerator type="XMLMAPPER" targetPackage="com.yt.model" targetProject="src">
             <property name="enableSubPackages" value="true"/>
         </javaClientGenerator>
 
@@ -34,6 +34,5 @@
                enableUpdateByExample="false"
                enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
         </table>
-
     </context>
 </generatorConfiguration>  
