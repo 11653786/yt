@@ -1,12 +1,12 @@
-package com.yt.dao.mongo.user.impl;
+package com.yt.service.mongo.template.user.impl;
 
 import com.google.gson.reflect.TypeToken;
 import com.mongodb.BasicDBObject;
 import com.mongodb.DBCursor;
 import com.mongodb.DBObject;
-import com.yt.dao.mongo.user.UserDaoMongo;
-import com.yt.dao.mongo.impl.MongoDaoImpl;
+import com.yt.dao.base.mongo.base.impl.MongoDaoImpl;
 import com.yt.entity.mongo.UserMongo;
+import com.yt.service.mongo.template.user.UserServiceMongo;
 import com.yt.util.JsonUtil;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
@@ -18,7 +18,7 @@ import java.util.List;
  */
 @Repository
 @Transactional
-public class UserDaoMongoImpl extends MongoDaoImpl<UserMongo> implements UserDaoMongo {
+public class UserServiceMongoImpl extends MongoDaoImpl<UserMongo> implements UserServiceMongo {
 
     public List<UserMongo> getlist(BasicDBObject where) {
         DBCursor sql= super.getDbCollection().find(where);

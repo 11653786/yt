@@ -1,6 +1,6 @@
-package com.yt.dao.base.impl;
+package com.yt.dao.base.mybatis.impl;
 
-import com.yt.dao.base.BaseDao;
+import com.yt.dao.base.mybatis.BaseDao;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;

@@ -1,7 +1,7 @@
 package com.yt.aop;
 
 import com.yt.entity.base.Account;
-import com.yt.service.UserService;
+import com.yt.service.mybatis.UserService;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
@@ -21,7 +21,7 @@ public class Proxy {
     private UserService userService;
 
 
-    @Pointcut("execution(public * com.yt.dao.base.BaseDao.save(..))")
+    @Pointcut("execution(public * com.yt.dao.base.mybatis.BaseDao.save(..))")
     private void saveMethod(){}//定义一个切入点
 
 

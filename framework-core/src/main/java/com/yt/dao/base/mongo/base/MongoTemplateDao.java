@@ -1,7 +1,5 @@
-package com.yt.dao.mongo;
+package com.yt.dao.base.mongo.base;
 
-import com.mongodb.BasicDBObject;
-import com.mongodb.DBObject;
 import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.data.mongodb.core.query.Update;

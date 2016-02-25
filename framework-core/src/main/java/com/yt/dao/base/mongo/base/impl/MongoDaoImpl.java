@@ -1,8 +1,8 @@
-package com.yt.dao.mongo.impl;
+package com.yt.dao.base.mongo.base.impl;
 
 import com.google.gson.reflect.TypeToken;
 import com.mongodb.*;
-import com.yt.dao.mongo.MongoDao;
+import com.yt.dao.base.mongo.base.MongoDao;
 import com.yt.entity.mongo.Student;
 import com.yt.util.JsonUtil;
 import com.yt.util.ListUtil;
@@ -22,7 +22,7 @@ import java.util.Iterator;
 import java.util.List;
 
 /**
- * basic mongodb 
+ * basic mongodb
  * @param <T>
  */
 @Repository

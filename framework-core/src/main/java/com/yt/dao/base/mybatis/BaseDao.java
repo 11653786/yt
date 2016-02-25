@@ -1,4 +1,4 @@
-package com.yt.dao.base;
+package com.yt.dao.base.mybatis;
 
 import com.yt.dao.redis.RedisDao;
 

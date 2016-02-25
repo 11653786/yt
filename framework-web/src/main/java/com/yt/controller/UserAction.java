@@ -3,13 +3,10 @@ package com.yt.controller;
 import com.mongodb.BasicDBList;
 import com.mongodb.BasicDBObject;
 import com.yt.base.BaseAction;
-import com.yt.dao.mongo.user.UserDaoMongo;
-import com.yt.entity.base.Account;
 import com.yt.entity.base.User;
 import com.yt.entity.mongo.UserMongo;
-import com.yt.service.AccountService;
-import com.yt.service.UserService;
-import com.yt.util.RedisHelper;
+import com.yt.service.mongo.template.user.UserServiceMongo;
+import com.yt.service.mybatis.UserService;
 import com.yt.util.mongoUtil.MongoUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -34,23 +31,11 @@ public class UserAction extends BaseAction{
 
     @Autowired
     private UserService userService;
-    @Autowired
-    private AccountService accountService;
 
     @Autowired
-    private UserDaoMongo userDaoMongo;
+    private UserServiceMongo userServiceMongo;
 
 
-    @RequestMapping(value = "/index")
-    public String index() {
-        userService.init();
-        Account account=new Account();
-        //  account.setAccountId("1231");
-        account.setAccountName("heheehe1");
-        accountService.save(account);
-        RedisHelper.set(0,"key1","value1");
-        return "index";
-    }
 
     @RequestMapping(value ="/directive")
     public String directive(){
@@ -64,18 +49,6 @@ public class UserAction extends BaseAction{
     }
 
 
-    @RequestMapping(value ="/form",method= RequestMethod.POST)
-    @ResponseBody
-    public String formSub(String email,String username){
-        User saveUser=new User();
-        saveUser.setUserName(username);
-        //       userService.save(saveUser);
-        Account account=new Account();
-        //  account.setAccountId("1231");
-        account.setAccountName(email);
-        accountService.save(account);
-        return "ok";
-    }
 
     @RequestMapping(value = "/save")
     public String saveSession(HttpSession session){
@@ -86,14 +59,11 @@ public class UserAction extends BaseAction{
     }
 
 
-
-
     @RequestMapping(value="/rediss")
     public String redis(){
         User user=new User();
         user.setUserName("USERNAME1");
         userService.save(user);
-
         return "index";
     }
 
@@ -129,39 +99,39 @@ public class UserAction extends BaseAction{
     @RequestMapping(value ="/mongotest")
     public void mongotest(HttpServletRequest request){
         UserMongo mongo=new UserMongo();
-        long total=userDaoMongo.getTotal();
+        long total=userServiceMongo.getTotal();
         mongo.set_id(Integer.valueOf(String.valueOf(total)));
         Random random=new Random();
         mongo.setName("hehe"+random.nextInt(10));
         mongo.setAge("16岁");
-        userDaoMongo.insert(mongo);
+        userServiceMongo.insert(mongo);
     }
 
 
     @RequestMapping(value ="/getById")
     public void mongowhere(HttpServletRequest request){
-        UserMongo userMongo=userDaoMongo.getById(4);
+        UserMongo userMongo=userServiceMongo.getById(4);
         System.out.println(userMongo);
     }
 
 
     @RequestMapping(value ="/remove")
     public void getlimitList(HttpServletRequest request){
-        UserMongo userMongo=userDaoMongo.getById(1);
-        userDaoMongo.remove(0);
+        UserMongo userMongo=userServiceMongo.getById(1);
+        userServiceMongo.remove(0);
     }
 
 
     @RequestMapping(value ="/saveOrUpdate")
     public void saveOrUpdate(HttpServletRequest request){
-        UserMongo userMongo=userDaoMongo.getById(3);
+        UserMongo userMongo=userServiceMongo.getById(3);
         userMongo.setName("测试名称!");
-        userDaoMongo.saveOrUpdate(userMongo);
+        userServiceMongo.saveOrUpdate(userMongo);
     }
 
     @RequestMapping(value ="/groupby")
     public void groupBy(HttpServletRequest request){
-        userDaoMongo.groupBy("");
+        userServiceMongo.groupBy("");
     }
 
 
@@ -175,14 +145,14 @@ public class UserAction extends BaseAction{
         //全部改成15岁
         where.put("name","hehe");
         BasicDBObject set=new BasicDBObject(MongoUtils.$set,new BasicDBObject("age","12"));
-        userDaoMongo.update(where, set);
+        userServiceMongo.update(where, set);
     }
 
     @RequestMapping(value ="/getList")
     public void getList(HttpServletRequest request){
         BasicDBObject where=new BasicDBObject();
-        userDaoMongo.getList(where);
-        userDaoMongo.getList2();
+        userServiceMongo.getList(where);
+        userServiceMongo.getList2();
     }
 
     @RequestMapping(value ="/getlist")
@@ -201,7 +171,7 @@ public class UserAction extends BaseAction{
             or.put(MongoUtils.$or,where);
             //and查询
             //查询id大于4,或者名称等于hehe4的
-            List<UserMongo> LIST= userDaoMongo.getlist(or);
+            List<UserMongo> LIST= userServiceMongo.getlist(or);
             System.out.println(LIST.size());
         }catch(Exception e){
             System.out.println(e.getMessage());
@@ -214,7 +184,7 @@ public class UserAction extends BaseAction{
         BasicDBList where = new BasicDBList();
         try{
 
-            List<UserMongo> LIST= userDaoMongo.getlist(null);
+            List<UserMongo> LIST= userServiceMongo.getlist(null);
             for(UserMongo u:LIST){
                 System.out.println(u);
             }
