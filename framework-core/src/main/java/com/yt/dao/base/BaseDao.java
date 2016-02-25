@@ -9,7 +9,7 @@ import java.util.Map;
  * http://www.runoob.com/bootstrap/bootstrap-v2-layout.html
  * Created by user on 2015/8/11.
  */
-public interface BaseDao<T> extends RedisDao {
+public interface BaseDao<T>{
 
     public void save(T t);
 
