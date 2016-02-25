@@ -55,6 +55,7 @@ public class Proxy {
 //    private void balanceFreeze(ProceedingJoinPoint point){
 //        Object[] args = point.getArgs();
 //
+
 //        for(Object obj:args){
 //            System.out.println(obj);
 //        }
