@@ -3,8 +3,7 @@ package com.yt.controller;
 import com.mongodb.BasicDBList;
 import com.mongodb.BasicDBObject;
 import com.yt.base.BaseAction;
-import com.yt.dao.student.StudentDao;
-import com.yt.dao.user.UserDaoMongo;
+import com.yt.dao.mongo.user.UserDaoMongo;
 import com.yt.entity.base.Account;
 import com.yt.entity.base.User;
 import com.yt.entity.mongo.UserMongo;
@@ -40,8 +39,6 @@ public class UserAction extends BaseAction{
 
     @Autowired
     private UserDaoMongo userDaoMongo;
-    @Autowired
-    private StudentDao studentDao;
 
 
     @RequestMapping(value = "/index")

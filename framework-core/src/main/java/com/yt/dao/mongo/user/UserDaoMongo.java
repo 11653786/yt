@@ -1,10 +1,8 @@
-package com.yt.dao.user;
+package com.yt.dao.mongo.user;
 
-import com.mongodb.BasicDBList;
 import com.mongodb.BasicDBObject;
 import com.yt.dao.mongo.MongoDao;
 import com.yt.entity.mongo.UserMongo;
-import org.springframework.data.mongodb.core.query.Query;
 
 import java.util.List;
 
