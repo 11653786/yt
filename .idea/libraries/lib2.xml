@@ -1,0 +1,59 @@
+<component name="libraryTable">
+  <library name="lib2">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../../mq/activemq/web/WEB-INF/lib/commons-fileupload-1.3.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../mq/activemq/web/WEB-INF/lib/commons-io-2.4.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../mq/activemq/web/WEB-INF/lib/spring-jdbc-4.0.2.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../mq/activemq/web/WEB-INF/lib/spring-jms-4.0.2.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../mq/activemq/web/WEB-INF/lib/commons-pool-1.6.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../mq/activemq/web/WEB-INF/lib/activemq-openwire-legacy-5.13.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../mq/activemq/web/WEB-INF/lib/faceppsdk.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../mq/activemq/web/WEB-INF/lib/activemq-web-5.13.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../mq/activemq/web/WEB-INF/lib/activemq-spring-5.13.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../mq/activemq/web/WEB-INF/lib/mysql-connector-java-5.1.22.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../mq/activemq/web/WEB-INF/lib/jstl.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../mq/activemq/web/WEB-INF/lib/activemq-jaas-5.13.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../mq/activemq/web/WEB-INF/lib/lucene-highlighter-5.4.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../mq/activemq/web/WEB-INF/lib/spring-beans-4.0.2.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../mq/activemq/web/WEB-INF/lib/spring-context-4.0.2.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../mq/activemq/web/WEB-INF/lib/spring-web-4.0.2.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../mq/activemq/web/WEB-INF/lib/activemq-kahadb-store-5.13.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../mq/activemq/web/WEB-INF/lib/com.springsource.org.apache.commons.logging-1.1.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../mq/activemq/web/WEB-INF/lib/com.springsource.org.aopalliance-1.0.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../mq/activemq/web/WEB-INF/lib/spring-webmvc-4.0.2.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../mq/activemq/web/WEB-INF/lib/com.springsource.org.aspectj.weaver-1.6.8.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../mq/activemq/web/WEB-INF/lib/geronimo-j2ee-management_1.1_spec-1.0.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../mq/activemq/web/WEB-INF/lib/activemq-console-5.13.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../mq/activemq/web/WEB-INF/lib/geronimo-jta_1.0.1B_spec-1.0.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../mq/activemq/web/WEB-INF/lib/spring-orm-4.0.2.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../mq/activemq/web/WEB-INF/lib/spring-context-support-4.0.2.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../mq/activemq/web/WEB-INF/lib/activemq-pool-5.13.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../mq/activemq/web/WEB-INF/lib/jackson-databind-2.2.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../mq/activemq/web/WEB-INF/lib/spring-tx-4.0.2.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../mq/activemq/web/WEB-INF/lib/jackson-core-2.2.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../mq/activemq/web/WEB-INF/lib/spring-expression-4.0.2.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../mq/activemq/web/WEB-INF/lib/jackson-annotations-2.2.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../mq/activemq/web/WEB-INF/lib/standard.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../mq/activemq/web/WEB-INF/lib/geronimo-jms_1.1_spec-1.1.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../mq/activemq/web/WEB-INF/lib/lucene-core-5.4.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../mq/activemq/web/WEB-INF/lib/spring-web-4.0.2.RELEASE-sources.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../mq/activemq/web/WEB-INF/lib/activemq-broker-5.13.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../mq/activemq/web/WEB-INF/lib/lucene-queryparser-5.4.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../mq/activemq/web/WEB-INF/lib/lucene-analyzers-common-5.4.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../mq/activemq/web/WEB-INF/lib/hawtbuf-1.11.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../mq/activemq/web/WEB-INF/lib/activemq-client-5.13.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../mq/activemq/web/WEB-INF/lib/spring-aop-4.0.2.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../mq/activemq/web/WEB-INF/lib/spring-core-4.0.2.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../mq/activemq/web/WEB-INF/lib/spring-aspects-4.0.2.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../mq/activemq/web/WEB-INF/lib/com.springsource.org.aspectj.tools-1.6.6.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../mq/activemq/web/WEB-INF/lib/jcl-over-slf4j-1.7.13.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../mq/activemq/web/WEB-INF/lib/activemq-protobuf-1.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../mq/activemq/web/WEB-INF/lib/gson-2.3.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../mq/activemq/web/WEB-INF/lib/lucene-analyzers-icu-5.4.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../mq/activemq/web/WEB-INF/lib/com.springsource.net.sf.cglib-2.2.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../mq/activemq/web/WEB-INF/lib/slf4j-api-1.7.13.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
