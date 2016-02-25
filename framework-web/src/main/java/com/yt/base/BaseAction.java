@@ -26,6 +26,7 @@ public class BaseAction {
 
     /**
      * 传递过来的reuqest参数转成map
+     *
      * @param request
      * @return
      */
@@ -38,8 +39,8 @@ public class BaseAction {
         if ((req != null) && (!req.isEmpty())) {
 
             Collection keys = req.keySet();
-            for (Iterator i = keys.iterator(); i.hasNext();) {
-                String key = (String)i.next();
+            for (Iterator i = keys.iterator(); i.hasNext(); ) {
+                String key = (String) i.next();
                 Object value = req.get(key);
                 Object v = null;
                 if ((value.getClass().isArray())
@@ -51,9 +52,9 @@ public class BaseAction {
                 if ((v != null) && ((v instanceof String))) {
                     String s = (String) v;
                     if (s.length() > 0) {
-                        if(key.equalsIgnoreCase("page") || key.equalsIgnoreCase("pageSize")){
-                           p.put(key,Integer.valueOf(s));
-                        }else{
+                        if (key.equalsIgnoreCase("page") || key.equalsIgnoreCase("pageSize")) {
+                            p.put(key, Integer.valueOf(s));
+                        } else {
                             p.put(key, s);
                         }
 
@@ -69,24 +70,23 @@ public class BaseAction {
 
     /**
      * 将cookie封装到Map里面
+     *
      * @param request
      * @return
      */
-    public static Map<String,String> ReadCookieMap(HttpServletRequest request){
+    public static Map<String, String> ReadCookieMap(HttpServletRequest request) {
         if (request == null) {
             request = ((ServletRequestAttributes) RequestContextHolder.getRequestAttributes()).getRequest();
         }
-        Map<String,String> cookieMap = new HashMap<String,String>();
+        Map<String, String> cookieMap = new HashMap<String, String>();
         Cookie[] cookies = request.getCookies();
-        if(null!=cookies){
-            for(Cookie cookie : cookies){
+        if (null != cookies) {
+            for (Cookie cookie : cookies) {
                 cookieMap.put(cookie.getName(), cookie.getValue());
             }
         }
         return cookieMap;
     }
-
-
 
 
 }
