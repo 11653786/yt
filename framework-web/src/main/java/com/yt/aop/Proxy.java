@@ -34,15 +34,18 @@ public class Proxy {
         Object[] objects = pjp.getArgs();
         for (Object object : objects) {
             if (object instanceof Account) {
-                ((Account) object).setUserName("god");
+                Account account= (Account) object;
             }
         }
 
         //获取监控方法得到的返回值
         Object result = pjp.proceed();
-        if(result.equals(1)){
+        if (result.equals(1)) {
             //保存日志
         }
+        long end = System.currentTimeMillis();
+        //耗时
+        long totalTime=end-start;
         return result;
     }
 }
