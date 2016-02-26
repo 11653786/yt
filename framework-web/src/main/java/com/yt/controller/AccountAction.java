@@ -12,14 +12,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
  * Created by user on 2015/8/11.
  */
 @Controller
-@RequestMapping(value = "/api/user")
+@RequestMapping(value = "/api/account")
 public class AccountAction extends BaseAction {
 
     @Autowired
     private AccountService accountService;
 
     @RequestMapping(value = "/save")
-    public void redis() {
+    public void save() {
         try {
             Account account = new Account();
             account.setUserName("admin");

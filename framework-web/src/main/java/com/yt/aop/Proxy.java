@@ -2,6 +2,7 @@ package com.yt.aop;
 
 import com.yt.service.mybatis.entity.Account;
 import org.aspectj.lang.JoinPoint;
+import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Pointcut;
@@ -13,58 +14,37 @@ import org.springframework.stereotype.Component;
 @Aspect
 @Component
 public class Proxy {
-
+    /**
+     * 要监控的方法
+     */
     @Pointcut("execution(public * com.core.mybatis.base.BaseDao.insert(..))")
     private void saveMethod() {
-    }//定义一个切入点
+    }
 
     /**
-     * 用作aop日志
+     * aop做日志
      *
-     * @param point
+     * @param pjp
+     * @return
      * @throws Throwable
      */
     @Around("saveMethod()")
-    public void doBasicProfiling(JoinPoint point) throws Throwable {
-        System.out.println("in");
-        Object[] args = point.getArgs();
-        System.out.println("getTarget:" + point.getTarget());
-        System.out.println("url+method:" + point.getSignature().getDeclaringTypeName() + "." + point.getSignature().getName());
-        for (int i = 0; i < args.length; i++) {
-            Object obj = args[i]; //输出传入的参数
-            //判断当前obj类型是不是account类型
-            System.out.println("obj:" + obj);
-            if(obj instanceof Account){
-                    System.out.println(Account.class.getName());
-                    Account account= (Account) obj;
-                System.out.println(account);
+    public Object aroundPointcut(ProceedingJoinPoint pjp) throws Throwable {
+        long start = System.currentTimeMillis();
+        Object[] objects = pjp.getArgs();
+        for (Object object : objects) {
+            if (object instanceof Account) {
+                ((Account) object).setUserName("god");
             }
         }
-        System.out.println("out");
+
+        //获取监控方法得到的返回值
+        Object result = pjp.proceed();
+        if(result.equals(1)){
+            //保存日志
+        }
+        return result;
     }
-
-    //环绕的ProceedingJoinPoint 可以获取返回参数，只有环绕可以使用
-//    @Around("execution(public * com.rbao.east.service.sina.impl.DepositSendServiceImpl.balanceFreeze(..))")
-//    private void balanceFreeze(ProceedingJoinPoint point){
-//        Object[] args = point.getArgs();
-//
-//        for(Object obj:args){
-//            System.out.println(obj);
-//        }
-//
-//        try {
-//            Object result = point.proceed();
-//            System.out.println(result);
-//
-//        } catch (Throwable e) {
-//            /**
-//             * @author yt
-//             * @date 2015年9月17日
-//             * 英科信息有限公司
-//             */
-//        }
-//
-//    }
-
-
 }
+
+
