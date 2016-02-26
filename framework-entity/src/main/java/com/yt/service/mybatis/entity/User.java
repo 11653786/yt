@@ -1,4 +1,4 @@
-package com.mybatis.entity;
+package com.yt.service.mybatis.entity;
 
 import java.io.Serializable;
 

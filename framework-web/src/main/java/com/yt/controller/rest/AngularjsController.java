@@ -1,7 +1,7 @@
 package com.yt.controller.rest;
 
 import com.yt.base.BaseAction;
-import com.mybatis.entity.User;
+import com.yt.service.mybatis.entity.User;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;

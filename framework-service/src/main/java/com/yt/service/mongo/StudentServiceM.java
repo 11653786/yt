@@ -1,4 +1,4 @@
-package com.yt.service.mongo.basic;
+package com.yt.service.mongo;
 
 /**
  * Created by user on 2015/9/25.

@@ -1,7 +1,7 @@
 package com.yt.service.mybatis;
 
 import com.core.mybatis.base.BaseDao;
-import com.mybatis.entity.User;
+import com.yt.service.mybatis.entity.User;
 
 /**
  * Created by user on 2015/8/11.
