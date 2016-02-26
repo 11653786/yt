@@ -60,8 +60,7 @@ public class Proxy {
         log.setIsSuccess(result.equals(1) ? 1 : 0);
         long end = System.currentTimeMillis();
         //耗时
-        Long totalTime = end - start;
-        log.setSpendTime(totalTime.intValue());
+        log.setSpendTime(Long.valueOf(end - start).intValue());
         logService.insertSelective(log);
         return result;
     }
