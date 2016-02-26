@@ -1,6 +1,5 @@
 package com.yt.controller;
 
-import com.yt.service.mybatis.entity.User;
 import com.yt.exception.MyException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;
@@ -28,17 +27,4 @@ public class TestExceptionController {
         }
         return "ok";
     }
-
-
-    @RequestMapping(value = "/spring")
-    @ResponseBody
-    public User getSpring() {
-
-        System.out.println(environment.getProperty("redis.maxIdle"));
-        System.out.println(environment.getProperty("jdbc.driver"));
-        User user = new User();
-        user.setId(1);
-        return user;
-    }
-
 }
