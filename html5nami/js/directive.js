@@ -1,1 +1,0 @@
-document.write('<script src="js/directive/userdirective.js"></script>');
