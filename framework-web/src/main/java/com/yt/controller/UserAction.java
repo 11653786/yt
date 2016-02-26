@@ -12,16 +12,19 @@ import org.springframework.web.bind.annotation.RequestMapping;
  */
 @Controller
 @RequestMapping(value = "/api/user")
-public class UserAction extends BaseAction{
+public class UserAction extends BaseAction {
 
     @Autowired
     private UserService userService;
 
-    @RequestMapping(value="/save")
-    public String redis(){
-        User user=new User();
-        user.setUserName("USERNAME1");
-        userService.save(user);
+    @RequestMapping(value = "/save")
+    public String redis() {
+        try {
+            User user = userService.get(1);
+            System.out.println(user);
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
         return "index";
     }
 }
