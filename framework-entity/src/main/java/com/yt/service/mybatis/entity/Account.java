@@ -1,12 +1,18 @@
 package com.yt.service.mybatis.entity;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class Account {
+/**
+ * 后台账户表
+ */
+public class Account implements Serializable {
     private Integer id;
 
     private String userName;
-
+    /**
+     * 昵称
+     */
     private String nikeName;
 
     private String email;
@@ -26,9 +32,13 @@ public class Account {
     private Integer verifyUser;
 
     private Date verifyTime;
-
+    /**
+     * 1可登录，0不可登录
+     */
     private Integer isLogin;
-
+    /**
+     * 1可用，0不可用
+     */
     private Integer isEnable;
 
     public Integer getId() {

@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.yt.entity.mapper.LogMapper" >
+  <resultMap id="BaseResultMap" type="com.yt.service.mybatis.entity.Log" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="class_name" property="className" jdbcType="VARCHAR" />
+    <result column="create_user" property="createUser" jdbcType="INTEGER" />
+    <result column="create_date" property="createDate" jdbcType="TIMESTAMP" />
+    <result column="is_success" property="isSuccess" jdbcType="INTEGER" />
+    <result column="spend_time" property="spendTime" jdbcType="INTEGER" />
+  </resultMap>
+  <resultMap id="ResultMapWithBLOBs" type="com.yt.service.mybatis.entity.Log" extends="BaseResultMap" >
+    <result column="log_info" property="logInfo" jdbcType="LONGVARBINARY" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, class_name, create_user, create_date, is_success, spend_time
+  </sql>
+  <sql id="Blob_Column_List" >
+    log_info
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="ResultMapWithBLOBs" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from t_log
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from t_log
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.yt.service.mybatis.entity.Log" >
+    insert into t_log (id, class_name, create_user, 
+      create_date, is_success, spend_time, 
+      log_info)
+    values (#{id,jdbcType=INTEGER}, #{className,jdbcType=VARCHAR}, #{createUser,jdbcType=INTEGER}, 
+      #{createDate,jdbcType=TIMESTAMP}, #{isSuccess,jdbcType=INTEGER}, #{spendTime,jdbcType=INTEGER}, 
+      #{logInfo,jdbcType=LONGVARBINARY})
+  </insert>
+  <insert id="insertSelective" parameterType="com.yt.service.mybatis.entity.Log" >
+    insert into t_log
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="className != null" >
+        class_name,
+      </if>
+      <if test="createUser != null" >
+        create_user,
+      </if>
+      <if test="createDate != null" >
+        create_date,
+      </if>
+      <if test="isSuccess != null" >
+        is_success,
+      </if>
+      <if test="spendTime != null" >
+        spend_time,
+      </if>
+      <if test="logInfo != null" >
+        log_info,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="className != null" >
+        #{className,jdbcType=VARCHAR},
+      </if>
+      <if test="createUser != null" >
+        #{createUser,jdbcType=INTEGER},
+      </if>
+      <if test="createDate != null" >
+        #{createDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="isSuccess != null" >
+        #{isSuccess,jdbcType=INTEGER},
+      </if>
+      <if test="spendTime != null" >
+        #{spendTime,jdbcType=INTEGER},
+      </if>
+      <if test="logInfo != null" >
+        #{logInfo,jdbcType=LONGVARBINARY},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.yt.service.mybatis.entity.Log" >
+    update t_log
+    <set >
+      <if test="className != null" >
+        class_name = #{className,jdbcType=VARCHAR},
+      </if>
+      <if test="createUser != null" >
+        create_user = #{createUser,jdbcType=INTEGER},
+      </if>
+      <if test="createDate != null" >
+        create_date = #{createDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="isSuccess != null" >
+        is_success = #{isSuccess,jdbcType=INTEGER},
+      </if>
+      <if test="spendTime != null" >
+        spend_time = #{spendTime,jdbcType=INTEGER},
+      </if>
+      <if test="logInfo != null" >
+        log_info = #{logInfo,jdbcType=LONGVARBINARY},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.yt.service.mybatis.entity.Log" >
+    update t_log
+    set class_name = #{className,jdbcType=VARCHAR},
+      create_user = #{createUser,jdbcType=INTEGER},
+      create_date = #{createDate,jdbcType=TIMESTAMP},
+      is_success = #{isSuccess,jdbcType=INTEGER},
+      spend_time = #{spendTime,jdbcType=INTEGER},
+      log_info = #{logInfo,jdbcType=LONGVARBINARY}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.yt.service.mybatis.entity.Log" >
+    update t_log
+    set class_name = #{className,jdbcType=VARCHAR},
+      create_user = #{createUser,jdbcType=INTEGER},
+      create_date = #{createDate,jdbcType=TIMESTAMP},
+      is_success = #{isSuccess,jdbcType=INTEGER},
+      spend_time = #{spendTime,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>
