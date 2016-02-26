@@ -9,15 +9,17 @@ import java.util.Map;
  * http://www.runoob.com/bootstrap/bootstrap-v2-layout.html
  * Created by user on 2015/8/11.
  */
-public interface BaseDao<T>{
+public interface BaseDao<T> {
 
-    public void save(T t);
+    public int insert(T t);
 
-    public T get(int id);
+    public int insertSelective(T t);
 
-    public T getByEntityId(T t);
+    public T selectByPrimaryKey(int id);
 
-    public List<T> getPage(Map<String,Object> map);
+    public int deleteByPrimaryKey(int id);
+
+    public int updateByPrimaryKeySelective(T t);
 
 
 }

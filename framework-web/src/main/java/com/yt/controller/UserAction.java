@@ -20,7 +20,7 @@ public class UserAction extends BaseAction {
     @RequestMapping(value = "/save")
     public String redis() {
         try {
-            User user = userService.get(1);
+            User user = userService.selectByPrimaryKey(1);
             System.out.println(user);
         } catch (Exception e) {
             System.out.println(e.getMessage());

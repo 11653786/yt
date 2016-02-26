@@ -18,8 +18,8 @@ import java.util.Map;
 public class BaseDaoImpl<T> implements BaseDao<T> {
 
 
-    private String packageName="com.yt.entity.";
-    private String houzhuiMapper="Mapper";
+    private String packageName = "com.yt.entity.mapper.";
+    private String houzhuiMapper = "Mapper";
 
 
     @Resource
@@ -32,43 +32,41 @@ public class BaseDaoImpl<T> implements BaseDao<T> {
     private String mapperNamespace;
 
 
-
     public BaseDaoImpl() {
 
     }
 
     public String getEntityClass() {
         this.entityClass = (Class<T>) ((ParameterizedType) this.getClass().getGenericSuperclass()).getActualTypeArguments()[0];
-        System.out.println("className: " + this.entityClass.getSimpleName());
         return entityClass.getSimpleName();
     }
 
-    public String setNameSpace(){
-        this.mapperNamespace=packageName+getEntityClass()+houzhuiMapper;
+    public String setNameSpace() {
+        this.mapperNamespace = packageName + getEntityClass() + houzhuiMapper;
         return mapperNamespace;
     }
 
-    public void save(T t) {
-        //这里是名空间加上方法民称就行了
-        session.insert(setNameSpace()+".save",t);
+    public int insert(T t) {
+        return session.insert(setNameSpace() + ".insert", t);
     }
 
-    public T get(int id) {
-        return  session.selectOne(setNameSpace()+".get",id);
+    public int insertSelective(T t) {
+        return session.insert(setNameSpace() + ".insertSelective", t);
     }
 
-    public T getByEntityId(T t) {
-        return  session.selectOne(setNameSpace()+".getByEntityId",t);
+    public T selectByPrimaryKey(int id) {
+        return session.selectOne(setNameSpace() + ".selectByPrimaryKey", id);
     }
 
-    public List<T> getPage() {
-        return  session.selectList(setNameSpace() + ".getPage");
+    public int updateByPrimaryKeySelective(T t) {
+        return session.insert(setNameSpace() + ".updateByPrimaryKeySelective", t);
     }
 
-    public List<T> getPage(Map<String, Object> map) {
-        List<T>  sessionList= session.selectList(setNameSpace() + ".getPage",map);
-        return sessionList;
+    public int updateByPrimaryKey(T t) {
+        return session.insert(setNameSpace() + ".updateByPrimaryKey", t);
     }
 
-
+    public int deleteByPrimaryKey(int id) {
+        return session.delete(setNameSpace() + ".deleteByPrimaryKey", id);
+    }
 }
