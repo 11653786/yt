@@ -1,6 +1,6 @@
 package com.yt.controller;
 
-import com.yt.entity.mybatis.User;
+import com.mybatis.entity.User;
 import com.yt.exception.MyException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;

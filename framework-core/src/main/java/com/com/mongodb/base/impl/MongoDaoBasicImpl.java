@@ -3,7 +3,7 @@ package com.com.mongodb.base.impl;
 import com.google.gson.reflect.TypeToken;
 import com.mongodb.*;
 import com.com.mongodb.base.MongoDaoBasic;
-import com.yt.entity.mongo.Student;
+import com.mongo.entity.Student;
 import com.yt.util.JsonUtil;
 import com.yt.util.ListUtil;
 import com.yt.util.StringUtils;

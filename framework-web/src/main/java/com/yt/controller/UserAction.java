@@ -1,7 +1,7 @@
 package com.yt.controller;
 
 import com.yt.base.BaseAction;
-import com.yt.entity.mybatis.User;
+import com.mybatis.entity.User;
 import com.yt.service.mybatis.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
