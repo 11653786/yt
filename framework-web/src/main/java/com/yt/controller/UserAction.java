@@ -18,13 +18,12 @@ public class UserAction extends BaseAction {
     private UserService userService;
 
     @RequestMapping(value = "/save")
-    public String redis() {
+    public void redis() {
         try {
             User user = userService.selectByPrimaryKey(1);
             System.out.println(user);
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
-        return "index";
     }
 }
