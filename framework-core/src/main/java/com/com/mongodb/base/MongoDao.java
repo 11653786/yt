@@ -1,4 +1,4 @@
-package com.yt.dao.base.mongo.base;
+package com.com.mongodb.base;
 
 import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;

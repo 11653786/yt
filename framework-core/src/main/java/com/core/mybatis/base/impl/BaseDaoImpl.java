@@ -1,14 +1,12 @@
-package com.yt.dao.base.mybatis.impl;
+package com.core.mybatis.base.impl;
 
-import com.yt.dao.base.mybatis.BaseDao;
+import com.core.mybatis.base.BaseDao;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
 import java.lang.reflect.ParameterizedType;
-import java.util.List;
-import java.util.Map;
 
 /**
  * Created by user on 2015/8/11.

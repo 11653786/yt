@@ -1,4 +1,4 @@
-package com.yt.dao.base.mongo.base;
+package com.com.mongodb.base;
 
 import com.mongodb.BasicDBObject;
 import com.mongodb.DBCollection;

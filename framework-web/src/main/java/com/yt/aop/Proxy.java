@@ -20,7 +20,7 @@ public class Proxy {
     private UserService userService;
 
 
-    @Pointcut("execution(public * com.yt.dao.base.mybatis.BaseDao.save(..))")
+    @Pointcut("execution(public * com.core.mybatis.base.BaseDao.save(..))")
     private void saveMethod(){}//定义一个切入点
 
 

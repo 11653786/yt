@@ -1,6 +1,6 @@
 package com.yt.service.mybatis.impl;
 
-import com.yt.dao.base.mybatis.impl.BaseDaoImpl;
+import com.core.mybatis.base.impl.BaseDaoImpl;
 import com.yt.entity.mybatis.User;
 import com.yt.service.mybatis.UserService;
 import org.springframework.stereotype.Service;

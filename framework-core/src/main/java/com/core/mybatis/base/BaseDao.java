@@ -1,9 +1,4 @@
-package com.yt.dao.base.mybatis;
-
-import com.yt.dao.redis.RedisDao;
-
-import java.util.List;
-import java.util.Map;
+package com.core.mybatis.base;
 
 /**
  * http://www.runoob.com/bootstrap/bootstrap-v2-layout.html
