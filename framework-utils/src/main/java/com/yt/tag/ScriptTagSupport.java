@@ -60,12 +60,12 @@ public class ScriptTagSupport extends TagSupport {
 
         if (StringUtils.checkNotNull(hasZtree) && hasZtree) {
             sw.append("<script type='text/javascript' src=" + getWebPath() + jsPath + "ztree/jquery.ztree.all.js></script>");
-            sw.append("<link rel='stylesheet' href=" + getWebPath() + cssPath + "zTreeStyle/zTreeStyle.css></link>");
+            sw.append("<link rel='stylesheet' href=" + getWebPath() + cssPath + "ztree/zTreeStyle/zTreeStyle.css></link>");
         }
         if (StringUtils.checkNotNull(hasEasyUi) && hasEasyUi) {
             sw.append("<script type='text/javascript' src=" + getWebPath() + jsPath + "easyui/jquery.easyui.min.js></script>");
-            sw.append("<link rel='stylesheet' href=" + getWebPath() + cssPath + "themes/icon.css></link>");
-            sw.append("<link rel='stylesheet' href=" + getWebPath() + cssPath + "themes/default/easyui.css></link>");
+            sw.append("<link rel='stylesheet' href=" + getWebPath() + cssPath + "easyui/themes/icon.css></link>");
+            sw.append("<link rel='stylesheet' href=" + getWebPath() + cssPath + "easyui/themes/default/easyui.css></link>");
         }
         if (StringUtils.checkNotNull(hasBootStrap) && hasBootStrap) {
             sw.append("<link rel='stylesheet' href=" + getWebPath() + cssPath + "bootstrap/css/bootstrap.css></link>");
