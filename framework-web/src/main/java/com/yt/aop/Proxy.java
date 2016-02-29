@@ -1,9 +1,11 @@
 package com.yt.aop;
 
+import com.yt.document.Table;
 import com.yt.service.mybatis.LogService;
 import com.yt.service.mybatis.entity.Account;
 import com.yt.service.mybatis.entity.Log;
 import com.yt.util.ByteUtils;
+import com.yt.util.StringUtils;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
@@ -48,6 +50,12 @@ public class Proxy {
         for (Object object : objects) {
             if (object instanceof Account) {
                 Account account = (Account) object;
+                //判断当前实体类使用是否注解
+                Table table = account.getClass().getAnnotation(Table.class);
+                if (StringUtils.checkNotNull(table)) {
+                    //获取注解内容
+                    log.setEntityName(table.name());
+                }
                 log.setCreateDate(new Date());
                 log.setClassName(account.getClass().getName());
                 log.setCreateUser(1);

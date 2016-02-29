@@ -5,7 +5,7 @@ package com.yt.util;
  */
 public class StringUtils {
 
-    public static boolean CheckNotNull(Object obj){
+    public static boolean checkNotNull(Object obj){
         if(obj!=null && !obj.equals("")){
                 return true;
         }

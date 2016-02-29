@@ -45,7 +45,7 @@ public class ReturnExceptionController {
         ResponseStatus status = exception.getClass().getAnnotation(ResponseStatus.class);
         ReturnCode errorcode = null;
         try {
-            if (StringUtils.CheckNotNull(status)) {
+            if (StringUtils.checkNotNull(status)) {
                 Integer code = status.value().value();
                 String reason = status.reason();
                 String message = exception.getMessage();

@@ -63,6 +63,9 @@
             <if test="logInfo != null">
                 log_info,
             </if>
+            <if test="entityName != null">
+                entity_name,
+            </if>
         </trim>
         <trim prefix="values (" suffix=")" suffixOverrides=",">
             <if test="id != null">
@@ -85,6 +88,9 @@
             </if>
             <if test="logInfo != null">
                 #{logInfo,jdbcType=LONGVARBINARY},
+            </if>
+            <if test="entityName != null">
+                #{entityName,jdbcType=LONGVARBINARY},
             </if>
         </trim>
     </insert>

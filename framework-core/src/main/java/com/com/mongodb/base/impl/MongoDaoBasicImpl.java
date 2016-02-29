@@ -164,9 +164,9 @@ public class MongoDaoBasicImpl<T> implements MongoDaoBasic<T> {
     public String getCollectionName() {
         Document document = getEntityClass().getAnnotation(Document.class);
         String collectionName = null;
-        if (StringUtils.CheckNotNull(document)) {
+        if (StringUtils.checkNotNull(document)) {
             collectionName = document.collection();
-            if (!StringUtils.CheckNotNull(collectionName)) collectionName = getEntityClass().getName();
+            if (!StringUtils.checkNotNull(collectionName)) collectionName = getEntityClass().getName();
         } else {
             collectionName = getEntityClass().getSimpleName();
         }
