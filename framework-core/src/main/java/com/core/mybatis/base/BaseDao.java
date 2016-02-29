@@ -18,7 +18,13 @@ public interface BaseDao<T> {
 
     public int updateByPrimaryKeySelective(T t);
 
-    public List<T> selectByExample(Object obj);
+    public List<T> selectByExample(Object example);
 
+    public int deleteByExample(Object example);
 
+    public int countByExample(Object example);
+
+    public int updateByExampleSelective(Object example);
+
+    public int updateByExample(Object example);
 }

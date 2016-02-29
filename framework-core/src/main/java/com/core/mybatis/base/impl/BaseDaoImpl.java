@@ -62,8 +62,8 @@ public class BaseDaoImpl<T> implements BaseDao<T> {
     }
 
     @Override
-    public List<T> selectByExample(Object obj) {
-        return session.selectList(setNameSpace()+".selectByExample", obj);
+    public List<T> selectByExample(Object example) {
+        return session.selectList(setNameSpace() + ".selectByExample", example);
     }
 
     public int updateByPrimaryKey(T t) {
@@ -72,5 +72,23 @@ public class BaseDaoImpl<T> implements BaseDao<T> {
 
     public int deleteByPrimaryKey(int id) {
         return session.delete(setNameSpace() + ".deleteByPrimaryKey", id);
+    }
+
+    public int deleteByExample(Object example) {
+        return session.delete(setNameSpace() + ".deleteByExample", example);
+    }
+
+    public int countByExample(Object example) {
+        return session.selectOne(setNameSpace() + ".countByExample", example);
+    }
+
+    @Override
+    public int updateByExampleSelective(Object example) {
+        return session.update(setNameSpace() + ".updateByExampleSelective", example);
+    }
+
+    @Override
+    public int updateByExample(Object example) {
+        return session.update(setNameSpace() + ".updateByExample", example);
     }
 }
