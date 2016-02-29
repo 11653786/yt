@@ -1,4 +1,4 @@
-package com.yt.service.mybatis.example;
+package com.yt.mybatis.example;
 
 import java.util.ArrayList;
 import java.util.Date;

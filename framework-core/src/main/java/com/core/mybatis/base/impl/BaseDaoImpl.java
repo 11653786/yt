@@ -7,6 +7,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
 import java.lang.reflect.ParameterizedType;
+import java.util.List;
 
 /**
  * Created by user on 2015/8/11.
@@ -58,6 +59,11 @@ public class BaseDaoImpl<T> implements BaseDao<T> {
 
     public int updateByPrimaryKeySelective(T t) {
         return session.insert(setNameSpace() + ".updateByPrimaryKeySelective", t);
+    }
+
+    @Override
+    public List<T> selectByExample(Object obj) {
+        return session.selectList(setNameSpace()+".selectByExample", obj);
     }
 
     public int updateByPrimaryKey(T t) {
