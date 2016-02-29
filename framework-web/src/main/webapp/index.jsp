@@ -10,11 +10,16 @@
 <%@ include file="top.jsp" %>
 <html>
 <head>
-    <title>22</title>
-    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resource/css/style.css">
+    <title>登录首页</title>
+    <simple:Script hasJquery="true" hasAngularjs="true" hasBootStrap="true" hasEasyUi="true"
+                   hasZtree="true"></simple:Script>
+    <script>
+        $(function () {
+            alert(312);
+        });
+    </script>
 </head>
 <body>
-你好
-<simple:Script counts="321" ></simple:Script>
+
 </body>
 </html>

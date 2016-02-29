@@ -13,7 +13,27 @@
         <!-- 带标签体,但是不能使用jsp  scriptless只能使用 empty 和tagdependent两种 -->
         <!-- 设定fragment 可以接受JspFragment标签体  -->
         <attribute>
-            <name>counts</name>
+            <name>hasJquery</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>hasAngularjs</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>hasZtree</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>hasEasyUi</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>hasBootStrap</name>
             <required>false</required>
             <rtexprvalue>true</rtexprvalue>
         </attribute>
