@@ -15,7 +15,6 @@
 
     <!--redis的配置信息-->
     <context:property-placeholder location="classpath:redis.properties"/>
-    <context:property-placeholder location="classpath*:mongodb.properties"/>
 
     <mongo:mongo id="mongo" replica-set="127.0.0.1:27017">
         <mongo:options
