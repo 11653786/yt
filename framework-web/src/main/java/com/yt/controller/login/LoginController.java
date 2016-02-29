@@ -1,6 +1,8 @@
 package com.yt.controller.login;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 /**
  * 后台登录
@@ -9,5 +11,15 @@ import org.springframework.stereotype.Controller;
 @Controller(value = "/login")
 public class LoginController {
 
+
+    /**
+     * 提交登录页面
+     *
+     * @return
+     */
+    @RequestMapping(method = RequestMethod.POST)
+    public String login() {
+        return null;
+    }
 
 }

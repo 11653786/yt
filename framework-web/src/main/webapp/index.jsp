@@ -44,7 +44,7 @@
         </div>
         <div id="darkbannerwrap">
         </div>
-        <form name="form1" method="post" action="index.php">
+        <form name="form1" method="post" action="${pageContext.request.contextPath}/login.do">
             <fieldset class="form">
                 <p>
                     <label class="loginlabel" for="user_name">
