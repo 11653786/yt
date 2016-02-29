@@ -8,6 +8,6 @@
     <!--mybatis所有配置-->
     <import resource="mybatis_conf.xml"/>
     <!--redis所有配置-->
-    <import resource="mybatis_conf.xml"/>
+    <import resource="redis_conf.xml"/>
 
 </beans>

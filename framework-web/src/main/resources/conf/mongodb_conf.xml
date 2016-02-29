@@ -9,7 +9,7 @@
            http://www.springframework.org/schema/context/spring-context.xsd
            http://www.springframework.org/schema/data/mongo http://www.springframework.org/schema/data/mongo/spring-mongo.xsd">
     <!--mongo配置文件-->
-    <context:property-placeholder location="classpath*:properties/mongodb.properties"/>
+    <context:property-placeholder location="classpath*:mongodb.properties"/>
     <mongo:mongo id="mongo" replica-set="${mongo.url}">
         <mongo:options
                 connections-per-host="${mongo.connectionsPerHost}"
