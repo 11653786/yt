@@ -11,15 +11,17 @@ import java.io.StringWriter;
  * Created by Administrator on 2016/2/29 0029.
  */
 public class ScriptTagSupport extends SimpleTagSupport {
-    private String counts;
 
-    public String getCount() {
-        return counts;
-    }
+    private boolean hasJquery;
 
-    public void setCount(String count) {
-        this.counts = count;
-    }
+    private boolean hasAngularjs;
+
+    private boolean hasZtree;
+
+    private boolean hasEasyUi;
+
+    private boolean hasBootStrap;
+
 
     @Override
     public void doTag() throws JspException, IOException {
@@ -50,5 +52,10 @@ public class ScriptTagSupport extends SimpleTagSupport {
             }
         }
         return sw.toString();
+    }
+
+
+    public String getIncludeFile(){
+
     }
 }

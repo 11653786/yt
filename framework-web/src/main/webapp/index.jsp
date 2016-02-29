@@ -15,6 +15,6 @@
 </head>
 <body>
 你好
-<simple:Script  ></simple:Script>
+<simple:Script counts="321" ></simple:Script>
 </body>
 </html>
