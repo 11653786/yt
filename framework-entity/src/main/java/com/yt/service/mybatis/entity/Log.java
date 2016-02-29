@@ -1,7 +1,10 @@
 package com.yt.service.mybatis.entity;
 
+import com.yt.document.Table;
+
 import java.util.Date;
 
+@Table(name = "日志")
 public class Log {
     private Integer id;
 
@@ -16,6 +19,8 @@ public class Log {
     private Integer spendTime;
 
     private byte[] logInfo;
+
+    private String entityName;
 
     public Integer getId() {
         return id;
@@ -71,5 +76,13 @@ public class Log {
 
     public void setLogInfo(byte[] logInfo) {
         this.logInfo = logInfo;
+    }
+
+    public String getEntityName() {
+        return entityName;
+    }
+
+    public void setEntityName(String entityName) {
+        this.entityName = entityName;
     }
 }

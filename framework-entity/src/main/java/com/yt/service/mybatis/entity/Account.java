@@ -1,11 +1,14 @@
 package com.yt.service.mybatis.entity;
 
+import com.yt.document.Table;
+
 import java.io.Serializable;
 import java.util.Date;
 
 /**
  * 后台账户表
  */
+@Table(name = "后台帐号")
 public class Account implements Serializable {
     private Integer id;
 

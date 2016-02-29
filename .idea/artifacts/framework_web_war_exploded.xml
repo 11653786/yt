@@ -17,11 +17,11 @@
           <element id="archive" name="framework-core-1.0-SNAPSHOT.jar">
             <element id="module-output" name="framework-core" />
           </element>
-          <element id="archive" name="framework-utils-1.0-SNAPSHOT.jar">
-            <element id="module-output" name="framework-utils" />
-          </element>
           <element id="archive" name="framework-entity-1.0-SNAPSHOT.jar">
             <element id="module-output" name="framework-entity" />
+          </element>
+          <element id="archive" name="framework-utils-1.0-SNAPSHOT.jar">
+            <element id="module-output" name="framework-utils" />
           </element>
           <element id="library" level="project" name="Maven: antlr:antlr:2.7.7" />
           <element id="library" level="project" name="Maven: org.apache.avro:avro:1.7.6" />

@@ -13,8 +13,8 @@
     <orderEntry type="library" name="Maven: com.caucho:hessian:4.0.7" level="project" />
     <orderEntry type="module" module-name="framework-service" />
     <orderEntry type="module" module-name="framework-core" />
-    <orderEntry type="module" module-name="framework-utils" />
     <orderEntry type="module" module-name="framework-entity" />
+    <orderEntry type="module" module-name="framework-utils" />
     <orderEntry type="library" name="Maven: antlr:antlr:2.7.7" level="project" />
     <orderEntry type="library" name="Maven: org.apache.avro:avro:1.7.6" level="project" />
     <orderEntry type="library" name="Maven: com.thoughtworks.paranamer:paranamer:2.3" level="project" />
