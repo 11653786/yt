@@ -3,7 +3,7 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:context="http://www.springframework.org/schema/context"
        xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx"
-       xmlns:p="http://www.springframework.org/schema/p" xmlns:mongo="http://www.springframework.org/schema/data/mongo"
+       xmlns:mongo="http://www.springframework.org/schema/data/mongo"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
            http://www.springframework.org/schema/beans/spring-beans.xsd
            http://www.springframework.org/schema/context
@@ -13,61 +13,15 @@
     <!-- 自动扫包 -->
     <context:component-scan base-package="com.yt"/>
 
-    <!--redis的配置信息-->
-    <context:property-placeholder location="classpath:redis.properties"/>
-
-    <mongo:mongo id="mongo" replica-set="127.0.0.1:27017">
-        <mongo:options
-                connections-per-host="100"
-                threads-allowed-to-block-for-connection-multiplier="50"
-                connect-timeout="0"
-                max-wait-time="10000"
-                auto-connect-retry="true"
-                socket-keep-alive="true"
-                socket-timeout="0"
-                write-number="1"
-                write-timeout="0"
-                write-fsync="true"/>
-    </mongo:mongo>
-
-    <!-- mongo的工厂，通过它来取得mongo实例,dbname为mongodb的数据库名，没有的话会自动创建 -->
-    <mongo:db-factory dbname="yt" username="root" password="123456" mongo-ref="mongo"/>
-
-    <!-- mongodb的主要操作对象，所有对mongodb的增删改查的操作都是通过它完成 -->
-    <bean id="mongoTemplate" class="org.springframework.data.mongodb.core.MongoTemplate">
-        <constructor-arg name="mongoDbFactory" ref="mongoDbFactory"/>
-    </bean>
-
     <!-- 切面，基于注解的方式管理aop,可以代理实现类 -->
     <aop:aspectj-autoproxy proxy-target-class="true"/>
 
+    <import resource="conf/mongodb_conf.xml"/>
     <!--mybatis所有配置-->
     <import resource="conf/mybatis_conf.xml"/>
+    <!--redis引入-->
+    <import resource="conf/mybatis_conf.xml"/>
 
-    <!--redis连接池配置-->
-    <bean id="poolConfig" class="redis.clients.jedis.JedisPoolConfig">
-        <property name="maxIdle" value="300"/>
-        <property name="testOnBorrow" value="true"/>
-    </bean>
-
-    <!--redis管理工厂-->
-    <bean id="connectionFactory" class="org.springframework.data.redis.connection.jedis.JedisConnectionFactory">
-        <property name="hostName" value="localhost"/>
-        <property name="port" value="6379"/>
-        <!--requirepass 123456-->
-        <!--<property name="password" value="123456" />-->
-        <property name="poolConfig" ref="poolConfig"/>
-
-    </bean>
-    <!--redisTemplate类-->
-    <bean id="redisTemplate" class="org.springframework.data.redis.core.StringRedisTemplate">
-        <property name="connectionFactory" ref="connectionFactory"/>
-    </bean>
-
-
-    <!--<bean id="redisTemplate" class="org.springframework.data.redis.core.StringRedisTemplate">-->
-    <!--<property name="connectionFactory" ref="connectionFactory"/>-->
-    <!--</bean>-->
     <!-- 1、创建TransactionManager -->
     <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
         <property name="dataSource" ref="dataSource"/>
