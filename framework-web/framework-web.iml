@@ -22,16 +22,6 @@
     </content>
     <orderEntry type="jdk" jdkName="1.7" jdkType="JavaSDK" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="module-library">
-      <library>
-        <CLASSES>
-          <root url="file://$MODULE_DIR$/src/main/webapp/WEB-INF/lib" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-        <jarDirectory url="file://$MODULE_DIR$/src/main/webapp/WEB-INF/lib" recursive="false" />
-      </library>
-    </orderEntry>
     <orderEntry type="module" module-name="framework-webservice" />
     <orderEntry type="library" name="Maven: com.caucho:hessian:4.0.7" level="project" />
     <orderEntry type="module" module-name="framework-service" />
@@ -125,5 +115,14 @@
     <orderEntry type="library" name="Maven: org.mongodb:mongo-java-driver:2.11.0" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.data:spring-data-mongodb:1.8.0.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.data:spring-data-commons:1.11.0.RELEASE" level="project" />
+    <orderEntry type="module-library">
+      <library name="Maven: com.google.code:kaptcha:2.3.2">
+        <CLASSES>
+          <root url="jar://D:/jar/maven_jar2/com/google/code/kaptcha/2.3.2/kaptcha-2.3.2.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
   </component>
 </module>

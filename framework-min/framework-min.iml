@@ -108,5 +108,14 @@
     <orderEntry type="library" name="Maven: org.mongodb:mongo-java-driver:2.11.0" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.data:spring-data-mongodb:1.8.0.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.data:spring-data-commons:1.11.0.RELEASE" level="project" />
+    <orderEntry type="module-library">
+      <library name="Maven: com.google.code:kaptcha:2.3.2">
+        <CLASSES>
+          <root url="jar://D:/jar/maven_jar2/com/google/code/kaptcha/2.3.2/kaptcha-2.3.2.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
   </component>
 </module>

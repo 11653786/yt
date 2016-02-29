@@ -10,6 +10,7 @@
     </content>
     <orderEntry type="jdk" jdkName="1.7" jdkType="JavaSDK" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" scope="PROVIDED" name="Tomcat 7.0.521" level="application_server_libraries" />
     <orderEntry type="library" scope="TEST" name="Maven: junit:junit:3.8.1" level="project" />
     <orderEntry type="library" name="Maven: antlr:antlr:2.7.7" level="project" />
     <orderEntry type="library" name="Maven: org.apache.avro:avro:1.7.6" level="project" />
@@ -97,6 +98,14 @@
     <orderEntry type="library" name="Maven: org.mongodb:mongo-java-driver:2.11.0" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.data:spring-data-mongodb:1.8.0.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.data:spring-data-commons:1.11.0.RELEASE" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Tomcat 7.0.521" level="application_server_libraries" />
+    <orderEntry type="module-library">
+      <library name="Maven: com.google.code:kaptcha:2.3.2">
+        <CLASSES>
+          <root url="jar://D:/jar/maven_jar2/com/google/code/kaptcha/2.3.2/kaptcha-2.3.2.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
   </component>
 </module>

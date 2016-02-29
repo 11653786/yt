@@ -45,6 +45,9 @@
 
     <!-- 切面，基于注解的方式管理aop,可以代理实现类 -->
     <aop:aspectj-autoproxy proxy-target-class="true"/>
+
+
+
     <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"
           destroy-method="close"
           p:driverClassName="${jdbc.driver}"
@@ -117,5 +120,27 @@
 
     <!-- 基于注解的事务管理 -->
     <tx:annotation-driven proxy-target-class="true" transaction-manager="transactionManager"/>
+
+
+    <!--谷歌验证码的配置信息-->
+    <bean id="captchaProducer" class="com.google.code.kaptcha.impl.DefaultKaptcha">
+        <property name="config">
+            <bean class="com.google.code.kaptcha.util.Config">
+                <constructor-arg>
+                    <props>
+                        <prop key="kaptcha.border">yes</prop>
+                        <prop key="kaptcha.border.color">105,179,90</prop>
+                        <prop key="kaptcha.textproducer.font.color">blue</prop>
+                        <prop key="kaptcha.image.width">125</prop>
+                        <prop key="kaptcha.image.height">45</prop>
+                        <prop key="kaptcha.textproducer.font.size">45</prop>
+                        <prop key="kaptcha.session.key">code</prop>
+                        <prop key="kaptcha.textproducer.char.length">4</prop>
+                        <prop key="kaptcha.textproducer.font.names">宋体,楷体,微软雅黑</prop>
+                    </props>
+                </constructor-arg>
+            </bean>
+        </property>
+    </bean>
 
 </beans>

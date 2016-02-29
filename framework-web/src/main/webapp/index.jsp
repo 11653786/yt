@@ -20,6 +20,6 @@
     </script>
 </head>
 <body>
-
+<img src="${pageContext.request.contextPath}/kaptcha/code.do" />
 </body>
 </html>
