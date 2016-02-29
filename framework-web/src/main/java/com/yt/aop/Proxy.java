@@ -58,7 +58,7 @@ public class Proxy {
                 }
                 log.setCreateDate(new Date());
                 log.setClassName(account.getClass().getName());
-                log.setCreateUser(1);
+                log.setCreateUser(account.getCreateUser());
                 log.setLogInfo(ByteUtils.ObjectToByte(account));
             }
         }
