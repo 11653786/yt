@@ -15,7 +15,7 @@
         <attribute>
             <name>counts</name>
             <required>false</required>
-            <fragment>true</fragment>
+            <rtexprvalue>false</rtexprvalue>
         </attribute>
     </tag>
 </taglib>

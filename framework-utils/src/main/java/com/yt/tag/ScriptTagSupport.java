@@ -11,13 +11,13 @@ import java.io.StringWriter;
  * Created by Administrator on 2016/2/29 0029.
  */
 public class ScriptTagSupport extends SimpleTagSupport {
-    private int counts;
+    private String counts;
 
-    public int getCount() {
+    public String getCount() {
         return counts;
     }
 
-    public void setCount(int count) {
+    public void setCount(String count) {
         this.counts = count;
     }
 

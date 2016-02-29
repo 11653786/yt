@@ -7,7 +7,7 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!--引入自定义标签-->
-<%@taglib prefix="simple" uri="/WEB-INF/tag/taglib.tld" %>
+<%@ include file="top.jsp" %>
 <html>
 <head>
     <title>22</title>
@@ -15,6 +15,6 @@
 </head>
 <body>
 你好
-<simple:Script ></simple:Script>
+<simple:Script  ></simple:Script>
 </body>
 </html>
