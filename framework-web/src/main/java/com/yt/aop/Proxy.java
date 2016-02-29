@@ -57,6 +57,7 @@ public class Proxy {
                     log.setEntityName(table.name());
                 }
                 log.setCreateDate(new Date());
+                log.setActions("保存");
                 log.setClassName(account.getClass().getName());
                 log.setCreateUser(account.getCreateUser());
                 log.setLogInfo(ByteUtils.ObjectToByte(account));

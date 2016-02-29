@@ -18,6 +18,11 @@ public class Log {
 
     private Integer spendTime;
 
+    /**
+     * 操作
+     */
+    private String actions;
+
     private byte[] logInfo;
 
     /**
@@ -87,5 +92,13 @@ public class Log {
 
     public void setEntityName(String entityName) {
         this.entityName = entityName;
+    }
+
+    public String getActions() {
+        return actions;
+    }
+
+    public void setActions(String actions) {
+        this.actions = actions;
     }
 }
