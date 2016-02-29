@@ -20,6 +20,9 @@ public class Log {
 
     private byte[] logInfo;
 
+    /**
+     * 实体类名称
+     */
     private String entityName;
 
     public Integer getId() {
