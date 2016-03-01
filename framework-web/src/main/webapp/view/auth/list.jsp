@@ -25,8 +25,9 @@
 </section>
 <!--dialog-->
 <div class="menu">
-    <button class="btn" data-toggle="modal" href="#dialog">添加</button>
-    <div id="dialog" class="modal hide fade" tabindex="-1" data-width="760" data-height="500" >
+    <button class="btn" data-toggle="modal" href="#adddialog">添加</button>
+    <%--dialog编辑菜单--%>
+    <div id="adddialog" class="modal hide fade" tabindex="-1" data-width="600" data-height="400" >
         <div class="modal-header">
             <h3>title</h3>
         </div>
