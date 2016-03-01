@@ -3,4 +3,5 @@
  */
 var myapp=angular.module("auth",[]);
 myapp.controller("auth_controller",function($scope, $http){
+$scope.name="3124";
 });

@@ -38,4 +38,15 @@
             <rtexprvalue>true</rtexprvalue>
         </attribute>
     </tag>
+    <!--引入angularjs的组建-->
+    <tag>
+        <name>angular</name>
+        <tag-class>com.yt.tag.AngularjsTreeSupport</tag-class>
+        <body-content>empty</body-content>
+        <attribute>
+            <name>hasAngularTree</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+    </tag>
 </taglib>

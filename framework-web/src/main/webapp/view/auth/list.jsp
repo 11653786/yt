@@ -12,6 +12,7 @@
     <title>权限管理</title>
     <simple:Script hasJquery="true" hasAngularjs="true" hasEasyUi="true" hasBootStrap="true"
                    hasZtree="false"></simple:Script>
+    <simple:angular hasAngularTree="true" />
     <script type="text/javascript" src="${pageContext.request.contextPath}/view/auth/js/auth.js"></script>
 </head>
 <body ng-controller="auth_controller">
