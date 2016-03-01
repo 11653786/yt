@@ -29,6 +29,8 @@ public class ScriptTagSupport extends TagSupport {
 
     private boolean hasBootStrap;
 
+    private boolean hasBootStrapModal;
+
     String jsPath = "/resource/js/";
 
     String cssPath = "/resource/css/";
@@ -69,7 +71,13 @@ public class ScriptTagSupport extends TagSupport {
             sw.append("<link rel='stylesheet' href=" + getWebPath() + cssPath + "easyui/themes/default/easyui.css></link>");
         }
         if (StringUtils.checkNotNull(hasBootStrap) && hasBootStrap) {
-            sw.append("<link rel='stylesheet' href=" + getWebPath() + cssPath + "bootstrap/css/bootstrap.css></link>");
+            sw.append("<link rel='stylesheet' href=" + getWebPath() + cssPath + "bootstrap/css/bootstrap.min.css></link>");
+        }
+
+        if (StringUtils.checkNotNull(hasBootStrapModal) && hasBootStrapModal) {
+            sw.append("<link rel='stylesheet' href=" + getWebPath() + cssPath + "bootstrap_modal/bootstrap-modal.css></link>");
+            sw.append("<script type='text/javascript' src=" + getWebPath() + jsPath + "angular_modal/bootstrap-modalmanager.js></script>");
+            sw.append("<script type='text/javascript' src=" + getWebPath() + jsPath + "angular_modal/bootstrap-modal.js></script>");
         }
         return sw;
     }
@@ -129,4 +137,12 @@ public class ScriptTagSupport extends TagSupport {
         this.hasBootStrap = hasBootStrap;
     }
 
+
+    public boolean getHasBootStrapModal() {
+        return hasBootStrapModal;
+    }
+
+    public void setHasBootStrapModal(boolean hasBootStrapModal) {
+        this.hasBootStrapModal = hasBootStrapModal;
+    }
 }
