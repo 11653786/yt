@@ -20,7 +20,7 @@
                  tree-model="treedata"
                  on-selection="showSelected(node, selected, $parentNode, $index, $first, $middle, $last, $odd, $even)"
                  on-node-toggle="showToggle(node, expanded, $parentNode, $index, $first, $middle, $last, $odd, $even)">
-        label: {{node.label}} ({{node.id}})
+        {{node.label}} {{node.id}}{{node.name}}
     </treecontrol>
 </section>
 <script>
