@@ -13,6 +13,8 @@ public class Auth {
 
     private String isEnable;
 
+    private String authUrl;
+
     private Integer createUser;
 
     private Date createDate;
@@ -61,6 +63,14 @@ public class Auth {
 
     public void setIsEnable(String isEnable) {
         this.isEnable = isEnable == null ? null : isEnable.trim();
+    }
+
+    public String getAuthUrl() {
+        return authUrl;
+    }
+
+    public void setAuthUrl(String authUrl) {
+        this.authUrl = authUrl == null ? null : authUrl.trim();
     }
 
     public Integer getCreateUser() {

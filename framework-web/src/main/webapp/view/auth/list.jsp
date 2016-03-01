@@ -10,7 +10,7 @@
 <html ng-app="auth">
 <head>
     <title>权限管理</title>
-    <simple:Script hasJquery="true" hasAngularjs="true" hasBootStrap="true" hasBootStrapModal="true" ></simple:Script>
+    <simple:Script hasJquery="true" hasAngularjs="true" hasBootStrap="true" hasBootStrapModal="true"></simple:Script>
     <simple:angular hasAngularTree="true"></simple:angular>
     <script type="text/javascript" src="${pageContext.request.contextPath}/view/auth/js/auth.js"></script>
 </head>
@@ -27,28 +27,33 @@
 <div class="menu">
     <button class="btn" data-toggle="modal" href="#adddialog">添加</button>
     <%--dialog编辑菜单--%>
-    <div id="adddialog" class="modal hide fade" tabindex="-1" data-width="600" data-height="400" >
+    <div id="adddialog" class="modal hide fade" tabindex="-1" data-width="600" data-height="400">
         <div class="modal-header">
             <h3>title</h3>
         </div>
         <div class="modal-body">
-            <div class="row-fluid">
-                <div class="span6">
-                    <h4>Some Input</h4>
-                    <p><input type="text" class="span12" /></p>
-                </div>
-                <div class="span6">
-                    <h4>Some More Input</h4>
-                    <p><input type="text" class="span12" /></p>
-                </div>
+            <div class="row-fluid" >
+                <form role="form">
+                    <div class="form-group">
+                        <label for="name">名称</label>
+                        <input type="text" id="name" style="width: 100%;" placeholder="请输入名称">
+                    </div>
+                    <div class="form-group">
+                        <label for="name">名称</label>
+                        <input type="text" id="name" style="width: 100%;" placeholder="请输入名称">
+                    </div>
+                    <div class="form-group">
+                        <label for="name">名称</label>
+                        <input type="text" id="name" style="width: 100%;" placeholder="请输入名称">
+                    </div>
+                </form>
             </div>
         </div>
         <div class="modal-footer">
             <button type="button" data-dismiss="modal" class="btn">Close</button>
-            <button type="button" class="btn btn-primary">Save changes</button>
+            <button type="button" data-dismiss="modal" class="btn btn-primary">Save changes</button>
         </div>
     </div>
 </div>
-
 </body>
 </html>

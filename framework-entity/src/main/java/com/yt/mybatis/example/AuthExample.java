@@ -435,6 +435,76 @@ public class AuthExample {
             return (Criteria) this;
         }
 
+        public Criteria andAuthUrlIsNull() {
+            addCriterion("auth_url is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andAuthUrlIsNotNull() {
+            addCriterion("auth_url is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andAuthUrlEqualTo(String value) {
+            addCriterion("auth_url =", value, "authUrl");
+            return (Criteria) this;
+        }
+
+        public Criteria andAuthUrlNotEqualTo(String value) {
+            addCriterion("auth_url <>", value, "authUrl");
+            return (Criteria) this;
+        }
+
+        public Criteria andAuthUrlGreaterThan(String value) {
+            addCriterion("auth_url >", value, "authUrl");
+            return (Criteria) this;
+        }
+
+        public Criteria andAuthUrlGreaterThanOrEqualTo(String value) {
+            addCriterion("auth_url >=", value, "authUrl");
+            return (Criteria) this;
+        }
+
+        public Criteria andAuthUrlLessThan(String value) {
+            addCriterion("auth_url <", value, "authUrl");
+            return (Criteria) this;
+        }
+
+        public Criteria andAuthUrlLessThanOrEqualTo(String value) {
+            addCriterion("auth_url <=", value, "authUrl");
+            return (Criteria) this;
+        }
+
+        public Criteria andAuthUrlLike(String value) {
+            addCriterion("auth_url like", value, "authUrl");
+            return (Criteria) this;
+        }
+
+        public Criteria andAuthUrlNotLike(String value) {
+            addCriterion("auth_url not like", value, "authUrl");
+            return (Criteria) this;
+        }
+
+        public Criteria andAuthUrlIn(List<String> values) {
+            addCriterion("auth_url in", values, "authUrl");
+            return (Criteria) this;
+        }
+
+        public Criteria andAuthUrlNotIn(List<String> values) {
+            addCriterion("auth_url not in", values, "authUrl");
+            return (Criteria) this;
+        }
+
+        public Criteria andAuthUrlBetween(String value1, String value2) {
+            addCriterion("auth_url between", value1, value2, "authUrl");
+            return (Criteria) this;
+        }
+
+        public Criteria andAuthUrlNotBetween(String value1, String value2) {
+            addCriterion("auth_url not between", value1, value2, "authUrl");
+            return (Criteria) this;
+        }
+
         public Criteria andCreateUserIsNull() {
             addCriterion("create_user is null");
             return (Criteria) this;
