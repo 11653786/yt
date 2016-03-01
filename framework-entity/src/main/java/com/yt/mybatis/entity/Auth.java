@@ -1,16 +1,15 @@
 package com.yt.mybatis.entity;
 
-import com.yt.document.Table;
-
 import java.util.Date;
 
-@Table(name = "权限")
 public class Auth {
     private Integer id;
 
     private String authName;
 
     private String authType;
+
+    private Integer parentId;
 
     private String isEnable;
 
@@ -46,6 +45,14 @@ public class Auth {
 
     public void setAuthType(String authType) {
         this.authType = authType == null ? null : authType.trim();
+    }
+
+    public Integer getParentId() {
+        return parentId;
+    }
+
+    public void setParentId(Integer parentId) {
+        this.parentId = parentId;
     }
 
     public String getIsEnable() {
