@@ -14,8 +14,8 @@
     <simple:angular hasAngularTree="true"></simple:angular>
     <script type="text/javascript" src="${pageContext.request.contextPath}/view/auth/js/auth.js"></script>
 </head>
-<body>
-<section ng-controller="auth_controller">
+<body ng-controller="auth_controller">
+<section>
     <treecontrol class="tree-classic"
                  tree-model="treedata"
                  on-selection="showSelected(node, selected, $parentNode, $index, $first, $middle, $last, $odd, $even)"
@@ -27,31 +27,44 @@
 <div class="menu">
     <button class="btn" data-toggle="modal" href="#adddialog">添加</button>
     <%--dialog编辑菜单--%>
-    <div id="adddialog" class="modal hide fade" tabindex="-1" data-width="600" data-height="400">
+    <div id="adddialog"    class="modal hide fade" tabindex="-1" data-width="600" data-height="400">
         <div class="modal-header">
-            <h3>title</h3>
+            <h3>添加权限</h3>
         </div>
         <div class="modal-body">
             <div class="row-fluid" >
-                <form role="form">
+                <form method="post" name="form1" role="form">
                     <div class="form-group">
-                        <label for="name">名称</label>
-                        <input type="text" id="name" style="width: 100%;" placeholder="请输入名称">
+                        <label >父名称</label>
+                        <label >{{parent_name}}{{parentId}}</label>
                     </div>
                     <div class="form-group">
                         <label for="name">名称</label>
                         <input type="text" id="name" style="width: 100%;" placeholder="请输入名称">
                     </div>
                     <div class="form-group">
-                        <label for="name">名称</label>
-                        <input type="text" id="name" style="width: 100%;" placeholder="请输入名称">
+                        <label for="name">权限类型</label>
+                        <select id="authType" name="authType" style="width: 100%;" >
+                        <option value="">请选择</option>\
+                        <option value="1">按钮</option>
+                        <option value="2">页面</option>
+                        <option value="3">菜单</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="authUrl">url:</label>
+                        <input type="text" id="authUrl" name="authUrl" style="width: 100%;" placeholder="请输入url">
+                    </div>
+                    <div class="form-group">
+                        <label for="authUrl">权限描述:</label>
+                        <textarea style="width: 100%;" id="authUrl" name="authUrl" class="form-control" rows="5"></textarea>
                     </div>
                 </form>
             </div>
         </div>
         <div class="modal-footer">
             <button type="button" data-dismiss="modal" class="btn">Close</button>
-            <button type="button" data-dismiss="modal" class="btn btn-primary">Save changes</button>
+            <button type="button" id="save" data-dismiss="modal"  class="btn btn-primary">Save changes</button>
         </div>
     </div>
 </div>

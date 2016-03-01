@@ -14,11 +14,13 @@ var names = ['Homer', 'Marge', 'Bart', 'Lisa', 'Mo'];
 function createSubTree(level, width, prefix) {
     if (level > 0) {
         var res = [];
-        for (var i = 1; i <= width; i++){
+        for (var i = 1; i <= width; i++) {
             res.push({
-                "label": names[i % names.length],
+                //子节点
                 "children": createSubTree(level - 1, width, prefix + i + "."),
-                id:i+" ",
+                //id
+                id: i + " ",
+                //名称
                 "name": names[i % names.length]
             });
         }
@@ -38,7 +40,14 @@ myapp.controller("auth_controller", function ($scope, $http) {
         var parent = $parentNode ? ("child of: " + $parentNode.label) : "root node";
         var location = $first ? "first" : ($last ? "last" : ("middle node at index " + $index));
         var oddEven = $odd ? "odd" : "even";
-        alert(node.id);
+        $scope.parent_name = node.name;
+        $scope.parentId = node.id;
     };
+
+    //提交表单,
+    $('#save').click(function () {
+        return false;
+    });
+
 });
 
