@@ -4,6 +4,7 @@
     <entry_points version="2.0" />
   </component>
   <component name="FrameworkDetectionExcludesConfiguration">
+    <file type="android" url="file://$PROJECT_DIR$/myapp" />
     <file type="web" url="file://$PROJECT_DIR$/framework-min" />
     <file type="web" url="file://$PROJECT_DIR$/framework-web" />
   </component>

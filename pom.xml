@@ -13,6 +13,7 @@
         <module>framework-core</module>
         <module>framework-webservice</module>
         <module>framework-min</module>
+        <module>myapp</module>
     </modules>
     <packaging>pom</packaging>
     <name>framework</name>

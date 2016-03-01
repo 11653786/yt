@@ -33,14 +33,12 @@ myapp.controller("auth_controller", function ($scope, $http) {
         var parent = $parentNode ? ("child of: " + $parentNode.label) : "root node";
         var location = $first ? "first" : ($last ? "last" : ("middle node at index " + $index));
         var oddEven = $odd ? "odd" : "even";
-        $("#events-listing").append("<li>" + node.label + (expanded ? " expanded" : " collapsed") + " (" + parent + ", " + location + ", " + oddEven + ")</li>");
     };
     $scope.showSelected = function (node, selected, $parentNode, $index, $first, $middle, $last, $odd, $even) {
         var parent = $parentNode ? ("child of: " + $parentNode.label) : "root node";
         var location = $first ? "first" : ($last ? "last" : ("middle node at index " + $index));
         var oddEven = $odd ? "odd" : "even";
         alert(node.id);
-        $("#events-listing").append("<li>" + node.label + (selected ? " selected" : " deselected") + " (" + parent + ", " + location + ", " + oddEven + ")</li>");
     };
 });
 

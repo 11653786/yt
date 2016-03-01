@@ -31,6 +31,7 @@
         <module name="framework-utils" />
         <module name="framework-web" />
         <module name="framework-webservice" />
+        <module name="myapp" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="1.7">

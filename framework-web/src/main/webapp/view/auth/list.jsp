@@ -10,7 +10,7 @@
 <html ng-app="auth">
 <head>
     <title>权限管理</title>
-    <simple:Script hasJquery="true" hasAngularjs="true"></simple:Script>
+    <simple:Script hasJquery="true" hasAngularjs="true" hasBootStrap="true" ></simple:Script>
     <simple:angular hasAngularTree="true"></simple:angular>
     <script type="text/javascript" src="${pageContext.request.contextPath}/view/auth/js/auth.js"></script>
 </head>
@@ -23,10 +23,5 @@
         {{node.label}} {{node.id}}{{node.name}}
     </treecontrol>
 </section>
-<script>
-
-
-</script>
-
 </body>
 </html>
