@@ -4,6 +4,13 @@
 var myapp = angular.module("auth", ['treeControl']);
 
 var names = ['Homer', 'Marge', 'Bart', 'Lisa', 'Mo'];
+/**
+ * 用来获取数据的方法....
+ * @param level
+ * @param width
+ * @param prefix
+ * @returns {Array}
+ */
 function createSubTree(level, width, prefix) {
     if (level > 0) {
         var res = [];
@@ -14,9 +21,8 @@ function createSubTree(level, width, prefix) {
     else
         return [];
 }
-
 myapp.controller("auth_controller", function ($scope, $http) {
-    $scope.treedata=createSubTree(3, 4, "");
+    $scope.treedata=createSubTree(3, 4, "14");
     $scope.showToggle = function(node, expanded, $parentNode, $index, $first, $middle, $last, $odd, $even) {
         var parent = $parentNode?("child of: " + $parentNode.label):"root node";
         var location = $first?"first":($last?"last":("middle node at index " + $index));
