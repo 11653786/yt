@@ -21,10 +21,6 @@
             height: 30px;
             width: 290px;
         }
-
-        #loginbtn {
-            text-align: center;
-        }
     </style>
 </head>
 <body id="login">
@@ -69,6 +65,7 @@
                     <span>
                         <img id="code" src="${pageContext.request.contextPath}/kaptcha/code.do"/></span>
                 </p>
+
                 <p class="loginlabel">
                     <button type="submit" style="width:290px">
                         Login
