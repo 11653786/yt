@@ -56,7 +56,7 @@ public class ScriptTagSupport extends TagSupport {
         }
 
         if (StringUtils.checkNotNull(hasAngularjs) && hasAngularjs) {
-            sw.append("<script type='text/javascript' src=" + getWebPath() + jsPath + "angularjs/angular.js></script>");
+            sw.append("<script type='text/javascript' src=" + getWebPath() + jsPath + "angularjs/angular.1.2.29.js></script>");
         }
 
         if (StringUtils.checkNotNull(hasZtree) && hasZtree) {
