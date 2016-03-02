@@ -65,7 +65,7 @@ myapp.controller("auth_controller", function ($scope, $http) {
                     'authDesc': $scope.auth.authDesc,
                     'parentId': $scope.auth.parentId
                 },
-                url: "/framework/api/auth/save.do"
+                url: "/api/auth/save.do"
             });
             //$('#adddialog').modal('hide');
         }
