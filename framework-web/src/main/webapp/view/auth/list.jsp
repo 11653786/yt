@@ -66,7 +66,7 @@
         </div>
         <div class="modal-footer">
             <button type="button" data-dismiss="modal" class="btn">Close</button>
-            <input type="button" id="save" class="btn btn-primary" value="Save changes"/>
+            <input type="submit" id="save" class="btn btn-primary" value="Save changes"/>
         </div>
         </form>
     </div>
