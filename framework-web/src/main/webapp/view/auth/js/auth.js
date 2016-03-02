@@ -36,27 +36,38 @@ myapp.controller("auth_controller", function ($scope, $http) {
         var location = $first ? "first" : ($last ? "last" : ("middle node at index " + $index));
         var oddEven = $odd ? "odd" : "even";
     };
+    $scope.auth = {};
     $scope.showSelected = function (node, selected, $parentNode, $index, $first, $middle, $last, $odd, $even) {
         var parent = $parentNode ? ("child of: " + $parentNode.label) : "root node";
         var location = $first ? "first" : ($last ? "last" : ("middle node at index " + $index));
         var oddEven = $odd ? "odd" : "even";
         $scope.parent_name = node.name;
-        $scope.parentId = node.id;
+        $scope.auth.parentId = node.id;
     };
 
-    $scope.user = {};
+
     //提交表单,
     $('#save').click(function () {
         var isTrue = true;
-        if (!$scope.user.authName) {
+        if (!$scope.auth.authName) {
             isTrue = false;
         }
-       for(var a in $scope.user){
-           alert(a+","+$scope.user[a]);
-       }
+
 
         if (isTrue) {
-            $('#adddialog').modal('hide');
+            //诺言
+            var promise = $http({
+                method: 'POST',
+                params: {
+                    'authName': $scope.auth.authName,
+                    'authType': $scope.auth.authType,
+                    'authUrl': $scope.auth.authUrl,
+                    'authDesc': $scope.auth.authDesc,
+                    'parentId': $scope.auth.parentId
+                },
+                url: "/framework/api/auth/save.do"
+            });
+            //$('#adddialog').modal('hide');
         }
     });
 
