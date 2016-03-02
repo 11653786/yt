@@ -58,15 +58,14 @@
                     </div>
                     <div class="form-group">
                         <label for="authUrl">权限描述:</label>
-                        <textarea style="width: 100%;" id="authUrl" name="authUrl" class="form-control"
+                        <textarea style="width: 100%;" id="authDesc" name="authDesc" class="form-control"
                                   rows="5"></textarea>
                     </div>
-
             </div>
         </div>
         <div class="modal-footer">
             <button type="button" data-dismiss="modal" class="btn">Close</button>
-            <input type="submit" id="save" class="btn btn-primary" value="Save changes"/>
+            <input type="submit" id="save"  class="btn btn-primary" value="Save changes" />
         </div>
         </form>
     </div>

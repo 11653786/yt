@@ -46,6 +46,7 @@ myapp.controller("auth_controller", function ($scope, $http) {
 
     //提交表单,
     $('#save').click(function () {
+        $('#adddialog').modal('hide');
     });
 
 });
