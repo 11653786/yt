@@ -46,7 +46,6 @@
                         <label for="name">权限类型</label>
                         <select id="authType" name="authType" style="width: 100%;">
                             <option value="">请选择</option>
-                            \
                             <option value="1">按钮</option>
                             <option value="2">页面</option>
                             <option value="3">菜单</option>
