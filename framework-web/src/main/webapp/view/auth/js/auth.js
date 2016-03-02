@@ -44,9 +44,20 @@ myapp.controller("auth_controller", function ($scope, $http) {
         $scope.parentId = node.id;
     };
 
+    $scope.user = {};
     //提交表单,
     $('#save').click(function () {
-        $('#adddialog').modal('hide');
+        var isTrue = true;
+        if (!$scope.user.authName) {
+            isTrue = false;
+        }
+       for(var a in $scope.user){
+           alert(a+","+$scope.user[a]);
+       }
+
+        if (isTrue) {
+            $('#adddialog').modal('hide');
+        }
     });
 
 });

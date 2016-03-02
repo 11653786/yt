@@ -40,11 +40,11 @@
                     </div>
                     <div class="form-group">
                         <label for="name">名称</label>
-                        <input type="text" required="true" id="name" style="width: 100%;" placeholder="请输入名称">
+                        <input type="text" ng-model="user.authName" required="true"  style="width: 100%;" placeholder="请输入名称">
                     </div>
                     <div class="form-group">
                         <label for="name">权限类型</label>
-                        <select id="authType" name="authType" style="width: 100%;">
+                        <select id="authType"  ng-model="user.authType"   style="width: 100%;">
                             <option value="">请选择</option>
                             <option value="1">按钮</option>
                             <option value="2">页面</option>
@@ -53,11 +53,11 @@
                     </div>
                     <div class="form-group">
                         <label for="authUrl">url:</label>
-                        <input type="text" id="authUrl" name="authUrl" style="width: 100%;" placeholder="请输入url">
+                        <input type="text" id="authUrl" ng-model="user.authUrl"  style="width: 100%;" placeholder="请输入url">
                     </div>
                     <div class="form-group">
                         <label for="authUrl">权限描述:</label>
-                        <textarea style="width: 100%;" id="authDesc" name="authDesc" class="form-control"
+                        <textarea style="width: 100%;" id="authDesc" ng-model="user.authdesc"  class="form-control"
                                   rows="5"></textarea>
                     </div>
             </div>
