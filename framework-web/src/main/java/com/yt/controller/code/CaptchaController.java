@@ -17,10 +17,10 @@ import com.google.code.kaptcha.Constants;
 import com.google.code.kaptcha.Producer;
 
 /**
- * 防止Captcha机器人登陆
- *
- * @author yt
- */
+* 防止Captcha机器人登陆
+*
+* @author yt
+*/
 @Controller
 @RequestMapping("/kaptcha/*")
 public class CaptchaController {

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--名空间别乱写写baseDao使用-->
+<mapper namespace="com.yt.entity.mapper.UserMapper">
+    <resultMap id="BaseResultMap" type="com.yt.service.mybatis.entity.User">
+        <id column="id" property="id" jdbcType="INTEGER"></id>
+        <result column="username" property="userName" jdbcType="VARCHAR"></result>
+    </resultMap>
+    <sql id="getall">
+        id,username
+    </sql>
+    <!--表名不用管根据sql自动映射?-->
+    <!--在insert方法里设置了主键自动增长-->
+    <insert id="save" parameterType="com.yt.service.mybatis.entity.User"  useGeneratedKeys="true" keyProperty="id" >
+        insert into t_user(userName) values(#{userName})
+    </insert>
+    <!--返回类型我用的id所以没关系的。。。-->
+    <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+        <!--使用的include,sql where if标签-->
+        select
+        <include refid="getall"/>
+        from t_user t
+        <!--<where>-->
+        <!--<if test="id!=null">-->
+        where t.id=#{id};
+        <!--</if>-->
+        <!--</where>-->
+    </select>
+    <!--传入的是对象才可以用if 标签判断-->
+    <select id="getByEntityId" parameterType="com.yt.service.mybatis.entity.User" resultMap="BaseResultMap">
+        <!--使用的include,sql where if标签-->
+        select
+        <include refid="getall"/>
+        from t_user t
+        <where>
+            <if test="id!=null">
+                t.id=#{id}
+            </if>
+        </where>
+    </select>
+
+    <select id="getPage" parameterType="java.util.Map"  resultMap="BaseResultMap">
+        select <include refid="getall" /> from t_user limit #{page},#{pageSize};
+    </select>
+</mapper>
