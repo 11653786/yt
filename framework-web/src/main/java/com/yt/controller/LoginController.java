@@ -1,4 +1,4 @@
-package com.yt.controller.login;
+package com.yt.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;

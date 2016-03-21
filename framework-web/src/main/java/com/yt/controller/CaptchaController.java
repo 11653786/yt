@@ -1,4 +1,4 @@
-package com.yt.controller.code;
+package com.yt.controller;
 
 import java.awt.image.BufferedImage;
 

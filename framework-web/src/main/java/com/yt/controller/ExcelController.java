@@ -1,4 +1,4 @@
-package com.yt.controller.excel;
+package com.yt.controller;
 
 import com.yt.mybatis.entity.Auth;
 import com.yt.util.DateUtils;
