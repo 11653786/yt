@@ -1,14 +1,12 @@
 package com.yt.controller;
 
 import com.yt.mybatis.entity.Auth;
-import com.yt.util.DateUtils;
-import com.yt.util.ExportExcel;
-import org.apache.commons.httpclient.util.DateUtil;
+import com.yt.util.yt.myutils.DateUtils;
+import com.yt.util.yt.myutils.ExportExcel;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;

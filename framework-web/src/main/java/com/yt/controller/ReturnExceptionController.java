@@ -1,8 +1,8 @@
 package com.yt.controller;
 
 import com.yt.model.ReturnCode;
-import com.yt.util.JsonUtil;
-import com.yt.util.StringUtils;
+import com.yt.util.yt.myutils.JsonUtil;
+import com.yt.util.yt.myutils.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;

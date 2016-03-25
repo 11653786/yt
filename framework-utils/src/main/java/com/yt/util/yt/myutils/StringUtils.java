@@ -1,4 +1,4 @@
-package com.yt.util;
+package com.yt.util.yt.myutils;
 
 /**
  * Created by user on 2015/8/20.

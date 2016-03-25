@@ -1,7 +1,7 @@
 //package com.yt.init.service;
 //
 //import com.yt.model.BaseResult;
-//import com.yt.util.StringUtils;
+//import com.yt.util.yt.myutils.StringUtils;
 //import org.springframework.beans.factory.annotation.Autowired;
 //import org.springframework.stereotype.Service;
 //import org.springframework.web.bind.annotation.RequestMapping;

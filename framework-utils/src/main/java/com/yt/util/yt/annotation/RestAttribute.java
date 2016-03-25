@@ -1,4 +1,4 @@
-package com.yt.document;
+package com.yt.util.yt.annotation;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

@@ -1,4 +1,4 @@
-package com.yt.util;
+package com.yt.util.yt.myutils;
 
 /**
  * Created by Administrator on 2016/3/18 0018.
@@ -18,7 +18,7 @@ import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
 
-import com.yt.document.RestAttribute;
+import com.yt.util.yt.annotation.RestAttribute;
 import org.apache.poi.hssf.usermodel.HSSFCell;
 import org.apache.poi.hssf.usermodel.HSSFCellStyle;
 import org.apache.poi.hssf.usermodel.HSSFClientAnchor;

@@ -1,6 +1,6 @@
 package com.yt.mybatis.entity;
 
-import com.yt.document.Table;
+import com.yt.util.yt.annotation.Table;
 
 import java.io.Serializable;
 import java.util.Date;

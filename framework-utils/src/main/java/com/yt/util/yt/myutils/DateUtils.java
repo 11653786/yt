@@ -1,4 +1,4 @@
-package com.yt.util;
+package com.yt.util.yt.myutils;
 
 import java.text.ParseException;
 import java.text.ParsePosition;
@@ -8,7 +8,6 @@ import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.Locale;
 
-import org.apache.poi.util.StringUtil;
 import org.springframework.util.StringUtils;
 
 public class DateUtils {

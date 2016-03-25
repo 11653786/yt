@@ -1,4 +1,4 @@
-package com.yt.util;
+package com.yt.util.yt.myutils;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;

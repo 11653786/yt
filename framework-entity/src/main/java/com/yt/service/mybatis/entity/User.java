@@ -1,6 +1,6 @@
 package com.yt.service.mybatis.entity;
 
-import com.yt.document.Table;
+import com.yt.util.yt.annotation.Table;
 
 /**
  * Created by Administrator on 2016/2/26 0026.

@@ -4,7 +4,7 @@ package com.yt.model;
  * Created by Administrator on 2016/3/24 0024.
  */
 
-import com.yt.document.RestAttribute;
+import com.yt.util.yt.annotation.RestAttribute;
 
 import java.io.Serializable;
 

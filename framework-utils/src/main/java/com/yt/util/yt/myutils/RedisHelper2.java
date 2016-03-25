@@ -1,9 +1,7 @@
-package com.yt.util;
+package com.yt.util.yt.myutils;
 
 import redis.clients.jedis.*;
 
-import java.io.IOException;
-import java.io.InputStream;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Properties;
