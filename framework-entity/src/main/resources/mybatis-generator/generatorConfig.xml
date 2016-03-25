@@ -33,9 +33,7 @@
         <!--</javaClientGenerator>-->
 
         <!-- 要生成那些表(更改tableName和domainObjectName就可以) -->
-        <table tableName="t_auth_group" domainObjectName="AuthGroup" enableCountByExample="true" enableUpdateByExample="true"
-               enableDeleteByExample="true" enableSelectByExample="true" selectByExampleQueryId="true"/>
-        <table tableName="t_account_group" domainObjectName="AccountGroup" enableCountByExample="true" enableUpdateByExample="true"
+        <table tableName="t_auth" domainObjectName="Auth" enableCountByExample="true" enableUpdateByExample="true"
                enableDeleteByExample="true" enableSelectByExample="true" selectByExampleQueryId="true"/>
     </context>
 </generatorConfiguration>
