@@ -2,7 +2,7 @@ package com.core.mongo.base.impl;
 
 import com.google.gson.reflect.TypeToken;
 import com.mongodb.*;
-import com.core.mongo.base.MongoDaoBasic;
+import com.core.mongo.base.MongoBaseDaoBasic;
 import com.yt.mongo.entity.Student;
 import com.yt.util.yt.myutils.JsonUtil;
 import com.yt.util.yt.myutils.ListUtil;
@@ -28,7 +28,7 @@ import java.util.List;
 @Repository
 @Transactional
 @Deprecated
-public class MongoDaoBasicImpl<T> implements MongoDaoBasic<T> {
+public class MongoDaoBasicImpl<T> implements MongoBaseDaoBasic<T> {
 
     private Class<T> entityClass;
 

@@ -11,7 +11,7 @@ import java.util.List;
  * Created by user on 2015/9/14.
  */
 @Deprecated
-public interface MongoDaoBasic<T>{
+public interface MongoBaseDaoBasic<T>{
 
     /**
      * 保存一个对象到mongodb

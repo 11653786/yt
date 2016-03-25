@@ -1,7 +1,7 @@
 package com.core.mongo.base.impl;
 
 import com.mongodb.*;
-import com.core.mongo.base.MongoDao;
+import com.core.mongo.base.MongoBaseDao;
 import com.yt.mongo.entity.Student;
 import com.yt.util.yt.myutils.StringUtils;
 import com.yt.util.mongoUtil.MongoUtils;
@@ -27,7 +27,7 @@ import java.util.Map;
  */
 @Repository
 @Transactional
-public class MongoDaoImpl<T> implements MongoDao<T> {
+public class MongoDaoImpl<T> implements MongoBaseDao<T> {
 
     private Class<T> entityClass;
     private int _id;

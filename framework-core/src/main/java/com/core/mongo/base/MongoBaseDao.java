@@ -10,7 +10,7 @@ import java.util.List;
  * mongoTemplate
  * Created by user on 2015/9/25.
  */
-public interface MongoDao<T> {
+public interface MongoBaseDao<T> {
 
     public T saveOrUpdate(T bean);
 
