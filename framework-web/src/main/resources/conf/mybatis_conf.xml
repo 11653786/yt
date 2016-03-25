@@ -18,6 +18,17 @@
           p:password="${jdbc.password}"/>
 
 
+
+
+    <!-- 扫描mapper.java -->
+<!--
+    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer"
+          autowire="byName">
+        <property name="basePackage" value="com.x.*.dao" />
+        <property name="sqlSessionFactory" ref="sqlSessionFactory" />
+    </bean>
+-->
+
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
         <property name="dataSource" ref="dataSource"/>
         <!--mybatis配置文件-->
