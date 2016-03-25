@@ -23,7 +23,7 @@
             <property name="trimStrings" value="true"/>
         </javaModelGenerator>
         <!-- 生成的映射文件包名和位置 -->
-        <sqlMapGenerator targetPackage="com.yt.entity.mapper" targetProject="src/main/java">
+        <sqlMapGenerator targetPackage="com.yt.service.mybatis.entity" targetProject="src/main/resource">
             <property name="enableSubPackages" value="true"/>
         </sqlMapGenerator>
 

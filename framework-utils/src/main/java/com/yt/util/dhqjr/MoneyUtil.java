@@ -2,12 +2,8 @@ package com.yt.util.dhqjr;
 
 import java.math.BigDecimal;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 public class MoneyUtil {
-    private static Logger logger = LoggerFactory.getLogger(MoneyUtil.class);
-    @SuppressWarnings("unused")
     private static final int _$1 = 2;
 
     /**
@@ -160,7 +156,6 @@ public class MoneyUtil {
         }
         // overflow超出处理能力，直接返回
         if (integerStr.length() > IUNIT.length) {
-            logger.warn(str + ":超出处理能力");
             return str;
         }
 
