@@ -9,17 +9,19 @@ import org.springframework.beans.factory.annotation.Value;
  */
 public class ResourceBaseController extends BaseAction implements InitializingBean {
 
-    @Autowired
-   // private ResourceInitService resourceInitService;
 
-    //@Value("${system.initResource}")
-    //private String initResource;
+    @Value("${system.initResource}")
+    private String initResource;
 
     /**
      * 处理resource资源信息
      */
     public void afterPropertiesSet() throws Exception {
         // resourceInitService.addClass(this.getClass());
+        if("yes".equals(initResource)){
+        System.out.println(this.getClass().getName());
+        }
+
     }
 
 
