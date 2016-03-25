@@ -1,4 +1,4 @@
-package com.yt.mybatis.entity;
+package com.yt.service.mybatis.entity;
 
 import java.util.ArrayList;
 import java.util.Date;

@@ -1,9 +1,9 @@
 package com.yt.aop;
 
 import com.yt.util.yt.annotation.Table;
-import com.yt.mybatis.LogService;
-import com.yt.mybatis.entity.Account;
-import com.yt.mybatis.entity.Log;
+import com.yt.service.mybatis.LogService;
+import com.yt.service.mybatis.entity.Account;
+import com.yt.service.mybatis.entity.Log;
 import com.yt.util.yt.myutils.ByteUtils;
 import com.yt.util.yt.myutils.StringUtils;
 import org.aspectj.lang.ProceedingJoinPoint;

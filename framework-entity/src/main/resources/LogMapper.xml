@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="/.LogMapper" >
-  <resultMap id="BaseResultMap" type="com.yt.mybatis.entity.Log" >
+  <resultMap id="BaseResultMap" type="com.yt.service.mybatis.entity.Log" >
     <id column="id" property="id" jdbcType="INTEGER" />
     <result column="class_name" property="className" jdbcType="VARCHAR" />
     <result column="create_user" property="createUser" jdbcType="INTEGER" />
@@ -11,7 +11,7 @@
     <result column="entity_name" property="entityName" jdbcType="VARCHAR" />
     <result column="actions" property="actions" jdbcType="VARCHAR" />
   </resultMap>
-  <resultMap id="ResultMapWithBLOBs" type="com.yt.mybatis.entity.Log" extends="BaseResultMap" >
+  <resultMap id="ResultMapWithBLOBs" type="com.yt.service.mybatis.entity.Log" extends="BaseResultMap" >
     <result column="log_info" property="logInfo" jdbcType="LONGVARBINARY" />
   </resultMap>
   <sql id="Example_Where_Clause" >
@@ -78,7 +78,7 @@
   <sql id="Blob_Column_List" >
     log_info
   </sql>
-  <select id="selectByExampleWithBLOBs" resultMap="ResultMapWithBLOBs" parameterType="com.yt.mybatis.entity.LogExample" >
+  <select id="selectByExampleWithBLOBs" resultMap="ResultMapWithBLOBs" parameterType="com.yt.service.mybatis.entity.LogExample" >
     select
     <if test="distinct" >
       distinct
@@ -95,7 +95,7 @@
       order by ${orderByClause}
     </if>
   </select>
-  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.yt.mybatis.entity.LogExample" >
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.yt.service.mybatis.entity.LogExample" >
     select
     <if test="distinct" >
       distinct
@@ -122,13 +122,13 @@
     delete from t_log
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <delete id="deleteByExample" parameterType="com.yt.mybatis.entity.LogExample" >
+  <delete id="deleteByExample" parameterType="com.yt.service.mybatis.entity.LogExample" >
     delete from t_log
     <if test="_parameter != null" >
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="com.yt.mybatis.entity.Log" >
+  <insert id="insert" parameterType="com.yt.service.mybatis.entity.Log" >
     insert into t_log (id, class_name, create_user, 
       create_date, is_success, spend_time, 
       entity_name, actions, log_info
@@ -138,7 +138,7 @@
       #{entityName,jdbcType=VARCHAR}, #{actions,jdbcType=VARCHAR}, #{logInfo,jdbcType=LONGVARBINARY}
       )
   </insert>
-  <insert id="insertSelective" parameterType="com.yt.mybatis.entity.Log" >
+  <insert id="insertSelective" parameterType="com.yt.service.mybatis.entity.Log" >
     insert into t_log
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="id != null" >
@@ -199,7 +199,7 @@
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="com.yt.mybatis.entity.LogExample" resultType="java.lang.Integer" >
+  <select id="countByExample" parameterType="com.yt.service.mybatis.entity.LogExample" resultType="java.lang.Integer" >
     select count(*) from t_log
     <if test="_parameter != null" >
       <include refid="Example_Where_Clause" />
@@ -269,7 +269,7 @@
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
-  <update id="updateByPrimaryKeySelective" parameterType="com.yt.mybatis.entity.Log" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.yt.service.mybatis.entity.Log" >
     update t_log
     <set >
       <if test="className != null" >
@@ -299,7 +299,7 @@
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.yt.mybatis.entity.Log" >
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.yt.service.mybatis.entity.Log" >
     update t_log
     set class_name = #{className,jdbcType=VARCHAR},
       create_user = #{createUser,jdbcType=INTEGER},
@@ -311,7 +311,7 @@
       log_info = #{logInfo,jdbcType=LONGVARBINARY}
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.yt.mybatis.entity.Log" >
+  <update id="updateByPrimaryKey" parameterType="com.yt.service.mybatis.entity.Log" >
     update t_log
     set class_name = #{className,jdbcType=VARCHAR},
       create_user = #{createUser,jdbcType=INTEGER},

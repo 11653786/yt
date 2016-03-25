@@ -1,16 +1,16 @@
-package com.yt.mybatis.impl;
+package com.yt.service.mybatis.impl;
 
 import com.core.mybatis.base.impl.BaseDaoImpl;
-import com.yt.mybatis.LogService;
-import com.yt.mybatis.entity.Log;
+import com.yt.service.mybatis.AuthService;
+import com.yt.service.mybatis.entity.Auth;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 /**
- * Created by Administrator on 2016/2/26 0026.
+ * Created by Administrator on 2016/2/29 0029.
  */
 @Service
 @Transactional(propagation = Propagation.REQUIRED)
-public class LogServiceImpl extends BaseDaoImpl<Log> implements LogService {
+public class AuthServiceImpl extends BaseDaoImpl<Auth> implements AuthService {
 }

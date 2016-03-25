@@ -1,8 +1,8 @@
-package com.yt.mybatis.impl;
+package com.yt.service.mybatis.impl;
 
 import com.core.mybatis.base.impl.BaseDaoImpl;
-import com.yt.mybatis.AccountService;
-import com.yt.mybatis.entity.Account;
+import com.yt.service.mybatis.AccountService;
+import com.yt.service.mybatis.entity.Account;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
