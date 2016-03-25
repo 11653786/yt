@@ -12,18 +12,14 @@ public class ResourceBaseController extends BaseAction implements InitializingBe
     @Autowired
    // private ResourceInitService resourceInitService;
 
-    @Value("${system.initResource}")
-    private String initResource;
+    //@Value("${system.initResource}")
+    //private String initResource;
 
     /**
      * 处理resource资源信息
      */
     public void afterPropertiesSet() throws Exception {
         // resourceInitService.addClass(this.getClass());
-        if("yes".equals(initResource)){
-          //  resourceInitService.registResourceByClass(this.getClass());
-        }
-
     }
 
 
