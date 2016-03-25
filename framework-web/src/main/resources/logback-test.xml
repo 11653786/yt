@@ -2,7 +2,7 @@
 
 <configuration>
     <!--el表达式log.base表示logs-->
-    <substitutionProperty name="log.base" value="logs"/>
+    <substitutionProperty name="log.path" value="log"/>
 
     <jmxConfigurator/>
     <appender name="stdout" class="ch.qos.logback.core.ConsoleAppender">
@@ -12,10 +12,10 @@
     </appender>
 
     <appender name="logfile" class="ch.qos.logback.core.rolling.RollingFileAppender">
-        <Encoding>UTF-8</Encoding>
-        <File>E:/log/${log.base}/%d{yyyy-MM-dd}.log</File>
+        <!--自定义格式化名称-->
+        <fileNamePattern>${BaseDir}/ServerError/%d{yyyyMMdd}.log</fileNamePattern>
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <FileNamePattern>${log.base}/cds-%d{yyyy-MM-dd}-%i.log</FileNamePattern>
+            <FileNamePattern>E:/${log.path}/杨涛项目-%d{yyyy-MM-dd}-%i.log</FileNamePattern>
             <!--保留100天-->
             <MaxHistory>100</MaxHistory>
             <TimeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
@@ -24,12 +24,12 @@
             </TimeBasedFileNamingAndTriggeringPolicy>
         </rollingPolicy>
         <layout class="ch.qos.logback.classic.PatternLayout">
-            <pattern>%date [%thread] %-5level %logger{80}- %msg%n</pattern>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{35} - %msg%n</pattern>
         </layout>
     </appender>
-
     <root>
-        <level value="WARN"/>
+        <level value="INFO"/>
+        <!--控制台和文件都按照控制台的格式存取-->
         <appender-ref ref="stdout"/>
         <appender-ref ref="logfile"/>
     </root>
