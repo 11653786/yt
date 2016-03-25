@@ -1,4 +1,4 @@
-package com.com.mongodb.base;
+package com.core.mongo.base;
 
 import com.mongodb.BasicDBObject;
 import com.mongodb.DBCollection;

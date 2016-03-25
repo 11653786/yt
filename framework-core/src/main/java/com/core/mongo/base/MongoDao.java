@@ -1,4 +1,4 @@
-package com.com.mongodb.base;
+package com.core.mongo.base;
 
 import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;

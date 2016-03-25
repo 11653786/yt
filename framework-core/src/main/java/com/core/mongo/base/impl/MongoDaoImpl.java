@@ -1,7 +1,7 @@
-package com.com.mongodb.base.impl;
+package com.core.mongo.base.impl;
 
 import com.mongodb.*;
-import com.com.mongodb.base.MongoDao;
+import com.core.mongo.base.MongoDao;
 import com.yt.mongo.entity.Student;
 import com.yt.util.yt.myutils.StringUtils;
 import com.yt.util.mongoUtil.MongoUtils;
