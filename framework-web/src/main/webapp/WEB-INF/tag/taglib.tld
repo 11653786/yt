@@ -8,7 +8,7 @@
     <!-- 引入script的文件 -->
     <tag>
         <name>Script</name>
-        <tag-class>com.yt.tag.ScriptTagSupport</tag-class>
+        <tag-class>com.yt.util.tag.ScriptTagSupport</tag-class>
         <body-content>empty</body-content>
         <!-- 带标签体,但是不能使用jsp  scriptless只能使用 empty 和tagdependent两种 -->
         <!-- 设定fragment 可以接受JspFragment标签体  -->
@@ -46,7 +46,7 @@
     <!--引入angularjs的组建-->
     <tag>
         <name>angular</name>
-        <tag-class>com.yt.tag.AngularjsTreeSupport</tag-class>
+        <tag-class>com.yt.util.tag.AngularjsTreeSupport</tag-class>
         <body-content>empty</body-content>
         <attribute>
             <name>hasAngularTree</name>
