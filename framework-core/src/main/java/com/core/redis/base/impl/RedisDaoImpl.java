@@ -1,6 +1,6 @@
-package com.redis.base.impl;
+package com.core.redis.base.impl;
 
-import com.redis.base.RedisDao;
+import com.core.redis.base.RedisDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.serializer.RedisSerializer;
