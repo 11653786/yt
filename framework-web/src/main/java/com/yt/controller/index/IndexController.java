@@ -6,6 +6,8 @@ import java.util.List;
 import javax.servlet.http.HttpSession;
 
 import com.yt.base.ResourceBaseController;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.util.Assert;
@@ -27,11 +29,13 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class IndexController extends ResourceBaseController {
 
+    private static final Logger indexLog = LoggerFactory.getLogger(IndexController.class);
 
     @RequestMapping(value = {"", "/", "/index"})
     public ModelAndView index() {
         ModelAndView mv = null;
         if (mv == null) {
+            indexLog.info("跳转登录页面!");
             mv = new ModelAndView("loginIn");
         } else {
             mv = new ModelAndView("index");
