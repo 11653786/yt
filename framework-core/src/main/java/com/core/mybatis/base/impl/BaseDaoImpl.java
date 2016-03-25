@@ -17,7 +17,7 @@ import java.util.List;
 public class BaseDaoImpl<T> implements BaseDao<T> {
 
 
-    private String packageName = "com.yt.entity.mapper.";
+    private String packageName = "com.yt.entity.";
     private String houzhuiMapper = "Mapper";
 
 
