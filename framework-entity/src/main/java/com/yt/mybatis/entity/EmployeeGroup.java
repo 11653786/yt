@@ -2,6 +2,9 @@ package com.yt.mybatis.entity;
 
 import java.util.Date;
 
+/**
+ * 用户组
+ */
 public class EmployeeGroup {
     private Integer id;
 
@@ -30,7 +33,7 @@ public class EmployeeGroup {
     public String getName() {
         return name;
     }
-    
+
     public void setName(String name) {
         this.name = name == null ? null : name.trim();
     }

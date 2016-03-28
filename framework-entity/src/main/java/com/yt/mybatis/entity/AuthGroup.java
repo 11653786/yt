@@ -2,6 +2,9 @@ package com.yt.mybatis.entity;
 
 import java.util.Date;
 
+/**
+ * 权限组
+ */
 public class AuthGroup {
     private Integer id;
 
