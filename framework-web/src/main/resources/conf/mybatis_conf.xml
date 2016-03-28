@@ -35,7 +35,7 @@
             <list>
                 <!-- 表示在com.rbao.resultmap包或以下所有目录中，以-resultmap.xml结尾所有文件 -->
                 <value>classpath:*-Mapper.xml</value>
-                <value>classpath:*Mapper.xml</value>
+                <value>classpath:com/yt/entity/*Mapper.xml</value>
             </list>
         </property>
     </bean>

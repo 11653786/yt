@@ -1,17 +1,17 @@
-package com.yt.service.mybatis.entity;
+package com.yt.mybatis.entity;
 
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-public class AccountExample {
+public class EmployeeExample {
     protected String orderByClause;
 
     protected boolean distinct;
 
     protected List<Criteria> oredCriteria;
 
-    public AccountExample() {
+    public EmployeeExample() {
         oredCriteria = new ArrayList<Criteria>();
     }
 

@@ -1,8 +1,8 @@
-package com.yt.service.mybatis.entity;
+package com.yt.mybatis.entity;
 
 import java.util.Date;
 
-public class Account {
+public class Employee {
     private Integer id;
 
     private String userName;

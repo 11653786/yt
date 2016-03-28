@@ -1,22 +1,15 @@
 package com.yt.controller.index;
 
-import java.lang.reflect.InvocationTargetException;
-import java.util.List;
-
-import javax.servlet.http.HttpSession;
-
-import com.yt.base.ResourceBaseController;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.yt.base.BaseAction;
 import org.springframework.stereotype.Controller;
-import org.springframework.util.Assert;
-import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
+
+import javax.servlet.http.HttpSession;
+import java.lang.reflect.InvocationTargetException;
 
 
 /**
@@ -27,7 +20,7 @@ import org.springframework.web.servlet.ModelAndView;
  * @since com.dongrongonline 2.0
  */
 @Controller
-public class IndexController extends ResourceBaseController {
+public class IndexController extends BaseAction {
 
 
 

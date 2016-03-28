@@ -1,9 +1,9 @@
 package com.yt.aop;
 
+import com.yt.mybatis.entity.Employee;
+import com.yt.mybatis.entity.Log;
 import com.yt.util.yt.annotation.Table;
 import com.yt.service.mybatis.LogService;
-import com.yt.service.mybatis.entity.Account;
-import com.yt.service.mybatis.entity.Log;
 import com.yt.util.yt.myutils.ByteUtils;
 import com.yt.util.yt.myutils.StringUtils;
 import org.aspectj.lang.ProceedingJoinPoint;
@@ -48,8 +48,8 @@ public class Proxy {
         long start = System.currentTimeMillis();
         Object[] objects = pjp.getArgs();
         for (Object object : objects) {
-            if (object instanceof Account) {
-                Account account = (Account) object;
+            if (object instanceof Employee) {
+                Employee account = (Employee) object;
                 //判断当前实体类使用是否注解
                 Table table = account.getClass().getAnnotation(Table.class);
                 if (StringUtils.checkNotNull(table)) {

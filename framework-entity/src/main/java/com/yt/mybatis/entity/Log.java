@@ -1,4 +1,4 @@
-package com.yt.service.mybatis.entity;
+package com.yt.mybatis.entity;
 
 import java.util.Date;
 
