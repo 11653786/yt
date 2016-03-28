@@ -2,6 +2,13 @@ package com.yt.mybatis.entity;
 
 import java.util.Date;
 
+/**
+ * @author zhangsan
+ * @class Auth
+ * @version 1.0 
+ * @date 2016/3/28 0028 15:01
+ * @descption: 疯狂的王麻子团队!
+ */
 public class Auth {
     private Integer id;
 
@@ -40,10 +47,10 @@ public class Auth {
     public void setAuthName(String authName) {
         this.authName = authName == null ? null : authName.trim();
     }
-
     public String getAuthType() {
         return authType;
     }
+
 
     public void setAuthType(String authType) {
         this.authType = authType == null ? null : authType.trim();
