@@ -14,7 +14,7 @@
     <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
     <link rel="shortcut icon" type="image/ico" href="${pageContext.request.contextPath}/resource/images/favicon.ico"/>
     <title>Login</title>
-    <link href="${pageContext.request.contextPath}/resource/css/login.css" type="text/css" media="screen"
+    <link href="${pageContext.request.contextPath}/static/css/login.css" type="text/css" media="screen"
           rel="stylesheet"/>
     <style type="text/css">
         #code {
@@ -31,7 +31,7 @@
         <div id="header">
             <h1>
                 <a href="">
-                    <img src="${pageContext.request.contextPath}/resource/images/logo2.png" height="50" width="200"
+                    <img src="${pageContext.request.contextPath}/static/images/logo2.png" height="50" width="200"
                          alt="logo"></a></h1>
         </div>
         <div id="darkbanner" class="banner320">
@@ -45,7 +45,7 @@
                 <p>
                     <label class="loginlabel" for="user_name">
                         Username:</label>
-                    <input class="logininput ui-keyboard-input ui-widget-content ui-corner-all" name="userName"
+                    <input class="logininput ui-keyboard-input ui-widget-content ui-corner-all" name="loginName"
                            id="user_name" type="text" value=""/>
                 </p>
 
@@ -56,7 +56,7 @@
                         <input class="logininput" name="password" id="user_password" type="password"/><img
                             id="passwd" class="tooltip" alt="Click to open the virtual keyboard"
                             title="Click to open the virtual keyboard"
-                            src="${pageContext.request.contextPath}/resource/images/keyboard.png"/></span>
+                            src="${pageContext.request.contextPath}/static/images/keyboard.png"/></span>
                 </p>
 
                 <p>
@@ -72,7 +72,9 @@
                     </button>
                 </p>
             </fieldset>
+            </form>
     </div>
+
 </div>
 <div id="wrapperbottom_branding">
     <div id="wrapperbottom_branding_text">

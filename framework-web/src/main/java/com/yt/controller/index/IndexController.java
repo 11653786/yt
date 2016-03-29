@@ -1,7 +1,11 @@
 package com.yt.controller.index;
 
 import com.yt.base.BaseAction;
+import com.yt.model.BaseResult;
 import com.yt.service.mybatis.EmployeeService;
+import com.yt.shiro.ShiroUserPasswordToken;
+import org.apache.shiro.SecurityUtils;
+import org.apache.shiro.subject.Subject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.util.StringUtils;
@@ -55,6 +59,20 @@ public class IndexController extends BaseAction {
     @ResponseBody
     public void login(@RequestParam("loginName") String loginName, @RequestParam("password") String password,
                       HttpSession session, @RequestParam(value = "isRememberMe", defaultValue = "false") boolean isRememberMe) {
+        BaseResult baseResult = null;
+            //判断用户名和密码是否输入正确
+            baseResult = isLogin(loginName, password);
+            if (!baseResult.isSuccess()) {
+
+            } else {
+                //
+                Subject shiroLogin = SecurityUtils.getSubject();
+                //参数名称,用户名，密码，是否记住密码，ip，登录方式，email，手机
+                ShiroUserPasswordToken token = new ShiroUserPasswordToken(loginName, password, isRememberMe, null, "1", null, null);
+                shiroLogin.login(token);
+            }
+
+
 
     }
 
@@ -88,11 +106,13 @@ public class IndexController extends BaseAction {
     }
 
 
-    public boolean isLogin(String loginName, String password) {
-        if(StringUtils.isEmpty(loginName)){
-
+    public BaseResult isLogin(String loginName, String password) {
+        if (StringUtils.isEmpty(loginName)) {
+            return BaseResult.fail("登录名称不能为空!");
+        } else if (StringUtils.isEmpty(password)) {
+            return BaseResult.fail("登录密码不能为空!");
+        } else {
+            return BaseResult.success("");
         }
-
-        return false;
     }
 }

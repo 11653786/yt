@@ -33,7 +33,6 @@ public class BASE64Coding {
      * Base64加密
      *
      * @param s
-     * @param charset字符码 如utf-8
      * @return String
      * @throws java.io.UnsupportedEncodingException
      */
