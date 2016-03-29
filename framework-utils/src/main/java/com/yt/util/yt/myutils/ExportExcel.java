@@ -4,6 +4,14 @@ package com.yt.util.yt.myutils;
  * Created by Administrator on 2016/3/18 0018.
  */
 
+import com.yt.util.dhqjr.DateUtil;
+import com.yt.util.yt.annotation.RestAttribute;
+import org.apache.poi.hssf.usermodel.*;
+import org.apache.poi.hssf.util.HSSFColor;
+import org.apache.poi.ss.usermodel.CellStyle;
+import org.apache.poi.ss.usermodel.DataFormat;
+import org.springframework.util.StringUtils;
+
 import java.beans.PropertyDescriptor;
 import java.io.IOException;
 import java.io.OutputStream;
@@ -12,27 +20,7 @@ import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.math.BigDecimal;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Date;
-import java.util.Iterator;
-import java.util.List;
-
-import com.yt.util.yt.annotation.RestAttribute;
-import org.apache.poi.hssf.usermodel.HSSFCell;
-import org.apache.poi.hssf.usermodel.HSSFCellStyle;
-import org.apache.poi.hssf.usermodel.HSSFClientAnchor;
-import org.apache.poi.hssf.usermodel.HSSFComment;
-import org.apache.poi.hssf.usermodel.HSSFDataFormat;
-import org.apache.poi.hssf.usermodel.HSSFFont;
-import org.apache.poi.hssf.usermodel.HSSFPatriarch;
-import org.apache.poi.hssf.usermodel.HSSFRichTextString;
-import org.apache.poi.hssf.usermodel.HSSFRow;
-import org.apache.poi.hssf.usermodel.HSSFSheet;
-import org.apache.poi.hssf.usermodel.HSSFWorkbook;
-import org.apache.poi.hssf.util.HSSFColor;
-import org.apache.poi.ss.usermodel.CellStyle;
-import org.apache.poi.ss.usermodel.DataFormat;
+import java.util.*;
 
 
 /**
@@ -45,7 +33,7 @@ import org.apache.poi.ss.usermodel.DataFormat;
 public class ExportExcel<T> {
 
     // 日期格式
-    private String datePattern = DateUtils.DATETIMESHOWFORMAT;
+    private String datePattern = DateUtil.DATETIMESHOWFORMAT;
 
     /**
      * 利用开源组件POI动态导出EXCEL文档 利用了JAVA的反射机制，可以将放置在JAVA集合中并且符号一定条件的数据 以EXCEL
@@ -195,7 +183,7 @@ public class ExportExcel<T> {
                     } else if (value instanceof List) {
                         @SuppressWarnings("unchecked")
                         List<Object> listValue = (List<Object>) value;
-                        if (StringUtils.checkNotNull(listValue)) {
+                        if (!StringUtils.isEmpty(listValue)) {
                             for (int j = 0; j < listValue.size(); j++) {
                                 Object obj = listValue.get(j);
                                 HSSFCell cel = row.createCell(i + j, HSSFCell.CELL_TYPE_STRING);
@@ -378,9 +366,9 @@ public class ExportExcel<T> {
             Method get = pd.getReadMethod();
             Object value = get.invoke(t, new Object[]{});
             if (value instanceof Date) {
-                return StringUtils.checkNotNull(value) ? "--" : DateUtils.getDateString((Date) value, datePattern);
+                return !StringUtils.isEmpty(value) ? "--" : DateUtil.getDateString((Date) value, datePattern);
             }
-            return !StringUtils.checkNotNull(value) ? "--" : value;
+            return StringUtils.isEmpty(value) ? "--" : value;
         } catch (Exception e) {
             e.printStackTrace();
         }

@@ -6,7 +6,6 @@ import com.core.mongo.base.MongoBaseDaoBasic;
 import com.yt.mongo.entity.Student;
 import com.yt.util.yt.myutils.JsonUtil;
 import com.yt.util.yt.myutils.ListUtil;
-import com.yt.util.yt.myutils.StringUtils;
 import com.yt.util.mongoUtil.MongoUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
@@ -15,6 +14,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.stereotype.Repository;
+import org.springframework.util.StringUtils;
 
 import javax.transaction.Transactional;
 import java.lang.reflect.*;
@@ -164,9 +164,9 @@ public class MongoDaoBasicImpl<T> implements MongoBaseDaoBasic<T> {
     public String getCollectionName() {
         Document document = getEntityClass().getAnnotation(Document.class);
         String collectionName = null;
-        if (StringUtils.checkNotNull(document)) {
+        if (!StringUtils.isEmpty(document)) {
             collectionName = document.collection();
-            if (!StringUtils.checkNotNull(collectionName)) collectionName = getEntityClass().getName();
+            if (StringUtils.isEmpty(collectionName)) collectionName = getEntityClass().getName();
         } else {
             collectionName = getEntityClass().getSimpleName();
         }

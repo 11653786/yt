@@ -1,6 +1,7 @@
 package com.yt.util.tag;
 
-import com.yt.util.yt.myutils.StringUtils;
+
+import org.springframework.util.StringUtils;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.jsp.JspException;
@@ -43,7 +44,7 @@ public class AngularjsTreeSupport extends TagSupport {
      */
     private StringWriter getIncludeFile() {
         StringWriter sw = new StringWriter();
-        if (StringUtils.checkNotNull(hasAngularTree) && hasAngularTree) {
+        if (!StringUtils.isEmpty(hasAngularTree) && hasAngularTree) {
             sw.append("<script type='text/javascript' src=" + getWebPath() + jsPath + "angular_tree/angular-tree-control.js></script>");
             sw.append("<link rel='stylesheet' href=" + getWebPath() + cssPath + "angular_tree/css/tree-control.css></link>");
             sw.append("<link rel='stylesheet' href=" + getWebPath() + cssPath + "angular_tree/css/tree-control-attribute.css></link>");

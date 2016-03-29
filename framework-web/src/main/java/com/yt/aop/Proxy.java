@@ -2,16 +2,16 @@ package com.yt.aop;
 
 import com.yt.mybatis.entity.Employee;
 import com.yt.mybatis.entity.Log;
+import com.yt.util.dhqjr.ByteUtil;
 import com.yt.util.yt.annotation.Table;
 import com.yt.service.mybatis.LogService;
-import com.yt.util.yt.myutils.ByteUtils;
-import com.yt.util.yt.myutils.StringUtils;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Pointcut;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.util.StringUtils;
 
 import java.util.Date;
 
@@ -52,7 +52,7 @@ public class Proxy {
                 Employee account = (Employee) object;
                 //判断当前实体类使用是否注解
                 Table table = account.getClass().getAnnotation(Table.class);
-                if (StringUtils.checkNotNull(table)) {
+                if (!StringUtils.isEmpty(table)) {
                     //获取注解内容
                     log.setEntityName(table.name());
                 }
@@ -60,7 +60,7 @@ public class Proxy {
                 log.setActions("保存");
                 log.setClassName(account.getClass().getName());
                 log.setCreateUser(account.getCreateUser());
-                log.setLogInfo(ByteUtils.ObjectToByte(account));
+                log.setLogInfo(ByteUtil.ObjectToByte(account));
             }
         }
 

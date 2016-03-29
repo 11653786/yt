@@ -1,7 +1,7 @@
 package com.yt.controller;
 
 import com.yt.mybatis.entity.Auth;
-import com.yt.util.yt.myutils.DateUtils;
+import com.yt.util.dhqjr.DateUtil;
 import com.yt.util.yt.myutils.ExportExcel;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -28,7 +28,7 @@ public class ExcelController {
         ServletOutputStream out = null;
         try {
             out = response.getOutputStream();
-            exportExcel.exportExcel("交易管理列表", headers, list, out, DateUtils.DATETIMESHOWFORMAT);
+            exportExcel.exportExcel("交易管理列表", headers, list, out, DateUtil.DATETIMESHOWFORMAT);
         } catch (IOException e) {
             e.printStackTrace();
         } catch (Exception e1) {

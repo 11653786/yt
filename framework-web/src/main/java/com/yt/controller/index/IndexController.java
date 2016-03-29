@@ -1,7 +1,10 @@
 package com.yt.controller.index;
 
 import com.yt.base.BaseAction;
+import com.yt.service.mybatis.EmployeeService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -22,6 +25,9 @@ import java.lang.reflect.InvocationTargetException;
 @Controller
 public class IndexController extends BaseAction {
 
+
+    @Autowired
+    private EmployeeService employeeService;
 
 
     @RequestMapping(value = {"", "/", "/index"})
@@ -47,7 +53,8 @@ public class IndexController extends BaseAction {
      */
     @RequestMapping(value = "/login", method = RequestMethod.POST)
     @ResponseBody
-    public void login(@RequestParam("loginName") String loginName, @RequestParam("password") String password, HttpSession session) throws IllegalAccessException, InvocationTargetException {
+    public void login(@RequestParam("loginName") String loginName, @RequestParam("password") String password,
+                      HttpSession session, @RequestParam(value = "isRememberMe", defaultValue = "false") boolean isRememberMe) {
 
     }
 
@@ -78,5 +85,14 @@ public class IndexController extends BaseAction {
     public void editCurrentUserPwd(
             @RequestParam("oldPwd") String oldPwd,
             @RequestParam("newPwd") String newPwd) {
+    }
+
+
+    public boolean isLogin(String loginName, String password) {
+        if(StringUtils.isEmpty(loginName)){
+
+        }
+
+        return false;
     }
 }

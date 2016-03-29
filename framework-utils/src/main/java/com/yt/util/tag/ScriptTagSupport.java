@@ -1,6 +1,7 @@
 package com.yt.util.tag;
 
-import com.yt.util.yt.myutils.StringUtils;
+
+import org.springframework.util.StringUtils;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.jsp.JspException;
@@ -52,24 +53,24 @@ public class ScriptTagSupport extends TagSupport {
             sw.append("<script type='text/javascript' src=" + getWebPath() + jsPath + "jquery/jquery.js></script>");
         }
 
-        if (StringUtils.checkNotNull(hasAngularjs) && hasAngularjs) {
+        if (!StringUtils.isEmpty(hasAngularjs) && hasAngularjs) {
             sw.append("<script type='text/javascript' src=" + getWebPath() + jsPath + "angularjs/angular.1.2.29.js></script>");
         }
 
-        if (StringUtils.checkNotNull(hasZtree) && hasZtree) {
+        if (!StringUtils.isEmpty(hasZtree) && hasZtree) {
             sw.append("<script type='text/javascript' src=" + getWebPath() + jsPath + "ztree/jquery.ztree.all.js></script>");
             sw.append("<link rel='stylesheet' href=" + getWebPath() + cssPath + "ztree/zTreeStyle/zTreeStyle.css></link>");
         }
-        if (StringUtils.checkNotNull(hasEasyUi) && hasEasyUi) {
+        if (!StringUtils.isEmpty(hasEasyUi) && hasEasyUi) {
             sw.append("<script type='text/javascript' src=" + getWebPath() + jsPath + "easyui/jquery.easyui.min.js></script>");
             sw.append("<link rel='stylesheet' href=" + getWebPath() + cssPath + "easyui/themes/icon.css></link>");
             sw.append("<link rel='stylesheet' href=" + getWebPath() + cssPath + "easyui/themes/default/easyui.css></link>");
         }
-        if (StringUtils.checkNotNull(hasBootStrap) && hasBootStrap) {
+        if (!StringUtils.isEmpty(hasBootStrap) && hasBootStrap) {
             sw.append("<link rel='stylesheet' href=" + getWebPath() + cssPath + "bootstrap/css/bootstrap.min.css></link>");
         }
 
-        if (StringUtils.checkNotNull(hasBootStrapModal) && hasBootStrapModal) {
+        if (!StringUtils.isEmpty(hasBootStrapModal) && hasBootStrapModal) {
             sw.append("<link rel='stylesheet' href=" + getWebPath() + cssPath + "bootstrap_modal/bootstrap-modal.css></link>");
             sw.append("<script type='text/javascript' src=" + getWebPath() + jsPath + "angular_modal/bootstrap-modalmanager.js></script>");
             sw.append("<script type='text/javascript' src=" + getWebPath() + jsPath + "angular_modal/bootstrap-modal.js></script>");
@@ -89,7 +90,7 @@ public class ScriptTagSupport extends TagSupport {
      * @return
      */
     private boolean validJquery() {
-        return hasJquery = StringUtils.checkNotNull(hasJquery) ? true : false;
+        return hasJquery = !StringUtils.isEmpty(hasJquery) ? true : false;
     }
 
     public boolean isHasJquery() {
