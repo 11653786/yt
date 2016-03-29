@@ -13,22 +13,11 @@
     <context:component-scan base-package="com.yt." use-default-filters="false">
         <context:include-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
     </context:component-scan>
-    <!--欢迎首页-->
-    <mvc:view-controller path="/" view-name="redirect:/index.do"/>
-
     <!-- 启动Springmvc注解驱动 -->
     <mvc:annotation-driven/>
 
-    <!--p文件的加载和使用@Value注解-->
-    <bean id="propertyConfigurer"
-          class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
-        <property name="locations">
-            <list>
-                <value>classpath:*.properties</value>
-            </list>
-        </property>
-        <property name="fileEncoding" value="UTF-8"/>
-    </bean>
+    <!--欢迎首页-->
+    <mvc:view-controller path="/" view-name="redirect:/index.do"/>
 
 
     <mvc:annotation-driven>
@@ -62,6 +51,6 @@
 
 
     <!--mvc闈欐�佽祫婧愭嫤鎴�-->
-    <mvc:resources location="/resource" mapping="/"/>
+    <mvc:resources location="/static" mapping="/"/>
 
 </beans>
