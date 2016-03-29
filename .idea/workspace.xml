@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f5e4681c-b491-4f95-bf09-2f7e1fd7cfa5" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/framework-web/src/main/webapp/view/login.jsp" afterPath="$PROJECT_DIR$/framework-web/src/main/webapp/view/login.jsp" />
+    <list default="true" id="f5e4681c-b491-4f95-bf09-2f7e1fd7cfa5" name="Default" comment="shiro">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/framework-web/src/main/java/com/yt/controller/index/IndexController.java" afterPath="$PROJECT_DIR$/framework-web/src/main/java/com/yt/controller/index/IndexController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="framework.iws" />
@@ -41,8 +41,18 @@
       <file leaf-file-name="IndexController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/framework-web/src/main/java/com/yt/controller/index/IndexController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.33170733" vertical-offset="436" max-vertical-offset="2618">
-              <caret line="47" column="0" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.49268293" vertical-offset="1096" max-vertical-offset="2662">
+              <caret line="80" column="0" selection-start-line="80" selection-start-column="0" selection-end-line="80" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="InvocableHandlerMethod.class" pinned="false" current-in-tab="false">
+        <entry file="jar://D:/jar/maven_jar2/org/springframework/spring-web/4.0.5.RELEASE/spring-web-4.0.5.RELEASE.jar!/org/springframework/web/method/support/InvocableHandlerMethod.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-6.72" vertical-offset="536" max-vertical-offset="946">
+              <caret line="33" column="29" selection-start-line="33" selection-start-column="29" selection-end-line="33" selection-end-column="29" />
               <folding />
             </state>
           </provider>
@@ -144,9 +154,9 @@
         <option value="$PROJECT_DIR$/framework-web/src/main/java/com/yt/shiro/ShiroAuthenticationInfo.java" />
         <option value="$PROJECT_DIR$/framework-web/src/main/java/com/yt/shiro/MyRealm.java" />
         <option value="$PROJECT_DIR$/framework-web/src/main/webapp/WEB-INF/web.xml" />
-        <option value="$PROJECT_DIR$/framework-web/src/main/java/com/yt/controller/index/IndexController.java" />
         <option value="$PROJECT_DIR$/framework-web/src/main/resources/springmvc-servlet.xml" />
         <option value="$PROJECT_DIR$/framework-web/src/main/webapp/view/login.jsp" />
+        <option value="$PROJECT_DIR$/framework-web/src/main/java/com/yt/controller/index/IndexController.java" />
       </list>
     </option>
   </component>
@@ -1004,13 +1014,7 @@
       <workItem from="1459126747577" duration="13939000" />
       <workItem from="1459215925642" duration="5493000" />
       <workItem from="1459230352706" duration="5518000" />
-      <workItem from="1459244507494" duration="1275000" />
-    </task>
-    <task id="LOCAL-00056" summary="spring xml文件分离">
-      <created>1456733655271</created>
-      <option name="number" value="00056" />
-      <option name="project" value="LOCAL" />
-      <updated>1456733655271</updated>
+      <workItem from="1459244507494" duration="1986000" />
     </task>
     <task id="LOCAL-00057" summary="spring xml文件分离">
       <created>1456733702023</created>
@@ -1300,11 +1304,17 @@
       <option name="project" value="LOCAL" />
       <updated>1459245696121</updated>
     </task>
-    <option name="localTasksCounter" value="105" />
+    <task id="LOCAL-00105" summary="shiro">
+      <created>1459245784781</created>
+      <option name="number" value="00105" />
+      <option name="project" value="LOCAL" />
+      <updated>1459245784781</updated>
+    </task>
+    <option name="localTasksCounter" value="106" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="129742000" />
+    <option name="totallyTimeSpent" value="130453000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
@@ -1462,24 +1472,12 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/framework-web/src/main/java/com/yt/controller/index/IndexController.java</url>
-          <line>78</line>
+          <line>70</line>
           <properties />
-          <option name="timeStamp" value="67" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/framework-web/src/main/java/com/yt/controller/index/IndexController.java</url>
-          <line>47</line>
-          <properties />
-          <option name="timeStamp" value="68" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/framework-web/src/main/java/com/yt/controller/index/IndexController.java</url>
-          <line>46</line>
-          <properties />
-          <option name="timeStamp" value="69" />
+          <option name="timeStamp" value="71" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="70" />
+      <option name="time" value="72" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1488,13 +1486,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/framework-entity/src/main/resources/mybatis-generator/generatorConfig.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="286" max-vertical-offset="1012">
-          <caret line="26" column="61" selection-start-line="26" selection-start-column="61" selection-end-line="26" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/framework-entity/src/main/java/com/yt/mybatis/entity/Auth.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="88" max-vertical-offset="2970">
@@ -1870,10 +1861,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar://D:/jar/maven_jar2/org/springframework/spring-web/4.0.5.RELEASE/spring-web-4.0.5.RELEASE.jar!/org/springframework/web/method/support/InvocableHandlerMethod.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.72" vertical-offset="536" max-vertical-offset="946">
+          <caret line="33" column="29" selection-start-line="33" selection-start-column="29" selection-end-line="33" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/framework-web/src/main/java/com/yt/controller/index/IndexController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33170733" vertical-offset="436" max-vertical-offset="2618">
-          <caret line="47" column="0" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.49268293" vertical-offset="1096" max-vertical-offset="2662">
+          <caret line="80" column="0" selection-start-line="80" selection-start-column="0" selection-end-line="80" selection-end-column="0" />
           <folding />
         </state>
       </provider>
