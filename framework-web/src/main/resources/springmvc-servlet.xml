@@ -9,12 +9,12 @@
            http://www.springframework.org/schema/context/spring-context.xsd
            http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd">
 
-    <!-- controller鎵弿璁剧疆-->
-    <context:component-scan base-package="com.yt" use-default-filters="false">
+    <!-- controller-->
+    <context:component-scan base-package="com.yt." use-default-filters="false">
         <context:include-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
     </context:component-scan>
-
-    <context:component-scan base-package="com.yt.exception"/>
+    <!--欢迎首页-->
+    <mvc:view-controller path="/" view-name="redirect:/index.do"/>
 
     <!-- 启动Springmvc注解驱动 -->
     <mvc:annotation-driven/>

@@ -41,11 +41,11 @@ public class IndexController extends BaseAction {
     private static final Logger logger = LoggerFactory.getLogger(IndexController.class);
 
 
-    @RequestMapping(value = {"", "/", "/index"})
+    @RequestMapping(value = {"index"})
     public ModelAndView index() {
         ModelAndView mv = null;
         if (mv == null) {
-            mv = new ModelAndView("loginIn");
+            mv = new ModelAndView("login");
         } else {
             mv = new ModelAndView("index");
         }
@@ -63,26 +63,25 @@ public class IndexController extends BaseAction {
      * @throws InvocationTargetException
      */
     @RequestMapping(value = "/login", method = RequestMethod.POST)
-    @ResponseBody
-    public void login(@RequestParam("loginName") String loginName, @RequestParam("password") String password,
-                      HttpSession session, @RequestParam(value = "isRememberMe", defaultValue = "false") boolean isRememberMe, @RequestParam(value = "code") String code, Model model) {
+    public String login(@RequestParam("loginName") String loginName, @RequestParam("password") String password,
+                        HttpSession session, @RequestParam(value = "isRememberMe", defaultValue = "false") boolean isRememberMe, @RequestParam(value = "code") String code, Model model) {
         BaseResult baseResult = null;
         //判断用户名和密码是否输入正确
         baseResult = isLogin(loginName, password, code, session);
         if (!baseResult.isSuccess()) {
             throw new RuntimeException();
         } else {
-            //
             Subject shiroLogin = SecurityUtils.getSubject();
             //参数名称,用户名，密码，是否记住密码，ip，登录方式，email，手机
             //, String mobile, String loginType, String email, String nikeName
             ShiroUserPasswordToken token = new ShiroUserPasswordToken(loginName, password, isRememberMe, null, "1", null, null);
             try {
                 shiroLogin.login(token);
-                System.out.println("5655234234234234");
+                return "redirect:/index.do";
             } catch (AuthenticationException e) {
                 model.addAttribute("msg", "登录失败!");
                 logger.error(e.getMessage());
+                return "redirect:/index.do";
             }
         }
 
