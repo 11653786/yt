@@ -61,10 +61,11 @@ public class MyRealm extends AuthorizingRealm {
             } else {
                 Employee employee = employees.get(0);
                 //帐号不可用或者限制登录
-                if (employee.getIsEnable() == 0 || employee.getIsLogin()==0) {
+                if (employee.getIsEnable() == 0 || employee.getIsLogin() == 0) {
                     return null;
                 } else {
-                    return new ShiroAuthenticationInfo(null, null, null, null, null, null, null);
+                    //登录成功返回登录信息
+                    return new ShiroAuthenticationInfo(employee.getUserName(), employee.getPassword(), null, employee.getMobile(), loginUser.getLoginType(), employee.getEmail(), employee.getNikeName());
                 }
             }
         } else {//前台登录
