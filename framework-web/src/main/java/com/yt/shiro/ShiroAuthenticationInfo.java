@@ -19,6 +19,10 @@ public class ShiroAuthenticationInfo extends SimpleAuthenticationInfo {
 
     private String nikeName;
 
+    public ShiroAuthenticationInfo(Object principal, Object credentials, String realmName) {
+        super(principal, credentials, realmName);
+    }
+
     public ShiroAuthenticationInfo(Object principal, Object credentials, String realmName, String mobile, String loginType, String email, String nikeName) {
         super(principal, credentials, realmName);
         this.mobile = mobile;

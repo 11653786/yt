@@ -26,6 +26,9 @@ import java.util.List;
 public class MyRealm extends AuthorizingRealm {
 
 
+
+    private String bmsLoginType="1";
+    private String mainLoginType="2";
     @Autowired
     private EmployeeService employeeService;
 
@@ -53,7 +56,7 @@ public class MyRealm extends AuthorizingRealm {
         ShiroUserPasswordToken loginUser = (ShiroUserPasswordToken) authenticationToken;
         //若存在，将此用户存放到登录认证info中
         //后台登录
-        if (loginUser.getLoginType().equals("1")) {
+        if (loginUser.getLoginType().equals(bmsLoginType)) {
 
             List<Employee> employees = employeeService.selectByExample(setInfo(loginUser));
             if (employees.isEmpty()) {
@@ -64,14 +67,15 @@ public class MyRealm extends AuthorizingRealm {
                 if (employee.getIsEnable() == 0 || employee.getIsLogin() == 0) {
                     return null;
                 } else {
-                    //登录成功返回登录信息
-                    return new ShiroAuthenticationInfo(employee.getUserName(), employee.getPassword(), null, employee.getMobile(), loginUser.getLoginType(), employee.getEmail(), employee.getNikeName());
+                    //登录成功返回登录信息,, String mobile, String loginType, String email, String nikeName
+                    return new ShiroAuthenticationInfo(loginUser.getUsername(), loginUser.getPassword(), getName(),employee.getMobile(),bmsLoginType,employee.getEmail(),employee.getNikeName());
+                    //return new SimpleAuthenticationInfo(loginUser.getUsername(), loginUser.getPassword(), getName());
                 }
             }
         } else {//前台登录
 
         }
-        return new ShiroAuthenticationInfo(null, null, null, null, null, null, null);
+      return null;
     }
 
     private EmployeeExample setInfo(ShiroUserPasswordToken loginUser) {

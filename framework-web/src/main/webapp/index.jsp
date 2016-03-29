@@ -18,8 +18,6 @@
           rel="stylesheet"/>
     <style type="text/css">
         #code {
-            height: 30px;
-            width: 290px;
         }
     </style>
 </head>
@@ -63,6 +61,7 @@
                     <label class="loginlabel" for="user_password">
                         Code:</label>
                     <span>
+                        <input style="	width:40px;" class="logininput" name="code"  type="text"/>
                         <img id="code" src="${pageContext.request.contextPath}/kaptcha/code.do"/></span>
                 </p>
 

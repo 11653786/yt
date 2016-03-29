@@ -42,6 +42,10 @@ public class ShiroUserPasswordToken extends UsernamePasswordToken {
         this.mobile = mobile;
     }
 
+    public ShiroUserPasswordToken(String username, char[] password, boolean rememberMe) {
+        super(username, password, rememberMe);
+    }
+
     public String getLoginType() {
         return loginType;
     }
