@@ -1,4 +1,4 @@
-package com.yt.mongo.entity;
+package com.yt.entity.mongo;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;

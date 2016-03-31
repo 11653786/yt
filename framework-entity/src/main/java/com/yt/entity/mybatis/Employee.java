@@ -1,19 +1,12 @@
-package com.yt.mybatis.entity;
+package com.yt.entity.mybatis;
 
 import java.util.Date;
 
-/**
- * 后台用户
- */
 public class Employee {
     private Integer id;
-    /**
-     * 用户名
-     */
+
     private String userName;
-    /**
-     * 昵称
-     */
+
     private String nikeName;
 
     private String email;
@@ -33,13 +26,9 @@ public class Employee {
     private Integer verifyUser;
 
     private Date verifyTime;
-    /**
-     * 是否限制登录
-     */
+
     private Integer isLogin;
-    /**
-     * 是否可用
-     */
+
     private Integer isEnable;
 
     public Integer getId() {

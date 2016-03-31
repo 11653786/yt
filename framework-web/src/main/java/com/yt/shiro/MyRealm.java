@@ -1,15 +1,13 @@
 package com.yt.shiro;
 
-import com.yt.mybatis.entity.Employee;
-import com.yt.mybatis.entity.EmployeeExample;
+import com.yt.entity.mybatis.Employee;
+import com.yt.entity.mybatis.EmployeeExample;
 import com.yt.service.mybatis.EmployeeService;
-import com.yt.util.dhqjr.ByteUtil;
 import com.yt.util.yt.myutils.Md5Utils;
 import org.apache.shiro.authc.*;
 import org.apache.shiro.authz.AuthorizationInfo;
 import org.apache.shiro.realm.AuthorizingRealm;
 import org.apache.shiro.subject.PrincipalCollection;
-import org.apache.xmlbeans.impl.store.CharUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 

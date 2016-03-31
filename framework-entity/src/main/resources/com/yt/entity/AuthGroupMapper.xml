@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.yt.entity.AuthGroupMapper" >
-  <resultMap id="BaseResultMap" type="com.yt.mybatis.entity.AuthGroup" >
+  <resultMap id="BaseResultMap" type="com.yt.entity.mybatis.AuthGroup" >
     <id column="id" property="id" jdbcType="INTEGER" />
     <result column="auth_group_name" property="authGroupName" jdbcType="VARCHAR" />
     <result column="auth_group_desc" property="authGroupDesc" jdbcType="VARCHAR" />
@@ -73,7 +73,7 @@
     id, auth_group_name, auth_group_desc, is_enable, create_user, create_time, update_user, 
     update_time
   </sql>
-  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.yt.mybatis.entity.AuthGroupExample" >
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.yt.entity.mybatis.AuthGroupExample" >
     select
     <if test="distinct" >
       distinct
@@ -98,13 +98,13 @@
     delete from t_auth_group
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <delete id="deleteByExample" parameterType="com.yt.mybatis.entity.AuthGroupExample" >
+  <delete id="deleteByExample" parameterType="com.yt.entity.mybatis.AuthGroupExample" >
     delete from t_auth_group
     <if test="_parameter != null" >
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="com.yt.mybatis.entity.AuthGroup" >
+  <insert id="insert" parameterType="com.yt.entity.mybatis.AuthGroup" >
     insert into t_auth_group (id, auth_group_name, auth_group_desc, 
       is_enable, create_user, create_time, 
       update_user, update_time)
@@ -112,7 +112,7 @@
       #{isEnable,jdbcType=INTEGER}, #{createUser,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}, 
       #{updateUser,jdbcType=INTEGER}, #{updateTime,jdbcType=TIMESTAMP})
   </insert>
-  <insert id="insertSelective" parameterType="com.yt.mybatis.entity.AuthGroup" >
+  <insert id="insertSelective" parameterType="com.yt.entity.mybatis.AuthGroup" >
     insert into t_auth_group
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="id != null" >
@@ -167,7 +167,7 @@
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="com.yt.mybatis.entity.AuthGroupExample" resultType="java.lang.Integer" >
+  <select id="countByExample" parameterType="com.yt.entity.mybatis.AuthGroupExample" resultType="java.lang.Integer" >
     select count(*) from t_auth_group
     <if test="_parameter != null" >
       <include refid="Example_Where_Clause" />
@@ -219,7 +219,7 @@
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
-  <update id="updateByPrimaryKeySelective" parameterType="com.yt.mybatis.entity.AuthGroup" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.yt.entity.mybatis.AuthGroup" >
     update t_auth_group
     <set >
       <if test="authGroupName != null" >
@@ -246,7 +246,7 @@
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.yt.mybatis.entity.AuthGroup" >
+  <update id="updateByPrimaryKey" parameterType="com.yt.entity.mybatis.AuthGroup" >
     update t_auth_group
     set auth_group_name = #{authGroupName,jdbcType=VARCHAR},
       auth_group_desc = #{authGroupDesc,jdbcType=VARCHAR},

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.yt.entity.EmployeeMapper" >
-  <resultMap id="BaseResultMap" type="com.yt.mybatis.entity.Employee" >
+  <resultMap id="BaseResultMap" type="com.yt.entity.mybatis.Employee" >
     <id column="id" property="id" jdbcType="INTEGER" />
     <result column="user_name" property="userName" jdbcType="VARCHAR" />
     <result column="nike_name" property="nikeName" jdbcType="VARCHAR" />
@@ -79,7 +79,7 @@
     id, user_name, nike_name, email, mobile, password, create_user, create_time, update_user, 
     update_time, verify_user, verify_time, is_login, is_enable
   </sql>
-  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.yt.mybatis.entity.EmployeeExample" >
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.yt.entity.mybatis.EmployeeExample" >
     select
     <if test="distinct" >
       distinct
@@ -104,13 +104,13 @@
     delete from t_employee
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <delete id="deleteByExample" parameterType="com.yt.mybatis.entity.EmployeeExample" >
+  <delete id="deleteByExample" parameterType="com.yt.entity.mybatis.EmployeeExample" >
     delete from t_employee
     <if test="_parameter != null" >
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="com.yt.mybatis.entity.Employee" >
+  <insert id="insert" parameterType="com.yt.entity.mybatis.Employee" >
     insert into t_employee (id, user_name, nike_name, 
       email, mobile, password, 
       create_user, create_time, update_user, 
@@ -122,7 +122,7 @@
       #{updateTime,jdbcType=TIMESTAMP}, #{verifyUser,jdbcType=INTEGER}, #{verifyTime,jdbcType=TIMESTAMP}, 
       #{isLogin,jdbcType=INTEGER}, #{isEnable,jdbcType=INTEGER})
   </insert>
-  <insert id="insertSelective" parameterType="com.yt.mybatis.entity.Employee" >
+  <insert id="insertSelective" parameterType="com.yt.entity.mybatis.Employee" >
     insert into t_employee
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="id != null" >
@@ -213,7 +213,7 @@
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="com.yt.mybatis.entity.EmployeeExample" resultType="java.lang.Integer" >
+  <select id="countByExample" parameterType="com.yt.entity.mybatis.EmployeeExample" resultType="java.lang.Integer" >
     select count(*) from t_employee
     <if test="_parameter != null" >
       <include refid="Example_Where_Clause" />
@@ -289,7 +289,7 @@
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
-  <update id="updateByPrimaryKeySelective" parameterType="com.yt.mybatis.entity.Employee" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.yt.entity.mybatis.Employee" >
     update t_employee
     <set >
       <if test="userName != null" >
@@ -334,7 +334,7 @@
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.yt.mybatis.entity.Employee" >
+  <update id="updateByPrimaryKey" parameterType="com.yt.entity.mybatis.Employee" >
     update t_employee
     set user_name = #{userName,jdbcType=VARCHAR},
       nike_name = #{nikeName,jdbcType=VARCHAR},

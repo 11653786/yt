@@ -1,10 +1,7 @@
-package com.yt.mybatis.entity;
+package com.yt.entity.mybatis;
 
 import java.util.Date;
 
-/**
- * 用户组
- */
 public class EmployeeGroup {
     private Integer id;
 

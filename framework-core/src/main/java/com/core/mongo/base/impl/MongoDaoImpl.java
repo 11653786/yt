@@ -2,7 +2,7 @@ package com.core.mongo.base.impl;
 
 import com.mongodb.*;
 import com.core.mongo.base.MongoBaseDao;
-import com.yt.mongo.entity.Student;
+import com.yt.entity.mongo.Student;
 import com.yt.util.mongoUtil.MongoUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;

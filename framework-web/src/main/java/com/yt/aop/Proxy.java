@@ -1,7 +1,7 @@
 package com.yt.aop;
 
-import com.yt.mybatis.entity.Employee;
-import com.yt.mybatis.entity.Log;
+import com.yt.entity.mybatis.Employee;
+import com.yt.entity.mybatis.Log;
 import com.yt.util.dhqjr.ByteUtil;
 import com.yt.util.yt.annotation.Table;
 import com.yt.service.mybatis.LogService;

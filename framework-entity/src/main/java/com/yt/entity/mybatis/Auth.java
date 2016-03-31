@@ -1,33 +1,18 @@
-package com.yt.mybatis.entity;
+package com.yt.entity.mybatis;
 
 import java.util.Date;
 
-/**
- * @author zhangsan
- * @class Auth 权限
- * @version 1.0 
- * @date 2016/3/28 0028 15:01
- * @descption: 疯狂的王麻子团队!
- */
 public class Auth {
     private Integer id;
 
     private String authName;
-    /**
-     * 权限类型:权限类型,1.按钮,2页面,3菜单
-     */
+
     private String authType;
-    /**
-     * 父id
-     */
+
     private Integer parentId;
-    /**
-     * 是否可用
-     */
+
     private String isEnable;
-    /**
-     * 权限url
-     */
+
     private String authUrl;
 
     private Integer createUser;
@@ -55,10 +40,10 @@ public class Auth {
     public void setAuthName(String authName) {
         this.authName = authName == null ? null : authName.trim();
     }
+
     public String getAuthType() {
         return authType;
     }
-
 
     public void setAuthType(String authType) {
         this.authType = authType == null ? null : authType.trim();

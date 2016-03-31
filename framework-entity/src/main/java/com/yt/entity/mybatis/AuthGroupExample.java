@@ -1,17 +1,17 @@
-package com.yt.mybatis.entity;
+package com.yt.entity.mybatis;
 
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-public class AuthExample {
+public class AuthGroupExample {
     protected String orderByClause;
 
     protected boolean distinct;
 
     protected List<Criteria> oredCriteria;
 
-    public AuthExample() {
+    public AuthGroupExample() {
         oredCriteria = new ArrayList<Criteria>();
     }
 
@@ -165,203 +165,143 @@ public class AuthExample {
             return (Criteria) this;
         }
 
-        public Criteria andAuthNameIsNull() {
-            addCriterion("auth_name is null");
+        public Criteria andAuthGroupNameIsNull() {
+            addCriterion("auth_group_name is null");
             return (Criteria) this;
         }
 
-        public Criteria andAuthNameIsNotNull() {
-            addCriterion("auth_name is not null");
+        public Criteria andAuthGroupNameIsNotNull() {
+            addCriterion("auth_group_name is not null");
             return (Criteria) this;
         }
 
-        public Criteria andAuthNameEqualTo(String value) {
-            addCriterion("auth_name =", value, "authName");
+        public Criteria andAuthGroupNameEqualTo(String value) {
+            addCriterion("auth_group_name =", value, "authGroupName");
             return (Criteria) this;
         }
 
-        public Criteria andAuthNameNotEqualTo(String value) {
-            addCriterion("auth_name <>", value, "authName");
+        public Criteria andAuthGroupNameNotEqualTo(String value) {
+            addCriterion("auth_group_name <>", value, "authGroupName");
             return (Criteria) this;
         }
 
-        public Criteria andAuthNameGreaterThan(String value) {
-            addCriterion("auth_name >", value, "authName");
+        public Criteria andAuthGroupNameGreaterThan(String value) {
+            addCriterion("auth_group_name >", value, "authGroupName");
             return (Criteria) this;
         }
 
-        public Criteria andAuthNameGreaterThanOrEqualTo(String value) {
-            addCriterion("auth_name >=", value, "authName");
+        public Criteria andAuthGroupNameGreaterThanOrEqualTo(String value) {
+            addCriterion("auth_group_name >=", value, "authGroupName");
             return (Criteria) this;
         }
 
-        public Criteria andAuthNameLessThan(String value) {
-            addCriterion("auth_name <", value, "authName");
+        public Criteria andAuthGroupNameLessThan(String value) {
+            addCriterion("auth_group_name <", value, "authGroupName");
             return (Criteria) this;
         }
 
-        public Criteria andAuthNameLessThanOrEqualTo(String value) {
-            addCriterion("auth_name <=", value, "authName");
+        public Criteria andAuthGroupNameLessThanOrEqualTo(String value) {
+            addCriterion("auth_group_name <=", value, "authGroupName");
             return (Criteria) this;
         }
 
-        public Criteria andAuthNameLike(String value) {
-            addCriterion("auth_name like", value, "authName");
+        public Criteria andAuthGroupNameLike(String value) {
+            addCriterion("auth_group_name like", value, "authGroupName");
             return (Criteria) this;
         }
 
-        public Criteria andAuthNameNotLike(String value) {
-            addCriterion("auth_name not like", value, "authName");
+        public Criteria andAuthGroupNameNotLike(String value) {
+            addCriterion("auth_group_name not like", value, "authGroupName");
             return (Criteria) this;
         }
 
-        public Criteria andAuthNameIn(List<String> values) {
-            addCriterion("auth_name in", values, "authName");
+        public Criteria andAuthGroupNameIn(List<String> values) {
+            addCriterion("auth_group_name in", values, "authGroupName");
             return (Criteria) this;
         }
 
-        public Criteria andAuthNameNotIn(List<String> values) {
-            addCriterion("auth_name not in", values, "authName");
+        public Criteria andAuthGroupNameNotIn(List<String> values) {
+            addCriterion("auth_group_name not in", values, "authGroupName");
             return (Criteria) this;
         }
 
-        public Criteria andAuthNameBetween(String value1, String value2) {
-            addCriterion("auth_name between", value1, value2, "authName");
+        public Criteria andAuthGroupNameBetween(String value1, String value2) {
+            addCriterion("auth_group_name between", value1, value2, "authGroupName");
             return (Criteria) this;
         }
 
-        public Criteria andAuthNameNotBetween(String value1, String value2) {
-            addCriterion("auth_name not between", value1, value2, "authName");
+        public Criteria andAuthGroupNameNotBetween(String value1, String value2) {
+            addCriterion("auth_group_name not between", value1, value2, "authGroupName");
             return (Criteria) this;
         }
 
-        public Criteria andAuthTypeIsNull() {
-            addCriterion("auth_type is null");
+        public Criteria andAuthGroupDescIsNull() {
+            addCriterion("auth_group_desc is null");
             return (Criteria) this;
         }
 
-        public Criteria andAuthTypeIsNotNull() {
-            addCriterion("auth_type is not null");
+        public Criteria andAuthGroupDescIsNotNull() {
+            addCriterion("auth_group_desc is not null");
             return (Criteria) this;
         }
 
-        public Criteria andAuthTypeEqualTo(String value) {
-            addCriterion("auth_type =", value, "authType");
+        public Criteria andAuthGroupDescEqualTo(String value) {
+            addCriterion("auth_group_desc =", value, "authGroupDesc");
             return (Criteria) this;
         }
 
-        public Criteria andAuthTypeNotEqualTo(String value) {
-            addCriterion("auth_type <>", value, "authType");
+        public Criteria andAuthGroupDescNotEqualTo(String value) {
+            addCriterion("auth_group_desc <>", value, "authGroupDesc");
             return (Criteria) this;
         }
 
-        public Criteria andAuthTypeGreaterThan(String value) {
-            addCriterion("auth_type >", value, "authType");
+        public Criteria andAuthGroupDescGreaterThan(String value) {
+            addCriterion("auth_group_desc >", value, "authGroupDesc");
             return (Criteria) this;
         }
 
-        public Criteria andAuthTypeGreaterThanOrEqualTo(String value) {
-            addCriterion("auth_type >=", value, "authType");
+        public Criteria andAuthGroupDescGreaterThanOrEqualTo(String value) {
+            addCriterion("auth_group_desc >=", value, "authGroupDesc");
             return (Criteria) this;
         }
 
-        public Criteria andAuthTypeLessThan(String value) {
-            addCriterion("auth_type <", value, "authType");
+        public Criteria andAuthGroupDescLessThan(String value) {
+            addCriterion("auth_group_desc <", value, "authGroupDesc");
             return (Criteria) this;
         }
 
-        public Criteria andAuthTypeLessThanOrEqualTo(String value) {
-            addCriterion("auth_type <=", value, "authType");
+        public Criteria andAuthGroupDescLessThanOrEqualTo(String value) {
+            addCriterion("auth_group_desc <=", value, "authGroupDesc");
             return (Criteria) this;
         }
 
-        public Criteria andAuthTypeLike(String value) {
-            addCriterion("auth_type like", value, "authType");
+        public Criteria andAuthGroupDescLike(String value) {
+            addCriterion("auth_group_desc like", value, "authGroupDesc");
             return (Criteria) this;
         }
 
-        public Criteria andAuthTypeNotLike(String value) {
-            addCriterion("auth_type not like", value, "authType");
+        public Criteria andAuthGroupDescNotLike(String value) {
+            addCriterion("auth_group_desc not like", value, "authGroupDesc");
             return (Criteria) this;
         }
 
-        public Criteria andAuthTypeIn(List<String> values) {
-            addCriterion("auth_type in", values, "authType");
+        public Criteria andAuthGroupDescIn(List<String> values) {
+            addCriterion("auth_group_desc in", values, "authGroupDesc");
             return (Criteria) this;
         }
 
-        public Criteria andAuthTypeNotIn(List<String> values) {
-            addCriterion("auth_type not in", values, "authType");
+        public Criteria andAuthGroupDescNotIn(List<String> values) {
+            addCriterion("auth_group_desc not in", values, "authGroupDesc");
             return (Criteria) this;
         }
 
-        public Criteria andAuthTypeBetween(String value1, String value2) {
-            addCriterion("auth_type between", value1, value2, "authType");
+        public Criteria andAuthGroupDescBetween(String value1, String value2) {
+            addCriterion("auth_group_desc between", value1, value2, "authGroupDesc");
             return (Criteria) this;
         }
 
-        public Criteria andAuthTypeNotBetween(String value1, String value2) {
-            addCriterion("auth_type not between", value1, value2, "authType");
-            return (Criteria) this;
-        }
-
-        public Criteria andParentIdIsNull() {
-            addCriterion("parent_id is null");
-            return (Criteria) this;
-        }
-
-        public Criteria andParentIdIsNotNull() {
-            addCriterion("parent_id is not null");
-            return (Criteria) this;
-        }
-
-        public Criteria andParentIdEqualTo(Integer value) {
-            addCriterion("parent_id =", value, "parentId");
-            return (Criteria) this;
-        }
-
-        public Criteria andParentIdNotEqualTo(Integer value) {
-            addCriterion("parent_id <>", value, "parentId");
-            return (Criteria) this;
-        }
-
-        public Criteria andParentIdGreaterThan(Integer value) {
-            addCriterion("parent_id >", value, "parentId");
-            return (Criteria) this;
-        }
-
-        public Criteria andParentIdGreaterThanOrEqualTo(Integer value) {
-            addCriterion("parent_id >=", value, "parentId");
-            return (Criteria) this;
-        }
-
-        public Criteria andParentIdLessThan(Integer value) {
-            addCriterion("parent_id <", value, "parentId");
-            return (Criteria) this;
-        }
-
-        public Criteria andParentIdLessThanOrEqualTo(Integer value) {
-            addCriterion("parent_id <=", value, "parentId");
-            return (Criteria) this;
-        }
-
-        public Criteria andParentIdIn(List<Integer> values) {
-            addCriterion("parent_id in", values, "parentId");
-            return (Criteria) this;
-        }
-
-        public Criteria andParentIdNotIn(List<Integer> values) {
-            addCriterion("parent_id not in", values, "parentId");
-            return (Criteria) this;
-        }
-
-        public Criteria andParentIdBetween(Integer value1, Integer value2) {
-            addCriterion("parent_id between", value1, value2, "parentId");
-            return (Criteria) this;
-        }
-
-        public Criteria andParentIdNotBetween(Integer value1, Integer value2) {
-            addCriterion("parent_id not between", value1, value2, "parentId");
+        public Criteria andAuthGroupDescNotBetween(String value1, String value2) {
+            addCriterion("auth_group_desc not between", value1, value2, "authGroupDesc");
             return (Criteria) this;
         }
 
@@ -375,133 +315,53 @@ public class AuthExample {
             return (Criteria) this;
         }
 
-        public Criteria andIsEnableEqualTo(String value) {
+        public Criteria andIsEnableEqualTo(Integer value) {
             addCriterion("is_enable =", value, "isEnable");
             return (Criteria) this;
         }
 
-        public Criteria andIsEnableNotEqualTo(String value) {
+        public Criteria andIsEnableNotEqualTo(Integer value) {
             addCriterion("is_enable <>", value, "isEnable");
             return (Criteria) this;
         }
 
-        public Criteria andIsEnableGreaterThan(String value) {
+        public Criteria andIsEnableGreaterThan(Integer value) {
             addCriterion("is_enable >", value, "isEnable");
             return (Criteria) this;
         }
 
-        public Criteria andIsEnableGreaterThanOrEqualTo(String value) {
+        public Criteria andIsEnableGreaterThanOrEqualTo(Integer value) {
             addCriterion("is_enable >=", value, "isEnable");
             return (Criteria) this;
         }
 
-        public Criteria andIsEnableLessThan(String value) {
+        public Criteria andIsEnableLessThan(Integer value) {
             addCriterion("is_enable <", value, "isEnable");
             return (Criteria) this;
         }
 
-        public Criteria andIsEnableLessThanOrEqualTo(String value) {
+        public Criteria andIsEnableLessThanOrEqualTo(Integer value) {
             addCriterion("is_enable <=", value, "isEnable");
             return (Criteria) this;
         }
 
-        public Criteria andIsEnableLike(String value) {
-            addCriterion("is_enable like", value, "isEnable");
-            return (Criteria) this;
-        }
-
-        public Criteria andIsEnableNotLike(String value) {
-            addCriterion("is_enable not like", value, "isEnable");
-            return (Criteria) this;
-        }
-
-        public Criteria andIsEnableIn(List<String> values) {
+        public Criteria andIsEnableIn(List<Integer> values) {
             addCriterion("is_enable in", values, "isEnable");
             return (Criteria) this;
         }
 
-        public Criteria andIsEnableNotIn(List<String> values) {
+        public Criteria andIsEnableNotIn(List<Integer> values) {
             addCriterion("is_enable not in", values, "isEnable");
             return (Criteria) this;
         }
 
-        public Criteria andIsEnableBetween(String value1, String value2) {
+        public Criteria andIsEnableBetween(Integer value1, Integer value2) {
             addCriterion("is_enable between", value1, value2, "isEnable");
             return (Criteria) this;
         }
 
-        public Criteria andIsEnableNotBetween(String value1, String value2) {
+        public Criteria andIsEnableNotBetween(Integer value1, Integer value2) {
             addCriterion("is_enable not between", value1, value2, "isEnable");
-            return (Criteria) this;
-        }
-
-        public Criteria andAuthUrlIsNull() {
-            addCriterion("auth_url is null");
-            return (Criteria) this;
-        }
-
-        public Criteria andAuthUrlIsNotNull() {
-            addCriterion("auth_url is not null");
-            return (Criteria) this;
-        }
-
-        public Criteria andAuthUrlEqualTo(String value) {
-            addCriterion("auth_url =", value, "authUrl");
-            return (Criteria) this;
-        }
-
-        public Criteria andAuthUrlNotEqualTo(String value) {
-            addCriterion("auth_url <>", value, "authUrl");
-            return (Criteria) this;
-        }
-
-        public Criteria andAuthUrlGreaterThan(String value) {
-            addCriterion("auth_url >", value, "authUrl");
-            return (Criteria) this;
-        }
-
-        public Criteria andAuthUrlGreaterThanOrEqualTo(String value) {
-            addCriterion("auth_url >=", value, "authUrl");
-            return (Criteria) this;
-        }
-
-        public Criteria andAuthUrlLessThan(String value) {
-            addCriterion("auth_url <", value, "authUrl");
-            return (Criteria) this;
-        }
-
-        public Criteria andAuthUrlLessThanOrEqualTo(String value) {
-            addCriterion("auth_url <=", value, "authUrl");
-            return (Criteria) this;
-        }
-
-        public Criteria andAuthUrlLike(String value) {
-            addCriterion("auth_url like", value, "authUrl");
-            return (Criteria) this;
-        }
-
-        public Criteria andAuthUrlNotLike(String value) {
-            addCriterion("auth_url not like", value, "authUrl");
-            return (Criteria) this;
-        }
-
-        public Criteria andAuthUrlIn(List<String> values) {
-            addCriterion("auth_url in", values, "authUrl");
-            return (Criteria) this;
-        }
-
-        public Criteria andAuthUrlNotIn(List<String> values) {
-            addCriterion("auth_url not in", values, "authUrl");
-            return (Criteria) this;
-        }
-
-        public Criteria andAuthUrlBetween(String value1, String value2) {
-            addCriterion("auth_url between", value1, value2, "authUrl");
-            return (Criteria) this;
-        }
-
-        public Criteria andAuthUrlNotBetween(String value1, String value2) {
-            addCriterion("auth_url not between", value1, value2, "authUrl");
             return (Criteria) this;
         }
 
@@ -565,63 +425,63 @@ public class AuthExample {
             return (Criteria) this;
         }
 
-        public Criteria andCreateDateIsNull() {
-            addCriterion("create_date is null");
+        public Criteria andCreateTimeIsNull() {
+            addCriterion("create_time is null");
             return (Criteria) this;
         }
 
-        public Criteria andCreateDateIsNotNull() {
-            addCriterion("create_date is not null");
+        public Criteria andCreateTimeIsNotNull() {
+            addCriterion("create_time is not null");
             return (Criteria) this;
         }
 
-        public Criteria andCreateDateEqualTo(Date value) {
-            addCriterion("create_date =", value, "createDate");
+        public Criteria andCreateTimeEqualTo(Date value) {
+            addCriterion("create_time =", value, "createTime");
             return (Criteria) this;
         }
 
-        public Criteria andCreateDateNotEqualTo(Date value) {
-            addCriterion("create_date <>", value, "createDate");
+        public Criteria andCreateTimeNotEqualTo(Date value) {
+            addCriterion("create_time <>", value, "createTime");
             return (Criteria) this;
         }
 
-        public Criteria andCreateDateGreaterThan(Date value) {
-            addCriterion("create_date >", value, "createDate");
+        public Criteria andCreateTimeGreaterThan(Date value) {
+            addCriterion("create_time >", value, "createTime");
             return (Criteria) this;
         }
 
-        public Criteria andCreateDateGreaterThanOrEqualTo(Date value) {
-            addCriterion("create_date >=", value, "createDate");
+        public Criteria andCreateTimeGreaterThanOrEqualTo(Date value) {
+            addCriterion("create_time >=", value, "createTime");
             return (Criteria) this;
         }
 
-        public Criteria andCreateDateLessThan(Date value) {
-            addCriterion("create_date <", value, "createDate");
+        public Criteria andCreateTimeLessThan(Date value) {
+            addCriterion("create_time <", value, "createTime");
             return (Criteria) this;
         }
 
-        public Criteria andCreateDateLessThanOrEqualTo(Date value) {
-            addCriterion("create_date <=", value, "createDate");
+        public Criteria andCreateTimeLessThanOrEqualTo(Date value) {
+            addCriterion("create_time <=", value, "createTime");
             return (Criteria) this;
         }
 
-        public Criteria andCreateDateIn(List<Date> values) {
-            addCriterion("create_date in", values, "createDate");
+        public Criteria andCreateTimeIn(List<Date> values) {
+            addCriterion("create_time in", values, "createTime");
             return (Criteria) this;
         }
 
-        public Criteria andCreateDateNotIn(List<Date> values) {
-            addCriterion("create_date not in", values, "createDate");
+        public Criteria andCreateTimeNotIn(List<Date> values) {
+            addCriterion("create_time not in", values, "createTime");
             return (Criteria) this;
         }
 
-        public Criteria andCreateDateBetween(Date value1, Date value2) {
-            addCriterion("create_date between", value1, value2, "createDate");
+        public Criteria andCreateTimeBetween(Date value1, Date value2) {
+            addCriterion("create_time between", value1, value2, "createTime");
             return (Criteria) this;
         }
 
-        public Criteria andCreateDateNotBetween(Date value1, Date value2) {
-            addCriterion("create_date not between", value1, value2, "createDate");
+        public Criteria andCreateTimeNotBetween(Date value1, Date value2) {
+            addCriterion("create_time not between", value1, value2, "createTime");
             return (Criteria) this;
         }
 
@@ -742,76 +602,6 @@ public class AuthExample {
 
         public Criteria andUpdateTimeNotBetween(Date value1, Date value2) {
             addCriterion("update_time not between", value1, value2, "updateTime");
-            return (Criteria) this;
-        }
-
-        public Criteria andAuthDescIsNull() {
-            addCriterion("auth_desc is null");
-            return (Criteria) this;
-        }
-
-        public Criteria andAuthDescIsNotNull() {
-            addCriterion("auth_desc is not null");
-            return (Criteria) this;
-        }
-
-        public Criteria andAuthDescEqualTo(String value) {
-            addCriterion("auth_desc =", value, "authDesc");
-            return (Criteria) this;
-        }
-
-        public Criteria andAuthDescNotEqualTo(String value) {
-            addCriterion("auth_desc <>", value, "authDesc");
-            return (Criteria) this;
-        }
-
-        public Criteria andAuthDescGreaterThan(String value) {
-            addCriterion("auth_desc >", value, "authDesc");
-            return (Criteria) this;
-        }
-
-        public Criteria andAuthDescGreaterThanOrEqualTo(String value) {
-            addCriterion("auth_desc >=", value, "authDesc");
-            return (Criteria) this;
-        }
-
-        public Criteria andAuthDescLessThan(String value) {
-            addCriterion("auth_desc <", value, "authDesc");
-            return (Criteria) this;
-        }
-
-        public Criteria andAuthDescLessThanOrEqualTo(String value) {
-            addCriterion("auth_desc <=", value, "authDesc");
-            return (Criteria) this;
-        }
-
-        public Criteria andAuthDescLike(String value) {
-            addCriterion("auth_desc like", value, "authDesc");
-            return (Criteria) this;
-        }
-
-        public Criteria andAuthDescNotLike(String value) {
-            addCriterion("auth_desc not like", value, "authDesc");
-            return (Criteria) this;
-        }
-
-        public Criteria andAuthDescIn(List<String> values) {
-            addCriterion("auth_desc in", values, "authDesc");
-            return (Criteria) this;
-        }
-
-        public Criteria andAuthDescNotIn(List<String> values) {
-            addCriterion("auth_desc not in", values, "authDesc");
-            return (Criteria) this;
-        }
-
-        public Criteria andAuthDescBetween(String value1, String value2) {
-            addCriterion("auth_desc between", value1, value2, "authDesc");
-            return (Criteria) this;
-        }
-
-        public Criteria andAuthDescNotBetween(String value1, String value2) {
-            addCriterion("auth_desc not between", value1, value2, "authDesc");
             return (Criteria) this;
         }
     }

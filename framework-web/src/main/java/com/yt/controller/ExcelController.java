@@ -1,6 +1,6 @@
 package com.yt.controller;
 
-import com.yt.mybatis.entity.Auth;
+import com.yt.entity.mybatis.Auth;
 import com.yt.util.dhqjr.DateUtil;
 import com.yt.util.yt.myutils.ExportExcel;
 import org.springframework.web.bind.annotation.RequestMapping;
