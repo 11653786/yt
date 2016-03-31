@@ -50,7 +50,7 @@
     </bean>
 
 
-    <!--mvc闈欐�佽祫婧愭嫤鎴�-->
-    <mvc:resources location="/static" mapping="/"/>
+    <!--静态资源处理-->
+    <mvc:resources location="/static" mapping="/static"/>
 
 </beans>
