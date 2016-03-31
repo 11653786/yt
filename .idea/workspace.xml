@@ -2,36 +2,31 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f5e4681c-b491-4f95-bf09-2f7e1fd7cfa5" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/framework-entity/src/main/resources/com/yt/entity/AuthGroupMapper.xml" afterPath="$PROJECT_DIR$/framework-entity/src/main/resources/com/yt/entity/AuthGroupMapper.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/framework-entity/src/main/resources/com/yt/entity/AuthMapper.xml" afterPath="$PROJECT_DIR$/framework-entity/src/main/resources/com/yt/entity/AuthMapper.xml" />
+      <change type="DELETED" beforePath="E:\ideaprojects\yt\.idea\artifacts\framework.xml" afterPath="" />
+      <change type="DELETED" beforePath="E:\ideaprojects\yt\.idea\artifacts\framework_min_war.xml" afterPath="" />
+      <change type="DELETED" beforePath="E:\ideaprojects\yt\.idea\artifacts\framework_min_war_exploded.xml" afterPath="" />
+      <change type="DELETED" beforePath="E:\ideaprojects\yt\.idea\artifacts\framework_new.xml" afterPath="" />
+      <change type="DELETED" beforePath="E:\ideaprojects\yt\.idea\artifacts\framework_web_war.xml" afterPath="" />
+      <change type="DELETED" beforePath="E:\ideaprojects\yt\.idea\artifacts\framework_web_war_exploded.xml" afterPath="" />
+      <change type="DELETED" beforePath="E:\ideaprojects\yt\.idea\artifacts\framework_yt1.xml" afterPath="" />
+      <change type="DELETED" beforePath="E:\ideaprojects\yt\.idea\artifacts\java.xml" afterPath="" />
+      <change type="DELETED" beforePath="E:\ideaprojects\yt\.idea\artifacts\unnamed.xml" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/framework-service/src/main/java/com/yt/service/mybatis/AuthService.java" afterPath="$PROJECT_DIR$/framework-service/src/main/java/com/yt/service/mybatis/AuthService.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/framework-service/src/main/java/com/yt/service/mybatis/impl/AuthServiceImpl.java" afterPath="$PROJECT_DIR$/framework-service/src/main/java/com/yt/service/mybatis/impl/AuthServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/framework-entity/src/main/resources/com/yt/entity/EmployeeGroupMapper.xml" afterPath="$PROJECT_DIR$/framework-entity/src/main/resources/com/yt/entity/EmployeeGroupMapper.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/framework-entity/src/main/resources/com/yt/entity/EmployeeMapper.xml" afterPath="$PROJECT_DIR$/framework-entity/src/main/resources/com/yt/entity/EmployeeMapper.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/framework-service/src/main/java/com/yt/service/mybatis/EmployeeService.java" afterPath="$PROJECT_DIR$/framework-service/src/main/java/com/yt/service/mybatis/EmployeeService.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/framework-service/src/main/java/com/yt/service/mybatis/impl/EmployeeServiceImpl.java" afterPath="$PROJECT_DIR$/framework-service/src/main/java/com/yt/service/mybatis/impl/EmployeeServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/framework-web/src/main/java/com/yt/controller/ExcelController.java" afterPath="$PROJECT_DIR$/framework-web/src/main/java/com/yt/controller/ExcelController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/framework-entity/src/main/resources/com/yt/entity/LogMapper.xml" afterPath="$PROJECT_DIR$/framework-entity/src/main/resources/com/yt/entity/LogMapper.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/framework-service/src/main/java/com/yt/service/mybatis/LogService.java" afterPath="$PROJECT_DIR$/framework-service/src/main/java/com/yt/service/mybatis/LogService.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/framework-service/src/main/java/com/yt/service/mybatis/impl/LogServiceImpl.java" afterPath="$PROJECT_DIR$/framework-service/src/main/java/com/yt/service/mybatis/impl/LogServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/framework-core/src/main/java/com/core/mongo/base/impl/MongoDaoBasicImpl.java" afterPath="$PROJECT_DIR$/framework-core/src/main/java/com/core/mongo/base/impl/MongoDaoBasicImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/framework-core/src/main/java/com/core/mongo/base/impl/MongoDaoImpl.java" afterPath="$PROJECT_DIR$/framework-core/src/main/java/com/core/mongo/base/impl/MongoDaoImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/framework-web/src/main/java/com/yt/shiro/MyRealm.java" afterPath="$PROJECT_DIR$/framework-web/src/main/java/com/yt/shiro/MyRealm.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/framework-web/src/main/java/com/yt/aop/Proxy.java" afterPath="$PROJECT_DIR$/framework-web/src/main/java/com/yt/aop/Proxy.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/framework.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/framework.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/framework-entity/src/main/resources/mybatis-generator/generatorConfig.xml" afterPath="$PROJECT_DIR$/framework-entity/src/main/resources/mybatis-generator/generatorConfig.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/framework-web/framework-web.iml" afterPath="$PROJECT_DIR$/framework-web/framework-web.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MOVED" beforePath="E:\ideaprojects\yt\framework-entity\src\main\java\com\yt\mongo\entity\Student.java" afterPath="$PROJECT_DIR$/framework-entity/src/main/java/com/yt/entity/mongo/Student.java" />
-      <change type="MOVED" beforePath="E:\ideaprojects\yt\framework-entity\src\main\java\com\yt\mybatis\entity\Auth.java" afterPath="$PROJECT_DIR$/framework-entity/src/main/java/com/yt/entity/mybatis/Auth.java" />
-      <change type="MOVED" beforePath="E:\ideaprojects\yt\framework-entity\src\main\java\com\yt\mybatis\entity\AuthExample.java" afterPath="$PROJECT_DIR$/framework-entity/src/main/java/com/yt/entity/mybatis/AuthExample.java" />
-      <change type="MOVED" beforePath="E:\ideaprojects\yt\framework-entity\src\main\java\com\yt\mybatis\entity\AuthGroup.java" afterPath="$PROJECT_DIR$/framework-entity/src/main/java/com/yt/entity/mybatis/AuthGroup.java" />
-      <change type="MOVED" beforePath="E:\ideaprojects\yt\framework-entity\src\main\java\com\yt\mybatis\entity\AuthGroupExample.java" afterPath="$PROJECT_DIR$/framework-entity/src/main/java/com/yt/entity/mybatis/AuthGroupExample.java" />
-      <change type="MOVED" beforePath="E:\ideaprojects\yt\framework-entity\src\main\java\com\yt\mybatis\entity\Employee.java" afterPath="$PROJECT_DIR$/framework-entity/src/main/java/com/yt/entity/mybatis/Employee.java" />
-      <change type="MOVED" beforePath="E:\ideaprojects\yt\framework-entity\src\main\java\com\yt\mybatis\entity\EmployeeExample.java" afterPath="$PROJECT_DIR$/framework-entity/src/main/java/com/yt/entity/mybatis/EmployeeExample.java" />
-      <change type="MOVED" beforePath="E:\ideaprojects\yt\framework-entity\src\main\java\com\yt\mybatis\entity\EmployeeGroup.java" afterPath="$PROJECT_DIR$/framework-entity/src/main/java/com/yt/entity/mybatis/EmployeeGroup.java" />
-      <change type="MOVED" beforePath="E:\ideaprojects\yt\framework-entity\src\main\java\com\yt\mybatis\entity\EmployeeGroupExample.java" afterPath="$PROJECT_DIR$/framework-entity/src/main/java/com/yt/entity/mybatis/EmployeeGroupExample.java" />
-      <change type="MOVED" beforePath="E:\ideaprojects\yt\framework-entity\src\main\java\com\yt\mybatis\entity\Log.java" afterPath="$PROJECT_DIR$/framework-entity/src/main/java/com/yt/entity/mybatis/Log.java" />
-      <change type="MOVED" beforePath="E:\ideaprojects\yt\framework-entity\src\main\java\com\yt\mybatis\entity\LogExample.java" afterPath="$PROJECT_DIR$/framework-entity/src/main/java/com/yt/entity/mybatis/LogExample.java" />
+      <change type="MOVED" beforePath="E:\ideaprojects\yt\.idea\artifacts\ok.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/framework1.xml" />
+      <change type="MOVED" beforePath="E:\ideaprojects\yt\framework-core\src\main\java\com\core\mongo\base\MongoBaseDao.java" afterPath="$PROJECT_DIR$/framework-core/src/main/java/com/com/yt/core/mongodao/MongoBaseDao.java" />
+      <change type="MOVED" beforePath="E:\ideaprojects\yt\framework-core\src\main\java\com\core\mongo\base\MongoBaseDaoBasic.java" afterPath="$PROJECT_DIR$/framework-core/src/main/java/com/com/yt/core/mongodao/MongoBaseDaoBasic.java" />
+      <change type="MOVED" beforePath="E:\ideaprojects\yt\framework-core\src\main\java\com\core\mongo\base\impl\MongoDaoBasicImpl.java" afterPath="$PROJECT_DIR$/framework-core/src/main/java/com/com/yt/core/mongodao/impl/MongoDaoBasicImpl.java" />
+      <change type="MOVED" beforePath="E:\ideaprojects\yt\framework-core\src\main\java\com\core\mongo\base\impl\MongoDaoImpl.java" afterPath="$PROJECT_DIR$/framework-core/src/main/java/com/com/yt/core/mongodao/impl/MongoDaoImpl.java" />
+      <change type="MOVED" beforePath="E:\ideaprojects\yt\framework-core\src\main\java\com\core\mybatis\base\BaseDao.java" afterPath="$PROJECT_DIR$/framework-core/src/main/java/com/yt/core/dao/BaseDao.java" />
+      <change type="MOVED" beforePath="E:\ideaprojects\yt\framework-core\src\main\java\com\core\mybatis\base\impl\BaseDaoImpl.java" afterPath="$PROJECT_DIR$/framework-core/src/main/java/com/yt/core/dao/impl/BaseDaoImpl.java" />
     </list>
     <ignored path="framework.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -65,7 +60,18 @@
     <favorites_list name="framework" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file leaf-file-name="Proxy.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/framework-web/src/main/java/com/yt/aop/Proxy.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="1.9099526" vertical-offset="272" max-vertical-offset="1562">
+              <caret line="62" column="34" selection-start-line="62" selection-start-column="34" selection-end-line="62" selection-end-column="34" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -152,48 +158,6 @@
         <PATH_ELEMENT>
           <option name="myItemId" value="" />
           <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$RootNode" />
-        </PATH_ELEMENT>
-      </PATH>
-      <PATH>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="" />
-          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$RootNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="framework-entity" />
-          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$ProjectNode" />
-        </PATH_ELEMENT>
-      </PATH>
-      <PATH>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="" />
-          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$RootNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="framework-entity" />
-          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$ProjectNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="Plugins" />
-          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$PluginsNode" />
-        </PATH_ELEMENT>
-      </PATH>
-      <PATH>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="" />
-          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$RootNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="framework-entity" />
-          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$ProjectNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="Plugins" />
-          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$PluginsNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="mybatis-generator" />
-          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$PluginNode" />
         </PATH_ELEMENT>
       </PATH>
     </treeState>
@@ -397,77 +361,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="framework-entity" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="framework" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="yt" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="framework-entity" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="framework" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="yt" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="framework-entity" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="entity" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="framework" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="yt" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="framework-entity" />
+              <option name="myItemId" value="framework-web" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -497,7 +391,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="framework-entity" />
+              <option name="myItemId" value="framework-web" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -517,11 +411,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="entity" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mybatis" />
+              <option name="myItemId" value="aop" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -535,7 +425,39 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="framework-entity" />
+              <option name="myItemId" value="framework-core" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="framework" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="yt" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="framework-core" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="framework" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="yt" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="framework-core" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -551,15 +473,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="yt" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="entity" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mongo" />
+              <option name="myItemId" value="com" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -904,9 +818,10 @@
     <configuration default="false" name="framework" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 7.0.52" ALTERNATIVE_JRE_ENABLED="false" ALTERNATIVE_JRE_PATH="">
       <option name="OPEN_IN_BROWSER" value="false" />
       <option name="BROWSER_ID" value="98ca6316-2f89-46d9-a9e5-fa9e2b0625b3" />
+      <option name="UPDATE_ON_FRAME_DEACTIVATION" value="true" />
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
-        <artifact name="framework">
+        <artifact name="framework1">
           <settings>
             <option name="CONTEXT_PATH" value="/" />
           </settings>
@@ -975,7 +890,7 @@
       </ConfigurationWrapper>
       <method>
         <option name="BuildArtifacts" enabled="true">
-          <artifact name="framework" />
+          <artifact name="framework1" />
         </option>
       </method>
     </configuration>
@@ -1020,6 +935,7 @@
       <workItem from="1459330764103" duration="770000" />
       <workItem from="1459397245528" duration="273000" />
       <workItem from="1459403795570" duration="564000" />
+      <workItem from="1459409054006" duration="318000" />
     </task>
     <task id="LOCAL-00058" summary="spring xml文件分离">
       <created>1456733983182</created>
@@ -1319,7 +1235,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="142170000" />
+    <option name="totallyTimeSpent" value="142488000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
@@ -1348,7 +1264,7 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.47265625" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.4127604" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
@@ -1492,13 +1408,13 @@
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/mongomac.txt">
-      <provider editor-type-id="com.intellij.database.editor.CsvTableFileEditorProvider">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.07913669" vertical-offset="0" max-vertical-offset="836">
           <caret line="2" column="16" selection-start-line="2" selection-start-column="16" selection-end-line="2" selection-end-column="16" />
         </state>
+      </provider>
+      <provider editor-type-id="com.intellij.database.editor.CsvTableFileEditorProvider">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/framework-web/src/main/resources/conf/redis_conf.xml">
@@ -1544,7 +1460,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/framework-core/src/main/java/com/core/mongo/base/impl/MongoDaoBasicImpl.java">
+    <entry file="file://$PROJECT_DIR$/framework-core/src/main/java/com/com/yt/core/mongodao/impl/MongoDaoBasicImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="3451" max-vertical-offset="4620">
           <caret line="166" column="13" selection-start-line="166" selection-start-column="13" selection-end-line="166" selection-end-column="13" />
@@ -1555,13 +1471,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.24279836" vertical-offset="7978" max-vertical-offset="8536">
           <caret line="368" column="68" selection-start-line="368" selection-start-column="68" selection-end-line="368" selection-end-column="68" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/framework-web/src/main/java/com/yt/aop/Proxy.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.34506088" vertical-offset="1109" max-vertical-offset="1848">
-          <caret line="62" column="34" selection-start-line="62" selection-start-column="34" selection-end-line="62" selection-end-column="34" />
         </state>
       </provider>
     </entry>
@@ -1600,7 +1509,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/framework-core/src/main/java/com/core/mongo/base/impl/MongoDaoImpl.java">
+    <entry file="file://$PROJECT_DIR$/framework-core/src/main/java/com/com/yt/core/mongodao/impl/MongoDaoImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.6457023" vertical-offset="330" max-vertical-offset="4224">
           <caret line="29" column="49" selection-start-line="29" selection-start-column="49" selection-end-line="29" selection-end-column="49" />
@@ -1850,7 +1759,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="572" max-vertical-offset="1166">
           <caret line="31" column="27" selection-start-line="31" selection-start-column="27" selection-end-line="31" selection-end-column="27" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1858,6 +1766,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-6.3636365" vertical-offset="2310" max-vertical-offset="2948">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/framework-web/src/main/java/com/yt/aop/Proxy.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.9099526" vertical-offset="272" max-vertical-offset="1562">
+          <caret line="62" column="34" selection-start-line="62" selection-start-column="34" selection-end-line="62" selection-end-column="34" />
           <folding />
         </state>
       </provider>
@@ -1868,7 +1783,7 @@
       <state key="ArtifactsStructureConfigurable.UI">
         <settings>
           <artifact-editor />
-          <last-edited>framework</last-edited>
+          <last-edited>framework1</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

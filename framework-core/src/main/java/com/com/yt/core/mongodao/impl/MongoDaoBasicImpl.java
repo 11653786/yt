@@ -1,8 +1,8 @@
-package com.core.mongo.base.impl;
+package com.com.yt.core.mongodao.impl;
 
 import com.google.gson.reflect.TypeToken;
 import com.mongodb.*;
-import com.core.mongo.base.MongoBaseDaoBasic;
+import com.com.yt.core.mongodao.MongoBaseDaoBasic;
 import com.yt.entity.mongo.Student;
 import com.yt.util.yt.myutils.JsonUtil;
 import com.yt.util.yt.myutils.ListUtil;

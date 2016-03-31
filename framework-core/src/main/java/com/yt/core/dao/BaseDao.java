@@ -1,4 +1,4 @@
-package com.core.mybatis.base;
+package com.yt.core.dao;
 
 import java.util.List;
 

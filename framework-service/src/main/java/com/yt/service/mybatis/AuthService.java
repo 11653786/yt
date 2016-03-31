@@ -1,6 +1,6 @@
 package com.yt.service.mybatis;
 
-import com.core.mybatis.base.BaseDao;
+import com.yt.core.dao.BaseDao;
 import com.yt.entity.mybatis.Auth;
 
 /**
